@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>OMiCall SDK Example</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+	<link omi-sdk-css rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+	<script>
+		/**
+		 * Mở file index.html trên localhost bằng live server mới có thể thực hiện cuộc gọi; 
+		 * http://localhost/index.html
+		 * 
+		*/
+		document.addEventListener('DOMContentLoaded', () => {
+			let config = {
+				theme: 'default',
+				debug: false,
+				language: 'vi', // Ngôn ngữ giao diện dialog,
+				ringtoneVolume: 0.5,
+				options: {
+					hideCallButton: false,
+				},
+				callbacks: {
+					register: (data) => { // Sự kiện xảy ra khi ghi danh tổng đài
+						// console.log('register:', data);
+					},
+					connecting: (data) => { // Sự kiện xảy ra khi bắt đầu thực hiện cuộc gọi ra
+						// console.log('connecting:', data);
+					},
+					ringing: (data) => { // Sự kiện xảy ra khi bắt đầu rung chuông
+						// console.log('ringing:', data);
+					},
+					invite: (data) => { // Sự kiện xảy ra khi có một cuộc gọi tới
+						// console.log('invite:', data);
+					},
+					inviteRejected: (data) => { // Sự kiện xảy ra khi có một cuộc gọi tới
+						// console.log('inviteRejected:', data);
+					},
+					incall: (data) => { // Sự kiện xảy ra sau khi cuộc gọi đã được kết nối mỗi 1 giây
+						// console.log('incall:', data);
+					},
+					accepted: (data) => { // Sự kiện xảy ra khi cuộc gọi được chấp nhận
+						// console.log('accepted:', data);
+					},
+					acceptedByOther: (data) => { // Sự kiện xảy ra khi cuộc gọi hiện tại được nghe máy ở thiết bị khác
+						// 	console.log('acceptedByOther:', data);
+					},
+					ended: (data) => { // Sự kiện xảy ra khi cuộc gọi kết thúc
+						// console.log('ended:', data);
+					},
+					holdChanged: (status) => { // Sự kiện xảy ra khi cuộc gọi đang được giữ
+						// console.log('on hold:', status);
+					},
+				}
+			};
+			
+			omiSDK.init(config, () => {
+				omiSDK.register({
+					domain: '',
+					username: '',
+					password: ''
+				});
+			});
+		});
+	</script>
+
+	<script omi-sdk type="text/javascript" src="https://minio.infra.omicrm.com/sdk/2.0.0/sdk.min.js"></script>
+
+</body>
+
+</html>

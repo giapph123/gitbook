@@ -1,0 +1,50 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Web SDK Demo</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://minio.infra.omicrm.com/statics/web-sdk/v11/sdk.min.js"></script>
+<script>
+	$(document).ready(function () {
+		var config = {
+			theme: 'fuji', // Theme giao diện dialog
+			language: "vi", // Ngôn ngữ giao diện dialog
+			incall_fn: function (data) { //Sự kiện xảy ra khi thay đổi trạng thái trong cuộc gọi
+				console.log(data);
+			},
+			accept_fn: function (data) { //Sự kiện xảy ra khi cuộc gọi được chấp nhận
+				console.log(data);
+			},
+			endcall_fn: function (data) { //Sự kiện xảy ra khi cuộc gọi kết thúc
+				console.log(data);
+			},
+			invite_fn: function (data) { //Sự kiện xảy ra khi có một cuộc gọi tới
+				console.log(data);
+			},
+			ping_fn: function (data) { //Kiem tra tin hieu cuoc goi
+				console.log(data);
+			},
+			register_fn: function (data) { //Kiem tra trang thai register tong dai
+				console.log(data);
+			}
+		};
+		omiSDK.init(config, function () {
+			var params = {
+				domain: "",
+				username: "",
+				password: ""
+			};
+			omiSDK.register(params);
+		});
+	});
+</script>
+
+</html>

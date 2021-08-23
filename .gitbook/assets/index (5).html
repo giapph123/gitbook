@@ -1,0 +1,58 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>OMiCall SDK Example</title>
+</head>
+
+<body></body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://minio.infra.omicrm.com/statics/web-sdk/v21/sdk.min.js"></script>
+
+<script>
+	/**
+	 * Mở file index.html trên localhost; 
+	 * http://localhost/index.html
+	 * 
+	*/
+	$(document).ready(function () {
+		var config = {
+			theme: 'fuji',
+			language: "vi", // Ngôn ngữ giao diện dialog,
+			form_ui : {
+				call_button : { enabled : true}
+			},
+			register_fn: function (data) { //Sự kiện xảy ra khi ghi danh tổng đài
+				console.log(data);
+			},
+			accept_fn: function (data) { //Sự kiện xảy ra khi cuộc gọi được chấp nhận
+				console.log(data);
+			},
+			invite_fn: function (data) { //Sự kiện xảy ra khi có một cuộc gọi tới
+				console.log(data);
+			},
+			ping_fn: function (data) { //Kiểm tra tính hiệu cuộc gọi
+				console.log(data);
+			},
+			endcall_fn: function (data) { //Sự kiện xảy ra khi cuộc gọi kết thúc
+				console.log(data);
+			},
+			accept_out_fn : function(data){ 
+				console.log(data);
+			}
+		};
+		/** Thông tin ghi danh tổng đài được lấy từ OMI. Cấu hình >> Tổng đài >> Số nội bộ **/
+		omiSDK.init(config, function () {
+			var params = {
+				domain: "",
+				username: "",
+				password: ""
+			};
+			omiSDK.register(params);
+		});
+	});
+</script>
+
+</html>
