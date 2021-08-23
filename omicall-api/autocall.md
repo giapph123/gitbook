@@ -4,13 +4,13 @@ description: API gọi tự động
 
 # Gọi tự động
 
-{% api-method method="post" host="\[URL\]" path="/api/auto\_call/create\_auto\_call" %}
+{% api-method method="post" host="\[URL\]" path="/api/auto\_call/execute\_by\_phone?phone\_number=" %}
 {% api-method-summary %}
 Tạo phiên gọi tự động
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Tạo phiên gọi tự động dựa trên cấu hình
+Tạo phiên gọi tự động dựa trên cấu hình & thực thi
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -26,6 +26,16 @@ Access Token Bearer token
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="speed" type="number" required=false %}
+Tốc độ đọc, Giá trị từ  -3 - 3 : Mặc định là 0  
+- 3 : Cực kì chậm  
+-2 : Rất chậm  
+-1 : Chậm  
+0 : Bình thường  
+1 : Nhanh  
+...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="voice" type="string" required=false %}
 Giọng đọc, có thể một trong các giá trị sau  
 **banmai** : Giọng nữ miền Bắc  
