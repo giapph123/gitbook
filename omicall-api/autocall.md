@@ -116,6 +116,7 @@ Thông tin phiên gọi tự động
 ```text
 {
    "name":"Chiến dịch giới thiệu sản phẩm mới",
+   "speed" : 0
    "template_dialplans":[
       {
          "target_type":"Recording",
@@ -197,57 +198,6 @@ Thông tin phiên gọi tự động
     </tr>
   </tbody>
 </table>
-
-{% api-method method="get" host="\[URL\]" path="/api/auto\_call/execute?autocall\_id=&phone\_number" %}
-{% api-method-summary %}
-Thực thi phiên gọi tự động với số cụ thể
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Thực thi phiên gọi tự động với số điện thoại cụ thể
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-type" type="string" required=false %}
-application/json
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Authorization" type="string" required=false %}
-Access token Bearer token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-query-parameters %}
-{% api-method-parameter name="autocall\_id" type="string" required=true %}
-Id phiên gọi tự động đã tạo trước đó
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="phone\_number" type="string" required=true %}
-Số điện thoại gọi tới
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Thực thi thành công
-{% endapi-method-response-example-description %}
-
-```
-{
-    "status_code": 9999,
-    "payload": {
-        "success": true
-    }
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 
 
