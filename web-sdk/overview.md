@@ -23,7 +23,7 @@ Nhúng web-sdk vào trang HTML của mình
 
 ```markup
 <!-- import omisdk -->
-<script omi-sdk type="text/javascript" src="https://minio.infra.omicrm.com/sdk/2.0.0/sdk.min.js"></script>
+<script omi-sdk type="text/javascript" src="https://cdn.omicrm.com/sdk/2.0.0/sdk.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 			let config = {
