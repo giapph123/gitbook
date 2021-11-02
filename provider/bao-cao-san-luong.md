@@ -4,42 +4,46 @@ description: '- Báo cáo sản lượng tổng nhà cung cấp'
 
 # Báo cáo sản lượng nhà cung cấp
 
-{% api-method method="get" host="\[URL\]" path="/supplier/report" %}
-{% api-method-summary %}
-Báo cáo tổng sản lượng
-{% endapi-method-summary %}
+{% swagger baseUrl="[URL]" path="/supplier/report" method="get" summary="Báo cáo tổng sản lượng" %}
+{% swagger-description %}
+\- Lấy sản lượng tổng nội và ngoại mạng
 
-{% api-method-description %}
-- Lấy sản lượng tổng nội và ngoại mạng  
-- Sản lượng nhận được sẽ bằng **20% sản lượng thực tế**  
-- API sẽ cập nhật số liệu sau 60 phút. Nếu request sau cách request trước chưa tới 60 phút, thì sẽ nhận sản lượng trước đó
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="provider\_key" type="string" required=true %}
+
+\- Sản lượng nhận được sẽ bằng 
+
+**20% sản lượng thực tế**
+
+\
+
+
+\- API sẽ cập nhật số liệu sau 60 phút. Nếu request sau cách request trước chưa tới 60 phút, thì sẽ nhận sản lượng trước đó
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="provider_key" type="string" %}
 KEY cung cấp nhà Supplier
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="from\_date\_str" type="string" %}
-Từ ngày \(dd/MM/yyyy HH:mm:ss\)   
+{% swagger-parameter in="query" name="from_date_str" type="string" %}
+Từ ngày (dd/MM/yyyy HH:mm:ss) 
+
+\
+
+
 Mặc định là ngày đầu tháng
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="to\_date\_str" type="boolean" %}
-Đến ngày \(dd/MM/yyyy HH:mm:ss\)  
+{% swagger-parameter in="query" name="to_date_str" type="boolean" %}
+Đến ngày (dd/MM/yyyy HH:mm:ss)
+
+\
+
+
 Mặc định là ngày hiện tại 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Sản lượng nội và ngoại mạng
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Sản lượng nội và ngoại mạng" %}
 ```
 {
     "status_code": 9999,
@@ -80,10 +84,6 @@ Sản lượng nội và ngoại mạng
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

@@ -4,30 +4,16 @@ description: Quản lý doanh nghiệp
 
 # Doanh nghiệp
 
-{% api-method method="get" host="\[URL\]" path="/api/tenant/detail" %}
-{% api-method-summary %}
-Thông tin chi tiết
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/tenant/detail" method="get" summary="Thông tin chi tiết" %}
+{% swagger-description %}
 Thông tin chi tiết doanh nghiệp
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Bearer Access Token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Thông tin chi tiết doanh nghiệp
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Thông tin chi tiết doanh nghiệp" %}
 ```
 {
     "status_code": 9999,
@@ -69,10 +55,6 @@ Thông tin chi tiết doanh nghiệp
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

@@ -14,9 +14,9 @@ description: Webhook cuộc gọi
 **Webhook data khi cuộc gọi đã kết thúc**
 {% endhint %}
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](<../.gitbook/assets/image (6).png>)
 
-```text
+```
 {
    "tenant_id": "5f68.......", // Id của doanh nghiệp
    "transaction_id":"91d3e842-9da2-43ec-8bb1-979c17e817ad", // id cuộc gọi
@@ -56,11 +56,11 @@ description: Webhook cuộc gọi
 {% endhint %}
 
 * Gửi thông tin cuộc gọi đang diễn ra cho đối tác tích hợp
-* **Trạng thái gồm : ringing**\(Đổ chuông\)**, answered** \(Kết nối\) , **hangup** \(Kết thúc\)
+* **Trạng thái gồm : ringing**(Đổ chuông)**, answered **(Kết nối) , **hangup **(Kết thúc)
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](<../.gitbook/assets/image (4).png>)
 
-```text
+```
 {
   "to_number": "0395187319", // Số điện thoại khách hàng
   "created_time": 1626693561, // Ngày khởi tạo cuộc gọi
@@ -72,4 +72,3 @@ description: Webhook cuộc gọi
   "direction": "outbound" // outbound : Gọi ra, inbound : Gọi vào
 }
 ```
-

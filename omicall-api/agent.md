@@ -4,47 +4,43 @@ description: Quản lý nhân viên
 
 # Nhân viên
 
-{% api-method method="get" host="\[URL\]" path="/api/agent/list" %}
-{% api-method-summary %}
-Danh sách nhân viên
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/agent/list" method="get" summary="Danh sách nhân viên" %}
+{% swagger-description %}
 Danh sách nhân viên của doanh nghiệp
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token, Bearer 'token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="page" type="number" required=true %}
-Page \(mặc định là 1\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="page" type="number" %}
+Page (mặc định là 1)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="size" type="number" required=true %}
-Size \(kích thước trang\) : mặc định là 50
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="size" type="number" %}
+Size (kích thước trang) : mặc định là 50
+{% endswagger-parameter %}
 
-{% api-method-parameter name="keyword" type="string" required=false %}
-Từ khóa tìm kiếm   
-- Họ và tên  
-- Email  
-- SĐT
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="keyword" type="string" %}
+Từ khóa tìm kiếm 
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Danh sách nhân viên
-{% endapi-method-response-example-description %}
+\
 
+
+\- Họ và tên
+
+\
+
+
+\- Email
+
+\
+
+
+\- SĐT
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Danh sách nhân viên" %}
 ```
 {
     "status_code": 9999,
@@ -266,62 +262,64 @@ Danh sách nhân viên
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/agent/invite" %}
-{% api-method-summary %}
-Mời nhân viên
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/agent/invite" method="post" summary="Mời nhân viên" %}
+{% swagger-description %}
 Mời nhân viên sử dụng tổng đài
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token : Bearer 'token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="owner\_email" type="string" required=false %}
+{% swagger-parameter in="body" name="owner_email" type="string" %}
 Email nhân viên phụ trách
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="role\_name" type="string" required=false %}
-Quyền . Mặt định là Sale  
--  Sale  
--  Trưởng nhóm sale  
-- Trưởng phòng Kinh Doanh  
-- Kế toán  
-- Giám đốc
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="role_name" type="string" %}
+Quyền . Mặt định là Sale
 
-{% api-method-parameter name="password" type="string" required=true %}
+\
+
+
+\-  Sale
+
+\
+
+
+\-  Trưởng nhóm sale
+
+\
+
+
+\- Trưởng phòng Kinh Doanh
+
+\
+
+
+\- Kế toán
+
+\
+
+
+\- Giám đốc
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="password" type="string" %}
 Mật khẩu đăng nhập, khởi tạo ban đầu
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="identify\_info" type="string" required=true %}
+{% swagger-parameter in="body" name="identify_info" type="string" %}
 Email định danh
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="full\_name" type="string" required=true %}
+{% swagger-parameter in="body" name="full_name" type="string" %}
 Họ và tên nhân viên
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Thông tin nhân viên 
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Thông tin nhân viên " %}
 ```
 {
     "status_code": 9999,
@@ -347,94 +345,34 @@ Thông tin nhân viên
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">M&#xE3; l&#x1ED7;i</th>
-      <th style="text-align:left">M&#xF4; t&#x1EA3;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">full_name_is_required</td>
-      <td style="text-align:left">H&#x1ECD; v&#xE0; t&#xEA;n l&#xE0; b&#x1EAF;t bu&#x1ED9;c</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">identify_info_invalid</td>
-      <td style="text-align:left">Email kh&#xF4;ng h&#x1EE3;p l&#x1EC7;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">password_invalid</td>
-      <td style="text-align:left">
-        <p>M&#x1EAD;t kh&#x1EA9;u kh&#xF4;ng h&#x1EE3;p l&#x1EC7; , M&#x1EAD;t kh&#x1EA9;u
-          bao g&#x1ED3;m</p>
-        <ul>
-          <li>&#xCD;t nh&#x1EA5;t 8 k&#xFD; t&#x1EF1;</li>
-          <li>K&#xFD; t&#x1EF1; in hoa, in th&#x1B0;&#x1EDD;ng</li>
-          <li>S&#x1ED1; v&#xE0; k&#xFD; t&#x1EF1; &#x111;&#x1EB7;c bi&#x1EC7;t</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">role_is_required</td>
-      <td style="text-align:left">Quy&#x1EC1;n l&#xE0; b&#x1EAF;t bu&#x1ED9;c</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">agent_exists</td>
-      <td style="text-align:left">Nh&#xE2;n vi&#xEA;n &#x111;&#xE3; t&#x1ED3;n t&#x1EA1;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">limit_agent</td>
-      <td style="text-align:left">V&#x1B0;&#x1EE3;t qu&#xE1; gi&#x1EDB;i h&#x1EA1;n g&#xF3;i d&#x1ECB;ch
-        vu</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">invite_error</td>
-      <td style="text-align:left">C&#xF3; l&#x1ED7;i x&#x1EA3;y ra khi invite</td>
-    </tr>
-  </tbody>
-</table>
+| Mã lỗi                   | Mô tả                                                                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| full\_name\_is\_required | Họ và tên là bắt buộc                                                                                                                          |
+| identify\_info\_invalid  | Email không hợp lệ                                                                                                                             |
+| password\_invalid        | <p>Mật khẩu không hợp lệ , Mật khẩu bao gồm </p><ul><li>Ít nhất 8 ký tự</li><li>Ký tự in hoa, in thường</li><li>Số và ký tự đặc biệt</li></ul> |
+| role\_is\_required       | Quyền là bắt buộc                                                                                                                              |
+| agent\_exists            | Nhân viên đã tồn tại                                                                                                                           |
+| limit\_agent             | Vượt quá giới hạn gói dịch vu                                                                                                                  |
+| invite\_error            | Có lỗi xảy ra khi invite                                                                                                                       |
 
-{% api-method method="delete" host="\[URL\]" path="/api/agent/delete?identify\_info=" %}
-{% api-method-summary %}
-Xóa nhân viên
-{% endapi-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/agent/delete?identify_info=" method="delete" summary="Xóa nhân viên" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="path" name="Authorization" type="string" %}
 Access token Bearer 'token'
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="identify\_info" type="string" required=true %}
+{% swagger-parameter in="query" name="identify_info" type="string" %}
 Email nhân viên
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Xóa nhân viên thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Xóa nhân viên thành công" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

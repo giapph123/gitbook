@@ -1,6 +1,6 @@
 ---
 description: >-
-  OmiCall Web SDK : là công cụ bao gồm thư viện, và tài liệu mà OmiCall cung cấp
+  OmiCall Web SDK : là công cụ bao gồm thư viện và tài liệu mà OmiCall cung cấp
   cho đối tác, để đối tác xây dựng tính năng call ngay chính trên ứng dụng web
   của mình.
 ---
@@ -15,305 +15,173 @@ Changelog : https://api.omicall.com/chang-log#26-05-2021
 
 ### Hướng dẫn cài đặt
 
-![Giao di&#x1EC7;n Dialog Call](../.gitbook/assets/sdk1.png)
-
-Nhúng web-sdk vào trang HTML của mình
+![Giao diện Dialog Call](../.gitbook/assets/sdk1.png)
 
 
+
+Nhúng Web SDK vào HTML của website cần tích hợp
 
 ```markup
-<!-- import omisdk -->
-<script omi-sdk type="text/javascript" src="https://cdn.omicrm.com/sdk/2.0.0/sdk.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-			let config = {
-				theme: 'default', // themes mặc định của dialog
-				language: 'vi', // Ngôn ngữ giao diện dialog,
-				ringtoneVolume: 0.5, // âm lượng từ 0 - 1
-				options: {
-					hideCallButton: false, // true/false : Ẩn hiện cửa số nhập số
-				},
-				callbacks: {
-					register: (data) => { // Sự kiện xảy ra khi ghi danh tổng đài
-						// console.log('register:', data);
-					},
-					connecting: (data) => { // Sự kiện xảy ra khi bắt đầu thực hiện cuộc gọi ra
-						// console.log('connecting:', data);
-					},
-					ringing: (data) => { // Sự kiện xảy ra khi bắt đầu rung chuông
-						// console.log('ringing:', data);
-					},
-					invite: (data) => { // Sự kiện xảy ra khi có một cuộc gọi tới
-						// console.log('invite:', data);
-					},
-					inviteRejected: (data) => { // Sự kiện xảy ra khi có một cuộc gọi tới
-						// console.log('inviteRejected:', data);
-					},
-					incall: (data) => { // Sự kiện xảy ra sau khi cuộc gọi đã được kết nối mỗi 1 giây
-						// console.log('incall:', data);
-					},
-					accepted: (data) => { // Sự kiện xảy ra khi cuộc gọi được chấp nhận
-						// console.log('accepted:', data);
-					},
-					acceptedByOther: (data) => { // Sự kiện xảy ra khi cuộc gọi hiện tại được nghe máy ở thiết bị khác
-						// 	console.log('acceptedByOther:', data);
-					},
-					ended: (data) => { // Sự kiện xảy ra khi cuộc gọi kết thúc
-						// console.log('ended:', data);
-					},
-					holdChanged: (status) => { // Sự kiện xảy ra khi cuộc gọi đang được giữ
-						// console.log('on hold:', status);
-					},
-				}
-			};
-			// Khởi tạo SDK
-			omiSDK.init(config, () => {
-				
-				// Ghi danh tổng đài
-				// Truy cập OMI: Cấu hình >> Tổng đài >> Số nội bộ
-				omiSDK.register({
-					domain: '', // Domain tổng đài
-					username: '', // Số máy lẻ nhân viên
-					password: '' // Mật khẩu số máy lẻ
-				});
-				
-			});
-		});
-</script>
+<body>
+
+    <!-- other html -->
+    
+    <script omi-sdk type="text/javascript" src="https://cdn.omicrm.com/sdk/2.0.0/sdk.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let config = {
+                theme: 'default',
+                debug: false,
+                busy: true,
+                language: 'vi',
+                ringtoneVolume: 1,
+                options: {
+                    hideCallButton: false,
+                    showContactLoading: false,
+                },
+                classes: {
+                    btnToggle: 'custom-btn-toggle-call btn-call-left',
+                    dialog: 'custom-dialog-call dialog-call-left',
+                },
+                styles: {
+                    btnToggle: {
+                        'background-color': 'red',
+                        justifyContent: 'center',
+            	    color: 'red',
+                    },
+                    dialog: {
+                        'background-color': 'gray',
+                        justifyContent: 'center',
+                        color: 'pink',
+                    },
+                },
+                callbacks: {
+                    register: (data) => {
+                        // Sự kiện xảy ra khi trạng thái kết nối tổng đài thay đổi
+                        console.log('register:', data);
+                    },
+                    connecting: (data) => {
+                        // Sự kiện xảy ra khi bắt đầu thực hiện cuộc gọi ra
+                        console.log('connecting:', data);
+                    },
+                    invite: (data) => {
+                         // Sự kiện xảy ra khi có cuộc gọi tới
+                         console.log('invite:', data);
+                    },
+                    inviteRejected: (data) => {
+                         // Sự kiện xảy ra khi có cuộc gọi tới, nhưng bị tự động từ chối
+                         // trong khi đang diễn ra một cuộc gọi khác
+                         console.log('inviteRejected:', data);
+                    },
+                    ringing: (data) => {
+                        // Sự kiện xảy ra khi cuộc gọi ra bắt đầu đổ chuông
+                        console.log('ringing:', data);
+                    },
+                    accepted: (data) => {
+                         // Sự kiện xảy ra khi cuộc gọi vừa được chấp nhận
+                         console.log('accepted:', data);
+                    },
+                    incall: (data) => {
+                         // Sự kiện xảy ra mỗi 1 giây sau khi cuộc gọi đã được chấp nhận
+                         console.log('incall:', data);
+                    },
+                    acceptedByOther: (data) => {
+                         // Sự kiện dùng để kiểm tra xem cuộc gọi bị kết thúc
+                         // đã được chấp nhận ở thiết bị khác hay không
+                         console.log('acceptedByOther:', data);
+                    },
+                    ended: (data) => {
+                         // Sự kiện xảy ra khi cuộc gọi kết thúc
+                         console.log('ended:', data);
+                    },
+                    holdChanged: (status) => {
+                         // Sự kiện xảy ra khi trạng thái giữ cuộc gọi thay đổi
+                         console.log('on hold:', status);
+                    },
+                }
+            };
+            omiSDK.init(config, () => {
+                omiSDK.register({
+                    domain: '',
+                    username: '',
+                    password: ''
+                });
+            });
+        };
+    </script>
+
+</body>
 ```
 
-{% file src="../.gitbook/assets/index \(3\).html" caption="Ví dụ tích hợp" %}
+{% file src="../.gitbook/assets/index (8).html" %}
+Ví dụ tích hợp
+{% endfile %}
 
-**Thuộc tính và Sự kiện**
+**Cấu hình và Sự kiện**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:right">Tham s&#x1ED1;</th>
-      <th style="text-align:left">Ki&#x1EC3;u</th>
-      <th style="text-align:left">M&#xF4; t&#x1EA3;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:right">config.<b>theme</b>
-      </td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">
-        <p>Giao di&#x1EC7;n dialog cu&#x1ED9;c g&#x1ECD;i (n&#x1EBF;u &#x111;&#x1EC3;
-          tr&#x1ED1;ng th&#xEC; s&#x1EBD; kh&#xF4;ng c&#xF3; giao di&#x1EC7;n). Ho&#x1EB7;c
-          m&#x1ED9;t trong c&#xE1;c gi&#xE1; tr&#x1ECB; sau</p>
-        <ul>
-          <li><b>default </b>: Giao di&#x1EC7;n (nh&#x1B0; &#x1EA3;nh &#x1EDF; tr&#xEA;n)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>language</b>
-      </td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">Ng&#xF4;n ng&#x1EEF; hi&#x1EC3;n th&#x1ECB; dialog cu&#x1ED9;c g&#x1ECD;i.
-        G&#x1ED3;m
-        <br />&quot;<b>vi</b>&quot; : Ti&#x1EBF;ng Vi&#x1EC7;t,
-        <br />&quot;<b>en</b>&quot; : Ti&#x1EBF;ng anh</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>options</b>
-      </td>
-      <td style="text-align:left">Object</td>
-      <td style="text-align:left"><em><code>hideCallButton </code></em><code>: true/false</code> : &#x1EA8;n
-        hi&#x1EC7;n n&#xFA;t g&#x1ECD;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>ringtoneVolume</b>
-      </td>
-      <td style="text-align:left">Number</td>
-      <td style="text-align:left">&#xC2;m l&#x1B0;&#x1EE3;ng chu&#xF4;ng, khi kh&#xE1;ch g&#x1ECD;i t&#x1EDB;i
-        (t&#x1EEB; 0 - 1)</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>register</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi ghi danh t&#x1ED5;ng &#x111;&#xE0;i
-        th&#xE0;nh c&#xF4;ng ho&#x1EB7;c th&#x1EA5;t b&#x1EA1;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>connecting</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi b&#x1EAF;t &#x111;&#x1EA7;u th&#x1EF1;c
-        hi&#x1EC7;n cu&#x1ED9;c g&#x1ECD;i ra</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>ringing</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi b&#x1EAF;t &#x111;&#x1EA7;u rung
-        chu&#xF4;ng</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>invite</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi cu&#x1ED9;c g&#x1ECD;i &#x111;&#x1B0;&#x1EE3;c
-        ch&#x1EA5;p nh&#x1EAD;n</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>inviteRejected</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi c&#xF3; m&#x1ED9;t cu&#x1ED9;c
-        g&#x1ECD;i t&#x1EDB;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>incall</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra sau khi cu&#x1ED9;c g&#x1ECD;i &#x111;&#xE3;
-        &#x111;&#x1B0;&#x1EE3;c k&#x1EBF;t n&#x1ED1;i m&#x1ED7;i 1 gi&#xE2;y</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>accepted</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi cu&#x1ED9;c g&#x1ECD;i &#x111;&#x1B0;&#x1EE3;c
-        ch&#x1EA5;p nh&#x1EAD;n</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>acceptedByOther</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi cu&#x1ED9;c g&#x1ECD;i hi&#x1EC7;n
-        t&#x1EA1;i &#x111;&#x1B0;&#x1EE3;c nghe m&#xE1;y &#x1EDF; thi&#x1EBF;t
-        b&#x1ECB; kh&#xE1;c</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>ended</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi cu&#x1ED9;c g&#x1ECD;i k&#x1EBF;t
-        th&#xFA;c</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">config.<b>holdChanged</b>
-      </td>
-      <td style="text-align:left">Function</td>
-      <td style="text-align:left">S&#x1EF1; ki&#x1EC7;n x&#x1EA3;y ra khi cu&#x1ED9;c g&#x1ECD;i &#x111;ang
-        &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF;</td>
-    </tr>
-  </tbody>
-</table>
+|                    Tham số | Kiểu         | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| -------------------------: | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|           config.**theme** | **String**   | <p>Giao diện dialog cuộc gọi (nếu để trống thì sẽ không có giao diện). Hoặc một trong các giá trị sau </p><ul><li><strong>default </strong>: Giao diện (như ảnh ở trên)</li></ul>                                                                                                                                                                                                                                                                                                                                             |
+|           config.**debug** | **Boolean**  | <p>Bật tắt chức năng log các sự kiện của SDK.</p><p>Mặc định: <strong>false</strong></p>                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|            config.**busy** | **Boolean**  | Trạng thái cho phép thực hiện cuộc gọi ra, nhưng sẽ tự động từ chối tất cả các cuộc gọi tới                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|        config.**language** | **String**   | <p>Ngôn ngữ hiển thị dialog cuộc gọi mặc định của SDK.</p><p>Gồm: <br> "<strong>vi</strong>" : Tiếng Việt (<strong>default</strong>)<br> "<strong>en</strong>" : Tiếng anh</p>                                                                                                                                                                                                                                                                                                                                                |
+|  config.**ringtoneVolume** | **Number**   | Âm lượng chuông, khi khách gọi tới (từ 0 - 1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|         config.**options** | **Object**   | <ul><li><em><strong><code>hideCallButton</code></strong></em><code>: </code><strong><code>Boolean</code></strong> Ẩn hiện nút gọi</li></ul><ul><li><strong><code>showContactLoading</code></strong><code>:</code><strong><code>Boolean</code></strong> Ẩn hiện loading vị trí tên của người gọi trong dialog cuộc gọi</li></ul>                                                                                                                                                                                               |
+|         config.**classes** | **Object**   | <ul><li><strong><code>btnToggle</code></strong><code>:</code><strong><code>String</code></strong> được truyền vào thuộc tính <strong><code>class</code></strong> của div ngoài cùng của button đóng mở UI cuộc gọi</li><li><strong><code>dialog</code></strong><code>:</code><strong><code>String</code></strong> được truyền vào thuộc tính <strong><code>class</code></strong> của div ngoài cùng của dialog UI cuộc gọi</li></ul>                                                                                          |
+|          config.**styles** | **Object**   | <p></p><ul><li><strong><code>btnToggle</code></strong><code>:</code><strong><code>Object</code></strong> được truyền vào thuộc tính <strong><code>style</code></strong> của div ngoài cùng của button đóng mở UI cuộc gọi</li><li><strong><code>dialog</code></strong><code>:</code><strong><code>Object</code></strong> được truyền vào thuộc tính <strong><code>style</code></strong> của div ngoài cùng của dialog UI cuộc gọi</li></ul><p><strong>*Lưu ý</strong>: ví dụ cách dùng ở hướng dẫn nhúng script phía trên</p> |
+|        config.**register** | **Function** | Sự kiện xảy ra khi trạng thái kết nối tổng đài thay đổi                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|      config.**connecting** | **Function** | Sự kiện xảy ra khi bắt đầu thực hiện cuộc gọi ra                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|          config.**invite** | **Function** | Sự kiện xảy ra khi có cuộc gọi tới                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|  config.**inviteRejected** | **Function** | Sự kiện xảy ra khi có cuộc gọi tới, nhưng bị tự động từ chối                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|         config.**ringing** | **Function** | Sự kiện xảy ra khi cuộc gọi ra bắt đầu đổ chuông                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|        config.**accepted** | **Function** | Sự kiện xảy ra khi cuộc gọi vừa được chấp nhận                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|          config.**incall** | **Function** | Sự kiện xảy ra mỗi 1 giây sau khi cuộc gọi đã được chấp nhận                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| config.**acceptedByOther** | **Function** | Sự kiện dùng để kiểm tra xem cuộc gọi bị kết thúc, đã được chấp nhận ở thiết bị khác hay không                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|           config.**ended** | **Function** | Sự kiện xảy ra khi cuộc gọi kết thúc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|     config.**holdChanged** | **Function** | Sự kiện xảy ra khi trạng thái giữ cuộc gọi thay đổi                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-Dữ liệu data callback từ sự kiện
 
-| Tham số | Loại | Mô tả |
-| :--- | :--- | :--- |
-| **event\_name** | String | Tên sự kiện |
-| **direction** | String | Hướng gọi : inbound, outboud, local |
-| **transaction\_id** | String | Id cuộc gọi |
-| **phone** | String | Số điện thoại khách hàng gọi đi hoặc gọi đến |
-| **start\_time** | Number | Thời gian bắt đầu gọi |
-| **start\_time\_to\_answer** | Number | Thời gian bắt đầu trả lời |
-| **end\_time** | Number | Thời gian kết thúc |
-| **getDuration** | Function | Thời gian tính từ khi gọi, đến khi kết thúc cuộc gọi |
-| **getBillSec** | Function | Số giây tính tiền |
+
+**Dữ liệu callback từ sự kiện**
+
+| Tham số                         | Loại       | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **direction**                   | **String** | Hướng của cuộc gọi: **`outbound, inbound`**                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **directionTxt**                | **String** | Tên hướng của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **status**                      | **String** | Trạng thái hiện tại của cuộc gọi: **`connecting, ringing, connected, ended, hold`**                                                                                                                                                                                                                                                                                                                                                         |
+| **statusTxt**                   | **String** | Tên trạng thái hiện tại của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **remoteNumber **hoặc** phone** | **String** | <ul><li>với <strong>direction outbound</strong>: số được gọi ra</li><li>với <strong>direction inbound</strong>: số đang gọi tới</li></ul>                                                                                                                                                                                                                                                                                                   |
+| **sipNumber**                   | **String** | Số tổng đài đang dùng để thực hiện cuộc gọi ra hay nhận cuộc gọi tới                                                                                                                                                                                                                                                                                                                                                                        |
+| **startTime**                   | **Date**   | Thời gian bắt đầu cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **answerTime**                  | **Date**   | Thời gian bắt đầu chấp nhận cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **endTime**                     | **Date**   | Thời gian kết thúc cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **endCause**                    | **String** | <p>Nguyễn nhân kết thúc cuộc gọi.</p><p>Gồm:</p><ul><li><strong>BUSY</strong>: máy bận</li><li><strong>NO_ANSWER</strong>: hết thời gian đổ chuông</li><li><strong>TRIAL_REJECTION</strong>: khi gọi tới số điện thoại chưa gọi vào số tổng tài (với tài khoản OMI Trial)</li><li><strong>LIMITATION_DECLINE</strong>: quá thời lượng cho phép gọi ra</li><li><strong>ALLOTTED_TIMEOUT</strong>: Cuộc gọi đạt giới hạn thời lượng</li></ul> |
+| **uuid**                        | **String** | **Transaction ID** của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **duration**                    | **Number** | Thời gian gọi giữa 2 người sau khi chấp nhận cuộc gọi cho tới khi cuộc gọi kết thúc                                                                                                                                                                                                                                                                                                                                                         |
+| **durationTxt**                 | **String** | Thời gian gọi giữa 2 người sau khi chấp nhận cuộc gọi cho tới khi cuộc gọi kết thúc và đã được định dạng theo thời gian: **`00:00`**                                                                                                                                                                                                                                                                                                        |
+| **totalDuration**               | **Number** | Tổng thời gian từ khi bắt đầu thực hiện/nhận cuộc gọi tới khi kết thúc                                                                                                                                                                                                                                                                                                                                                                      |
+| **ping**                        | **Object** | Dữ liệu về trạng thái tín hiệu của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+
 
 **Phương thức**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:right">Ph&#x1B0;&#x1A1;ng th&#x1EE9;c</th>
-      <th style="text-align:left">M&#xF4; t&#x1EA3;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:right">omiSDK<b>.init(config,callback)</b>
-      </td>
-      <td style="text-align:left">Kh&#x1EDF;i t&#x1EA1;o SDK.</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>register(params)</b>
-      </td>
-      <td style="text-align:left">
-        <p>Ph&#x1B0;&#x1A1;ng th&#x1EE9;c ghi danh t&#x1ED5;ng &#x111;&#xE0;i</p>
-        <p><code>var params = {<br />  domain : &quot;testcompany&quot; //domain c&#xF4;ng ty</code>
-        </p>
-        <p><code>  username: &quot;142&quot;, //S&#x1ED1; n&#x1ED9;i b&#x1ED9; c&#x1EE7;a nh&#xE2;n vi&#xEA;n</code>
-        </p>
-        <p><code>  password: &quot;&lt;mk&gt;&quot; // M&#x1EAD;t kh&#x1EA9;u s&#x1ED1; n&#x1ED9;i b&#x1ED9;</code>
-        </p>
-        <p><code>}</code>
-        </p>
-        <p>C&#xF3; th&#x1EC3; l&#x1EA5;y th&#xF4;ng tin danh s&#xE1;ch nh&#xE2;n
-          vi&#xEA;n v&#xE0; s&#x1ED1; n&#x1ED9;i b&#x1ED9; th&#xF4;ng qua Api</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>makeCall(phone) </b>
-      </td>
-      <td style="text-align:left">
-        <p>S&#x1ED1; c&#x1EA7;n g&#x1ECD;i t&#x1EDB;i</p>
-        <ul>
-          <li>S&#x1ED1; &#x111;i&#x1EC7;n tho&#x1EA1;i kh&#xE1;ch h&#xE0;ng</li>
-          <li>S&#x1ED1; n&#x1ED9;i b&#x1ED9; c&#x1EE7;a nh&#xE2;n vi&#xEA;n</li>
-          <li>S&#x1ED1; n&#x1ED9;i b&#x1ED9; c&#x1EE7;a nh&#xF3;m</li>
-          <li>S&#x1ED1; n&#x1ED9;i b&#x1ED9; c&#x1EE7;a nh&#xF3;m b&#xEA;n ngo&#xE0;i</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>stopCall</b>()</td>
-      <td style="text-align:left">K&#x1EBF;t th&#xFA;c cu&#x1ED9;c g&#x1ECD;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>acceptCall</b>()</td>
-      <td style="text-align:left">Ch&#x1EA5;p nh&#x1EAD;n cu&#x1ED9;c g&#x1ECD;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>reregister</b>()</td>
-      <td style="text-align:left">K&#x1EBF;t n&#x1ED1;i tr&#x1EDF; l&#x1EA1;i t&#x1ED5;ng &#x111;&#xE0;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>transferCall(extension)</b>
-      </td>
-      <td style="text-align:left">
-        <p>Chuy&#x1EC3;n ti&#x1EBF;p cu&#x1ED9;c g&#x1ECD;i.</p>
-        <ul>
-          <li><b>extension</b> : L&#xE0; s&#x1ED1; m&#xE1;y l&#x1EBB; nh&#xE2;n vi&#xEA;n
-            c&#x1EA7;n chuy&#x1EC3;n t&#x1EDB;i</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>unregister</b>()</td>
-      <td style="text-align:left">Ng&#x1EAF;t k&#x1EBF;t n&#x1ED1;i t&#x1ED5;ng &#x111;&#xE0;i</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>rejectCall()</b>
-      </td>
-      <td style="text-align:left">T&#x1EEB; ch&#x1ED1;i cu&#x1ED9;c g&#x1ECD;i (trong tr&#x1B0;&#x1EDD;ng
-        h&#x1EE3;p kh&#xF4;ng mu&#x1ED1;n nh&#x1EAD;n)</td>
-    </tr>
-    <tr>
-      <td style="text-align:right">omiSDK.<b>updateContactInfo</b>(Object)</td>
-      <td style="text-align:left">
-        <p>C&#x1EAD;p nh&#x1EAD;t T&#xEA;n v&#xE0; Avatar c&#x1EE7;a kh&#xE1;ch h&#xE0;ng
-          tr&#xEA;n c&#x1EED;a s&#x1ED1; cu&#x1ED9;c g&#x1ECD;i</p>
-        <p><em>omiSDK.<b>updateContactInfo</b>({</em>
-        </p>
-        <p><em>name : &quot;Nguy&#x1EC5;n Thanh Sang&quot;,</em>
-        </p>
-        <p><em>avatar : &quot;https://....&quot;</em>
-        </p>
-        <p><em>})</em>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
+|                          Phương thức | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| -----------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|    omiSDK**.init(config, callback)** | Khởi tạo các cấu hình cần thiết cho SDK và load UI nếu có truyền theme                                                                                                                                                                                                                                                                                                                                                                                                               |
+|          omiSDK.**register(params)** | <ul><li>Gọi tới khi sau khi function SDK init callback.</li><li>Phương thức ghi danh tổng đài: <strong>Object</strong></li></ul><p><code>{</code><br><code>   domain : "abc" // domain tổng dài</code></p><p><code>   username: "100", // Số nội bộ</code></p><p><code>   password: "***" // Mật khẩu số nội bộ</code></p><p><code>}</code></p><p></p><p><strong>*Lưu ý:</strong> Có thể lấy các thông tin ghi danh tổng đài ở cấu hình số nội bộ hoặc thông qua API của OMICall</p> |
+|              omiSDK.**unregister()** | Ngưng kết nối với tổng đài                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|        omiSDK.**reregister(params)** | Ngưng kết nối với tổng đài và tạo một phiên kết nối mới với params trước đó hoặc từ params mới truyền                                                                                                                                                                                                                                                                                                                                                                                |
+|   omiSDK.**makeCall(remoteNumber) ** | <p>Số cần gọi tới:</p><ul><li>Số điện thoại khách hàng</li><li>Số nội bộ của nhân viên</li><li>Số nội bộ của nhóm</li><li>Số nội bộ của nhóm bên ngoài</li></ul>                                                                                                                                                                                                                                                                                                                     |
+|                omiSDK.**stopCall**() | Kết thúc cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|              omiSDK.**rejectCall()** | Từ chối cuộc gọi (trong trường hợp không muốn nhận)                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|              omiSDK.**acceptCall**() | Chấp nhận cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|   omiSDK.**transferCall(extension)** | <p>Chuyển tiếp cuộc gọi. </p><p><strong>extension</strong> : Là số máy lẻ nhân viên cần chuyển tới</p>                                                                                                                                                                                                                                                                                                                                                                               |
+|            omiSDK.**sendDTMF(tone)** | <p>Gửi tín hiệu tương tác bấm phím</p><p><strong>tone</strong>: các số từ 0-9 hoặc *#</p>                                                                                                                                                                                                                                                                                                                                                                                            |
+|              omiSDK.**toggleMute()** | Bật tắt âm thanh từ micro của bạn                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|              omiSDK.**toggleHold()** | Thay đổi trạng thái giữ cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|               omiSDK.**getStatus()** | <p>Lấy trạng thái kết nối hiện tại của SDK với tổng đài:</p><ul><li><strong>registering</strong>: đang kết nối</li><li><strong>registered</strong>: đã kết nối</li><li><strong>unregistered</strong>: chưa kết nối</li></ul>                                                                                                                                                                                                                                                         |
+|            omiSDK.**toggleDialog()** | Chủ động ẩn hiện dialog cuộc gọi của SDK nếu có sử dụng theme                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| omiSDK.**updateContactInfo**(Object) | <p>Cập nhật Tên và Avatar của khách hàng trên cửa số cuộc gọi</p><p><em></em></p><p><em>omiSDK.<strong>updateContactInfo</strong>({</em></p><p><em>   name : "Nguyễn Thanh Sang",</em></p><p><em>   avatar : "https://...."</em></p><p><em>});</em></p><p><em></em></p><p><em>*G</em>iá trị <strong>avatar</strong> sẽ được truyền vào thuộc tính <code>src</code> của thẻ <code>img</code>: có thẻ là http link hoặc base64,...</p>                                                 |
 

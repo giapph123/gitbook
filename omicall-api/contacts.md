@@ -4,53 +4,47 @@ description: Quản lý khách hàng
 
 # Khách hàng
 
-{% api-method method="post" host="\[URL\]" path="/api/contacts/list" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/contacts/list" method="post" summary="Tìm kiếm khách hàng" %}
+{% swagger-description %}
 Tìm kiếm khách hàng
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Tìm kiếm khách hàng
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Bearer Access: Bearer 'token'
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="page" type="number" required=false %}
+{% swagger-parameter in="query" name="page" type="number" %}
 Trang. Bắt đầu từ 1. Mặc định là 1
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="size" type="number" required=false %}
+{% swagger-parameter in="query" name="size" type="number" %}
 Kích thước trang. Mặc định là 50
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="keyword" type="string" required=false %}
-Từ khóa tìm kiếm. Có thể một trong các giá trị  
-- Số điện thoại  
-- Email  
-- Họ và tên
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="body" name="keyword" type="string" %}
+Từ khóa tìm kiếm. Có thể một trong các giá trị
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Dữ liệu trả về thành công
-{% endapi-method-response-example-description %}
+\
 
+
+\- Số điện thoại
+
+\
+
+
+\- Email
+
+\
+
+
+\- Họ và tên
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Dữ liệu trả về thành công" %}
 ```
 {
     "status_code": 9999,
@@ -201,116 +195,194 @@ Dữ liệu trả về thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/contacts/add" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/contacts/add" method="post" summary="Tạo mới khách hàng" %}
+{% swagger-description %}
 Tạo mới khách hàng
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Tạo mới khách hàng
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-Type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-Type" type="string" %}
 application/json
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Bearer Access: Bearer 'token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="tags" type="array" required=false %}
-Danh sách thẻ tags  
-Ví dụ : `"tags" : ["Khách lẻ", "Khách có nhu cầu"]`
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="tags" type="array" %}
+Danh sách thẻ tags
 
-{% api-method-parameter name="more\_infomation" type="array" required=false %}
-Thông tin trường tùy chỉnh  
-Ví dụ  
-`[  
-{value_type : "Cao",  display_value: "1.75m"},  
-{value_type:"Nặng", display_value : "75kg"}  
-{value_type:"Điểm", display_value: "90"}  
-]`
-{% endapi-method-parameter %}
+\
 
-{% api-method-parameter name="user\_owner\_email" type="string" required=false %}
+
+Ví dụ : 
+
+`"tags" : ["Khách lẻ", "Khách có nhu cầu"]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="more_infomation" type="array" %}
+Thông tin trường tùy chỉnh
+
+\
+
+
+Ví dụ
+
+\
+
+
+
+
+`[`
+
+\
+
+
+`{value_type : "Cao",  display_value: "1.75m"},`
+
+\
+
+
+`{value_type:"Nặng", display_value : "75kg"}`
+
+\
+
+
+`{value_type:"Điểm", display_value: "90"}`
+
+\
+
+
+`]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="user_owner_email" type="string" %}
 Email nhân viên phụ trách 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="refId" type="string" required=false %}
+{% swagger-parameter in="body" name="refId" type="string" %}
 Id của khách hàng bên đối tác
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="refCode" type="string" required=false %}
+{% swagger-parameter in="body" name="refCode" type="string" %}
 Mã của khách hàng bên đối tác
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="job\_title" type="string" required=false %}
+{% swagger-parameter in="body" name="job_title" type="string" %}
 Công việc / chức vụ của khách hàng
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="note" type="string" required=false %}
+{% swagger-parameter in="body" name="note" type="string" %}
 Ghi chú về khách hàng
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="birthday" type="string" required=false %}
-Ngày tháng năm sinh, định dạng : \(dd/MM/yyyy\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="birthday" type="string" %}
+Ngày tháng năm sinh, định dạng : (dd/MM/yyyy)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="gender" type="string" required=false %}
-Giới tính gồm \( '**other**' : Giới tính khác; '**male**' : Nam; '**female**' : Nữ\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="gender" type="string" %}
+Giới tính gồm ( '
 
-{% api-method-parameter name="fullName" type="string" required=true %}
+**other**
+
+' : Giới tính khác; '
+
+**male**
+
+' : Nam; '
+
+**female**
+
+' : Nữ)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="fullName" type="string" %}
 Họ và tên
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="passport" type="string" required=false %}
+{% swagger-parameter in="body" name="passport" type="string" %}
 Hộ chiếu hoặc Id card
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="address" type="string" required=false %}
+{% swagger-parameter in="body" name="address" type="string" %}
 Địa chỉ
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="emails" type="array" required=false %}
-Danh sách đối tượng EMAIL  
-Ví dụ :  
-`[{  
- data: "tientv@demo.com.nv",   
- value: "home", // home, personal, office  
- valueType: "Nhà" // Nhà, Cá nhân, Công ty  
-}]`
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="emails" type="array" %}
+Danh sách đối tượng EMAIL
 
-{% api-method-parameter name="phones" type="array" required=true %}
-Danh sách đối tượng PHONE  
-Ví dụ :  
-`[{  
- data: "02525485xxx",  
- value : "home", // home, personal, office  
- valueType : "Nhà" // Nhà, Cá nhân, Công ty  
-}]`
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+\
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Dữ liệu trả về khi yêu cầu thành công
-{% endapi-method-response-example-description %}
 
+Ví dụ :
+
+\
+
+
+
+
+`[{`
+
+\
+
+
+`  data: "tientv@demo.com.nv",  `
+
+\
+
+
+` value: "home", // home, personal, office`
+
+\
+
+
+` valueType: "Nhà" // Nhà, Cá nhân, Công ty`
+
+\
+
+
+`}]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="phones" type="array" %}
+Danh sách đối tượng PHONE
+
+\
+
+
+Ví dụ :
+
+\
+
+
+
+
+`[{`
+
+\
+
+
+` data: "02525485xxx",`
+
+\
+
+
+` value : "home", // home, personal, office`
+
+\
+
+
+` valueType : "Nhà" // Nhà, Cá nhân, Công ty`
+
+\
+
+
+`}]`
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Dữ liệu trả về khi yêu cầu thành công" %}
 ```
 {
     "status_code": 9999,
@@ -361,40 +433,28 @@ Dữ liệu trả về khi yêu cầu thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL" path="/api/contacts/add-more" %}
-{% api-method-summary %}
-Tạo nhiều khách hàng
-{% endapi-method-summary %}
+{% swagger baseUrl="[URL" path="/api/contacts/add-more" method="post" summary="Tạo nhiều khách hàng" %}
+{% swagger-description %}
+Tạo danh nhiều khách hàng, Request Body là array Object đối tượng khách hàng lúc tạo mới. 
 
-{% api-method-description %}
-Tạo danh nhiều khách hàng, Request Body là array Object đối tượng khách hàng lúc tạo mới.   
+\
+
+
 API xử lý bất đồng bộ
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="path" name="Authorization" type="string" %}
 Access token: Bearer 'token'
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Content-type" type="string" required=true %}
+{% swagger-parameter in="path" name="Content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Tạo danh sách thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Tạo danh sách thành công" %}
 ```
 {
     "status_code": 9999,
@@ -403,107 +463,181 @@ Tạo danh sách thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/contacts/update" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/contacts/update" method="post" summary="Sửa thông tin khách hàng" %}
+{% swagger-description %}
 Sửa thông tin khách hàng
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Sửa thông tin khách hàng
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access Token : Bearer 'token'
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="tags" type="array" required=false %}
-Danh sách thẻ tags  
-Ví dụ : `"tags":["Khách lẻ","Khách có nhu cầu"]`
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="tags" type="array" %}
+Danh sách thẻ tags
 
-{% api-method-parameter name="refId" type="string" required=true %}
+\
+
+
+Ví dụ :
+
+` "tags":["Khách lẻ","Khách có nhu cầu"]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="refId" type="string" %}
 Id khách hàng
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="birthday" type="string" required=false %}
-Ngày tháng năm sinh: định dạng \(dd/MM/yyyy\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="birthday" type="string" %}
+Ngày tháng năm sinh: định dạng (dd/MM/yyyy)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="more\_infomation" type="array" required=false %}
-Thông tin trường tùy chỉnh  
-`[  
-{"value_type":"Điểm","display_value":"20"},  
-{"value_type":"Đơn","display_value":"10"},  
-{"value_type":"Tiền","display_value":"500000"}  
-]`
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="more_infomation" type="array" %}
+Thông tin trường tùy chỉnh
 
-{% api-method-parameter name="user\_owner\_email" type="string" required=false %}
+\
+
+
+
+
+`[`
+
+\
+
+
+`{"value_type":"Điểm","display_value":"20"},`
+
+\
+
+
+`{"value_type":"Đơn","display_value":"10"},`
+
+\
+
+
+`{"value_type":"Tiền","display_value":"500000"}`
+
+\
+
+
+`]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="user_owner_email" type="string" %}
 Email người phụ trách
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="fullName" type="string" required=true %}
+{% swagger-parameter in="body" name="fullName" type="string" %}
 Họ và tên
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="gender" type="string" required=false %}
-Giới tính \('**other**' : Giới tính khác; '**male**' : Nam; '**female**' : Nữ\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="gender" type="string" %}
+Giới tính ('
 
-{% api-method-parameter name="passport" type="string" required=false %}
+**other**
+
+' : Giới tính khác; '
+
+**male**
+
+' : Nam; '
+
+**female**
+
+' : Nữ)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="passport" type="string" %}
 Hộ chiếu hoặc id card
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="address" type="string" required=false %}
+{% swagger-parameter in="body" name="address" type="string" %}
 Địa chỉ
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="note" type="string" required=false %}
+{% swagger-parameter in="body" name="note" type="string" %}
 Ghi chú
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="emails" type="array" required=false %}
-Danh sách đối tượng EMAILS   
-Ví dụ :   
-`[{  
- data : "tientv@demo.com.vn",  
- type: "home", // home, personal, office  
- valueType: "Nhà" // Nhà, Cá nhân, Công ty  
-}]`
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="emails" type="array" %}
+Danh sách đối tượng EMAILS 
 
-{% api-method-parameter name="phones" type="array" required=true %}
-Danh sách đối tượng PHONES  
-Ví dụ :  
-`[{  
- data : "03256521XXX",   
- type : "home", //home, personal/ office  
- valueType : "Nhà" // Nhà, Cá nhân, Công ty  
-}]`
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+\
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Dữ liệu thông tin khách hàng trả về, khi sửa thông tin thành công
-{% endapi-method-response-example-description %}
 
+Ví dụ : 
+
+\
+
+
+
+
+`[{`
+
+\
+
+
+` data : "tientv@demo.com.vn",`
+
+\
+
+
+` type: "home", // home, personal, office`
+
+\
+
+
+` valueType: "Nhà" // Nhà, Cá nhân, Công ty`
+
+\
+
+
+`}]`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="phones" type="array" %}
+Danh sách đối tượng PHONES
+
+\
+
+
+Ví dụ :
+
+\
+
+
+
+
+`[{`
+
+\
+
+
+`  data : "03256521XXX",  `
+
+\
+
+
+` type : "home", //home, personal/ office`
+
+\
+
+
+` valueType : "Nhà" // Nhà, Cá nhân, Công ty`
+
+\
+
+
+`}]`
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Dữ liệu thông tin khách hàng trả về, khi sửa thông tin thành công" %}
 ```
 {
     "status_code": 9999,
@@ -536,45 +670,27 @@ Dữ liệu thông tin khách hàng trả về, khi sửa thông tin thành côn
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="delete" host="{URL}" path="/api/contacts/delete/:public\_id" %}
-{% api-method-summary %}
-Xóa khách hàng
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="{URL}" path="/api/contacts/delete/:public_id" method="delete" summary="Xóa khách hàng" %}
+{% swagger-description %}
 Xóa khách hàng thông qua publicId
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="public\_id" type="string" required=true %}
+{% swagger-parameter in="path" name="public_id" type="string" %}
 Id khách hàng
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 AccessToken. Bearer 'token'
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Xóa khách hàng thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Xóa khách hàng thành công" %}
 ```
 {
     "status_code": 9999,
@@ -584,8 +700,5 @@ Xóa khách hàng thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

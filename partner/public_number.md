@@ -4,40 +4,24 @@ description: Danh sách kho đầu số
 
 # Kho đầu số
 
-{% api-method method="get" host="\[URL\]" path="/api/partner/public\_number/list" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/partner/public_number/list" method="get" summary="Danh sách kho đầu số" %}
+{% swagger-description %}
 Danh sách kho đầu số
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Danh sách kho đầu số
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token : Bearer 'partner token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="page" type="number" required=true %}
-Trang \(Bắt đầu từ 1\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="page" type="number" %}
+Trang (Bắt đầu từ 1)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="size" type="boolean" required=true %}
-Kích thước trang \(Mặc định là 50\)
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="size" type="boolean" %}
+Kích thước trang (Mặc định là 50)
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Danh sách đầu số
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Danh sách đầu số" %}
 ```
 {
     "status_code": 9999,
@@ -87,60 +71,37 @@ Danh sách đầu số
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL" path="/api/partner/public\_number/buy" %}
-{% api-method-summary %}
-Mua đầu số 
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL" path="/api/partner/public_number/buy" method="post" summary="Mua đầu số " %}
+{% swagger-description %}
 Mua số hotline
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="path" name="Authorization" type="string" %}
 Access token : Bearer 'partner token'
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="number\_count" type="number" required=true %}
-Số tháng sử dụng \(Tối thiểu 6 tháng\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="number_count" type="number" %}
+Số tháng sử dụng (Tối thiểu 6 tháng)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="note" type="string" required=true %}
+{% swagger-parameter in="body" name="note" type="string" %}
 Mô tả
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="number" type="string" required=true %}
+{% swagger-parameter in="body" name="number" type="string" %}
 Số hotline
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="email" type="string" required=true %}
+{% swagger-parameter in="body" name="email" type="string" %}
 Email chủ doanh nghiệp
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Mua đầu số thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Mua đầu số thành công" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

@@ -6,36 +6,20 @@ description: >-
 
 # Xác thực
 
-{% api-method method="get" host="\[URL\]" path="/api/auth?apiKey=" %}
-{% api-method-summary %}
-Get AccessToken
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/auth?apiKey=" method="get" summary="Get AccessToken" %}
+{% swagger-description %}
 Lấy Access Token thông qua API KEY
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-Type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-Type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="apiKey" type="string" required=true %}
+{% swagger-parameter in="query" name="apiKey" type="string" %}
 API key của doanh nghiệp được cung cấp
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Khi yêu cầu API thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Khi yêu cầu API thành công" %}
 ```
 {
     "status_code": 9999,
@@ -49,40 +33,13 @@ Khi yêu cầu API thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 **Thông tin kết quả trả về payload**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Tham s&#x1ED1;</th>
-      <th style="text-align:left">M&#xF4; t&#x1EA3;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">access_token</td>
-      <td style="text-align:left">Access token truy c&#x1EAD;p</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">access_type</td>
-      <td style="text-align:left">
-        <p>C&#xF3; 2 lo&#x1EA1;i</p>
-        <ul>
-          <li><b>normal </b>: Doanh nghi&#x1EC7;p ng&#x1B0;&#x1EDD;i d&#xF9;ng cu&#x1ED1;i</li>
-          <li><b>bussiness </b>: Doanh nghi&#x1EC7;p l&#xE0; &#x111;&#x1ED1;i t&#xE1;c
-            c&#x1EE7;a OMICALL</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token_type</td>
-      <td style="text-align:left">Bearer</td>
-    </tr>
-  </tbody>
-</table>
-
+| Tham số       | Mô tả                                                                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| access\_token | Access token truy cập                                                                                                                                              |
+| access\_type  | <p>Có 2 loại </p><ul><li><strong>normal </strong>: Doanh nghiệp người dùng cuối</li><li><strong>bussiness </strong>: Doanh nghiệp là đối tác của OMICALL</li></ul> |
+| token\_type   | Bearer                                                                                                                                                             |

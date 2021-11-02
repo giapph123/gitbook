@@ -4,30 +4,16 @@ description: Danh sách gói dịch vụ
 
 # Gói dịch vụ
 
-{% api-method method="get" host="\[URL\]" path="/api/partner/service\_package/list" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/partner/service_package/list" method="get" summary="Danh sách gói dịch vụ" %}
+{% swagger-description %}
 Danh sách gói dịch vụ
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Danh sách gói dịch vụ
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token: Bearer 'partner token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Danh sách gói dịch vụ
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Danh sách gói dịch vụ" %}
 ```
 {
     "status_code": 9999,
@@ -99,108 +85,86 @@ Danh sách gói dịch vụ
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/partner/service\_package/upgrade" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/partner/service_package/upgrade" method="post" summary="Nâng cấp gói dịch vụ" %}
+{% swagger-description %}
 Nâng cấp gói dịch vụ
-{% endapi-method-summary %}
 
-{% api-method-description %}
-Nâng cấp gói dịch vụ  
-**Số tiền nâng cấp** = **Phí thiết lập** + **Phí duy trì \* số tháng**
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+
+
+
+**Số tiền nâng cấp**
+
+ \= 
+
+**Phí thiết lập**
+
+ \+ 
+
+**Phí duy trì * số tháng**
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="Authorization" type="string" %}
 Access Token : Bearer 'partner token'
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="email" type="string" required=true %}
+{% swagger-parameter in="body" name="email" type="string" %}
 Email chủ doanh nghiệp
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="code\_name" type="string" required=true %}
+{% swagger-parameter in="body" name="code_name" type="string" %}
 Mã gói dịch vụ
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="month\_num" type="number" required=true %}
-Số tháng \(Ít nhất là 6 tháng\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="month_num" type="number" %}
+Số tháng (Ít nhất là 6 tháng)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="note" type="string" required=true %}
-Ghi chú \(Lớn hơn 10 ký tự\)
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="body" name="note" type="string" %}
+Ghi chú (Lớn hơn 10 ký tự)
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Nâng cấp gói dịch vụ thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Nâng cấp gói dịch vụ thành công" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/partner/service\_package/extend" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/partner/service_package/extend" method="post" summary="Gia hạn gói dịch vụ" %}
+{% swagger-description %}
 Gia hạn gói dịch vụ
-{% endapi-method-summary %}
 
-{% api-method-description %}
-Gia hạn gói dịch vụ  
-**Số tiền gia hạn = Phí duy trì \* Số tháng**
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+
+
+
+**Số tiền gia hạn = Phí duy trì * Số tháng**
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access Token : Bearer 'partner token'.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="month\_num" type="integer" required=true %}
-Số tháng gia hạn \(Tối thiểu 6 tháng\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="month_num" type="integer" %}
+Số tháng gia hạn (Tối thiểu 6 tháng)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="note" type="string" required=true %}
-Ghi chú \(Tối thiểu 10 ký tự\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="note" type="string" %}
+Ghi chú (Tối thiểu 10 ký tự)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="email" type="string" required=true %}
+{% swagger-parameter in="body" name="email" type="string" %}
 Email chủ doanh nghiệp
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Gia hạn gói dịch vụ
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Gia hạn gói dịch vụ" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

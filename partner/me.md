@@ -4,30 +4,16 @@ description: Thông tin đối tác
 
 # Thông tin đối tác
 
-{% api-method method="get" host="\[URL\]" path="/api/partner/me" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/partner/me" method="get" summary="Thông tin đối tác" %}
+{% swagger-description %}
 Thông tin đối tác
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Thông tin đối tác
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Acces token : Bearer 'partner token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Thông tin đối tác
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Thông tin đối tác" %}
 ```
 {
     "status_code": 9999,
@@ -48,10 +34,6 @@ Thông tin đối tác
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

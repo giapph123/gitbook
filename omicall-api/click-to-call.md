@@ -4,44 +4,28 @@ API dùng để thực hiện **click-to-call**.
 
 Sau khi thực hiện click-to-call, hệ thống sẽ gọi vào số extension của domain, sau khi extension pickup cuộc gọi thì có một cuộc gọi đẩy ra số mobile dựa vào parameter của API.
 
-{% api-method method="post" host="\[URL\]" path="/api/click2call" %}
-{% api-method-summary %}
-Click To Call
-{% endapi-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/click2call" method="post" summary="Click To Call" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Bearer 'Access Token'
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="extension" type="string" required=true %}
+{% swagger-parameter in="body" name="extension" type="string" %}
 Số máy lẻ nhân viên thực hiện cuộc gọi
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="hotline" type="string" required=true %}
-Số Hotline \(Hay số SIP\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="hotline" type="string" %}
+Số Hotline (Hay số SIP)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="phone\_number" type="string" required=true %}
+{% swagger-parameter in="body" name="phone_number" type="string" %}
 Số điện thoại gọi tới
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "status_code": 9999,
@@ -53,16 +37,13 @@ Số điện thoại gọi tới
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-| ERROR CODE | DESCRIPTION |
-| :--- | :--- |
-| _data\_is\_required_ | Dữ liệu là bắt buộc |
-| _tenant\_invalid_ | Doanh nghiệp không hợp lệ |
-| _user\_not\_registered_ | Số máy lẻ không được ghi danh tổng đài |
+| ERROR CODE                   | DESCRIPTION                                  |
+| ---------------------------- | -------------------------------------------- |
+| _data\_is\_required_         | Dữ liệu là bắt buộc                          |
+| _tenant\_invalid_            | Doanh nghiệp không hợp lệ                    |
+| _user\_not\_registered_      | Số máy lẻ không được ghi danh tổng đài       |
 | _number\_call\_out\_invalid_ | Số hotline gọi ra không hợp lệ hoặc không có |
-| _extension\_invalid_ | Số máy lẻ không hợp lệ |
-
+| _extension\_invalid_         | Số máy lẻ không hợp lệ                       |

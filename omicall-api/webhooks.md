@@ -4,30 +4,16 @@ description: Quản lý Webhook
 
 # Webhooks
 
-{% api-method method="get" host="\[URL" path="/api/webhooks/list" %}
-{% api-method-summary %}
+{% swagger baseUrl="[URL" path="/api/webhooks/list" method="get" summary="Danh sách webhook" %}
+{% swagger-description %}
 Danh sách webhook
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
-Danh sách webhook
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Danh sách Webhook
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Danh sách Webhook" %}
 ```
 {
     "status_code": 9999,
@@ -42,47 +28,69 @@ Danh sách Webhook
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/webhooks/register" %}
-{% api-method-summary %}
-Đăng ký Webhook
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/webhooks/register" method="post" summary="Đăng ký Webhook" %}
+{% swagger-description %}
 Ghi danh Webhook
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="webhook" type="object" required=true %}
-Đối tượng :  
-- **type** : _Loại Webhook_   
-- **url** : _Đường dẫn Webhook_  
-`{  
-   "type" : "call",   
-   "url" : "https://...... "  
-}`
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="body" name="webhook" type="object" %}
+Đối tượng :
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Ghi danh Webhook thành công
-{% endapi-method-response-example-description %}
+\
 
+
+\- 
+
+**type**
+
+ : 
+
+_Loại Webhook_
+
+ 
+
+\
+
+
+\- 
+
+**url **
+
+: 
+
+_Đường dẫn Webhook_
+
+\
+
+
+
+
+`{`
+
+\
+
+
+`    "type" : "call",  `
+
+\
+
+
+`   "url" : "https://...... "`
+
+\
+
+
+`}`
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Ghi danh Webhook thành công" %}
 ```
 {
     "status_code": 9999,
@@ -97,47 +105,33 @@ Ghi danh Webhook thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="\[URL\]" path="/api/webhooks/destroy?hook\_type=" %}
-{% api-method-summary %}
-Hủy Webhook
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/webhooks/destroy?hook_type=" method="post" summary="Hủy Webhook" %}
+{% swagger-description %}
 Hủy đăng ký Webhook
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="hook\_type" type="string" required=true %}
-Một trong các giá trị sau  
-- **call** : Lịch sử cuộc gọi
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="hook_type" type="string" %}
+Một trong các giá trị sau
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+\
 
-{% endapi-method-response-example-description %}
 
+\- 
+
+**call **
+
+: Lịch sử cuộc gọi
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

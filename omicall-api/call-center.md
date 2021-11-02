@@ -1,52 +1,55 @@
 ---
-description: 'Quản lý cấu hình tổng đài , số nội bộ'
+description: Quản lý cấu hình tổng đài , số nội bộ
 ---
 
 # Tổng đài
 
-{% api-method method="get" host="\[URL\]" path="/api/call\_center/internal\_phone/list" %}
-{% api-method-summary %}
-Danh sách số nội bộ
-{% endapi-method-summary %}
+{% swagger baseUrl="[URL]" path="/api/call_center/internal_phone/list" method="get" summary="Danh sách số nội bộ" %}
+{% swagger-description %}
+\- Lấy danh sách cấu hình số nội bộ
 
-{% api-method-description %}
-- Lấy danh sách cấu hình số nội bộ  
-- **Cấu hình** &gt; **Tổng đài** &gt; **Số nội bộ**  
-{% endapi-method-description %}
+\
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+
+\- 
+
+**Cấu hình**
+
+ \> 
+
+**Tổng đài**
+
+ \>
+
+** Số nội bộ**
+
+\
+
+
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Access Token : Bearer 'token'
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Content-type" type="string" required=true %}
+{% swagger-parameter in="header" name="Content-type" type="string" %}
 application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="keyword" type="string" required=false %}
+{% swagger-parameter in="query" name="keyword" type="string" %}
 Số nội bộ
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="page" type="number" %}
-Trang, bắt đầu từ 1 \(Mặc định 1\)
-{% endapi-method-parameter %}
+{% swagger-parameter in="query" name="page" type="number" %}
+Trang, bắt đầu từ 1 (Mặc định 1)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="size" type="number" %}
+{% swagger-parameter in="query" name="size" type="number" %}
 Kích thước trang, mặc định là 50
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Lấy danh sách số nội bộ thành công
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Lấy danh sách số nội bộ thành công" %}
 ```
 {
     "status_code": 9999,
@@ -89,53 +92,34 @@ Lấy danh sách số nội bộ thành công
     "key_enabled": false
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="put" host="\[URL\]" path="/api/call\_center/internal\_phone/status?enabled=&sip\_user=" %}
-{% api-method-summary %}
-Cập nhật trạng thái số máy lẻ
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="[URL]" path="/api/call_center/internal_phone/status?enabled=&sip_user=" method="put" summary="Cập nhật trạng thái số máy lẻ" %}
+{% swagger-description %}
 Thay đổi trạng thái số máy lẻ : Hoạt đồng hoặc / Ngưng hoạt động
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 Bearer token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="sip\_user" type="string" required=true %}
+{% swagger-parameter in="query" name="sip_user" type="string" %}
 Số máy lẻ nhân viên
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="enabled" type="string" required=true %}
-true : Hoạt động  
+{% swagger-parameter in="query" name="enabled" type="string" %}
+true : Hoạt động
+
+\
+
+
 false : Ngưng hoạt động
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

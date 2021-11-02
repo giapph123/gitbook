@@ -10,15 +10,23 @@
 **LIÊN HỆ OMICALL, ĐỂ ĐƯỢC CẤP SUPPER KEY CHO VIỆC TRUY CẬP API ĐỐI TÁC**
 {% endhint %}
 
-{% page-ref page="public\_number.md" %}
+{% content-ref url="public_number.md" %}
+[public\_number.md](public\_number.md)
+{% endcontent-ref %}
 
-{% page-ref page="service\_package.md" %}
+{% content-ref url="service_package.md" %}
+[service\_package.md](service\_package.md)
+{% endcontent-ref %}
 
-{% page-ref page="payment-history.md" %}
+{% content-ref url="payment-history.md" %}
+[payment-history.md](payment-history.md)
+{% endcontent-ref %}
 
-{% page-ref page="tenant.md" %}
+{% content-ref url="tenant.md" %}
+[tenant.md](tenant.md)
+{% endcontent-ref %}
 
-{% page-ref page="me.md" %}
-
-
+{% content-ref url="me.md" %}
+[me.md](me.md)
+{% endcontent-ref %}
 
