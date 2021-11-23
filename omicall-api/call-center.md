@@ -29,11 +29,11 @@ description: Quản lý cấu hình tổng đài , số nội bộ
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 Access Token : Bearer 'token'
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Content-type" type="string" %}
+{% swagger-parameter in="header" name="Content-type" type="string" required="true" %}
 application/json
 {% endswagger-parameter %}
 
@@ -100,15 +100,15 @@ Kích thước trang, mặc định là 50
 Thay đổi trạng thái số máy lẻ : Hoạt đồng hoặc / Ngưng hoạt động
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 Bearer token
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="sip_user" type="string" %}
+{% swagger-parameter in="query" name="sip_user" type="string" required="true" %}
 Số máy lẻ nhân viên
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="enabled" type="string" %}
+{% swagger-parameter in="query" name="enabled" type="string" required="true" %}
 true : Hoạt động
 
 \
@@ -123,3 +123,31 @@ false : Ngưng hoạt động
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger baseUrl="[URL]" path="/api/call_center/hotline/list?extension=" method="get" summary="Danh sách đầu số đang hoạt động và cho phép gọi ra" %}
+{% swagger-description %}
+Lấy danh sách đầu số đang hoạt động và cho phép gọi ra của một số nội bộ
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="extension" type="string" %}
+Số máy lẻ nhân viên
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="" %}
+```
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": [
+        "024********",
+        "842*********"
+    ],
+    "key_enabled": false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
