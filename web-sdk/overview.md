@@ -48,7 +48,7 @@ Nhúng Web SDK vào HTML của website cần tích hợp
                     btnToggle: {
                         'background-color': 'red',
                         justifyContent: 'center',
-            	    color: 'red',
+            	        color: 'red',
                     },
                     dialog: {
                         'background-color': 'gray',
