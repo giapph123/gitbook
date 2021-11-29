@@ -33,7 +33,7 @@ Nhúng Web SDK vào HTML của website cần tích hợp
             let config = {
                 theme: 'default',
                 debug: false,
-                busy: true,
+                busy: false,
                 language: 'vi',
                 ringtoneVolume: 1,
                 options: {
