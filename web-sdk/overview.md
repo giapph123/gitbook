@@ -30,32 +30,33 @@ Nhúng Web SDK vào HTML của website cần tích hợp
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Ví dụ về một số config có thể dùng khi init SDK
             let config = {
                 theme: 'default',
-                debug: false,
-                busy: false,
+                // debug: false,
+                // busy: false,
                 language: 'vi',
                 ringtoneVolume: 1,
                 options: {
                     hideCallButton: false,
                     showContactLoading: false,
                 },
-                classes: {
-                    btnToggle: 'custom-btn-toggle-call btn-call-left',
-                    dialog: 'custom-dialog-call dialog-call-left',
-                },
-                styles: {
-                    btnToggle: {
-                        'background-color': 'red',
-                        justifyContent: 'center',
-            	        color: 'red',
-                    },
-                    dialog: {
-                        'background-color': 'gray',
-                        justifyContent: 'center',
-                        color: 'pink',
-                    },
-                },
+                // classes: {
+                //     btnToggle: 'custom-btn-toggle-call btn-call-left',
+                //     dialog: 'custom-dialog-call dialog-call-left',
+                // },
+                // styles: {
+                //     btnToggle: {
+                //         'background-color': 'red',
+                //         justifyContent: 'center',
+            	//         color: 'red',
+                //     },
+                //     dialog: {
+                //        'background-color': 'gray',
+                //        justifyContent: 'center',
+                //        color: 'pink',
+                //    },
+                //},
                 callbacks: {
                     register: (data) => {
                         // Sự kiện xảy ra khi trạng thái kết nối tổng đài thay đổi
@@ -108,7 +109,7 @@ Nhúng Web SDK vào HTML của website cần tích hợp
                     password: ''
                 });
             });
-        };
+        });
     </script>
 
 </body>
@@ -122,7 +123,7 @@ Ví dụ tích hợp
 
 |                    Tham số | Kiểu         | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------: | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|           config.**theme** | **String**   | <p>Giao diện dialog cuộc gọi (nếu để trống thì sẽ không có giao diện). Hoặc một trong các giá trị sau </p><ul><li><strong>default </strong>: Giao diện (như ảnh ở trên)</li></ul>                                                                                                                                                                                                                                                                                                                                             |
+|           config.**theme** | **String**   | <p>Giao diện dialog cuộc gọi (nếu để trống thì sẽ không có giao diện). Hoặc một trong các giá trị sau </p><ul><li><strong>default</strong> : Giao diện (như ảnh ở trên)</li></ul>                                                                                                                                                                                                                                                                                                                                             |
 |           config.**debug** | **Boolean**  | <p>Bật tắt chức năng log các sự kiện của SDK.</p><p>Mặc định: <strong>false</strong></p>                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |            config.**busy** | **Boolean**  | Trạng thái cho phép thực hiện cuộc gọi ra, nhưng sẽ tự động từ chối tất cả các cuộc gọi tới                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |        config.**language** | **String**   | <p>Ngôn ngữ hiển thị dialog cuộc gọi mặc định của SDK.</p><p>Gồm: <br> "<strong>vi</strong>" : Tiếng Việt (<strong>default</strong>)<br> "<strong>en</strong>" : Tiếng anh</p>                                                                                                                                                                                                                                                                                                                                                |
@@ -151,7 +152,7 @@ Ví dụ tích hợp
 | **directionTxt**                | **String** | Tên hướng của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **status**                      | **String** | Trạng thái hiện tại của cuộc gọi: **`connecting, ringing, connected, ended, hold`**                                                                                                                                                                                                                                                                                                                                                         |
 | **statusTxt**                   | **String** | Tên trạng thái hiện tại của cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **remoteNumber **hoặc** phone** | **String** | <ul><li>với <strong>direction outbound</strong>: số được gọi ra</li><li>với <strong>direction inbound</strong>: số đang gọi tới</li></ul>                                                                                                                                                                                                                                                                                                   |
+| **remoteNumber** hoặc **phone** | **String** | <ul><li>với <strong>direction outbound</strong>: số được gọi ra</li><li>với <strong>direction inbound</strong>: số đang gọi tới</li></ul>                                                                                                                                                                                                                                                                                                   |
 | **sipNumber**                   | **String** | Số tổng đài đang dùng để thực hiện cuộc gọi ra hay nhận cuộc gọi tới                                                                                                                                                                                                                                                                                                                                                                        |
 | **startTime**                   | **Date**   | Thời gian bắt đầu cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **answerTime**                  | **Date**   | Thời gian bắt đầu chấp nhận cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -170,10 +171,10 @@ Ví dụ tích hợp
 |                          Phương thức | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | -----------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |    omiSDK**.init(config, callback)** | Khởi tạo các cấu hình cần thiết cho SDK và load UI nếu có truyền theme                                                                                                                                                                                                                                                                                                                                                                                                               |
-|          omiSDK.**register(params)** | <ul><li>Gọi tới khi sau khi function SDK init callback.</li><li>Phương thức ghi danh tổng đài: <strong>Object</strong></li></ul><p><code>{</code><br><code>   domain : "abc" // domain tổng dài</code></p><p><code>   username: "100", // Số nội bộ</code></p><p><code>   password: "***" // Mật khẩu số nội bộ</code></p><p><code>}</code></p><p></p><p><strong>*Lưu ý:</strong> Có thể lấy các thông tin ghi danh tổng đài ở cấu hình số nội bộ hoặc thông qua API của OMICall</p> |
+|          omiSDK.**register(params)** | <ul><li>Gọi tới khi sau khi function SDK init callback.</li><li>Phương thức ghi danh tổng đài: <strong>Object</strong></li></ul><p><code>{</code><br>   <code>domain : "abc" // domain tổng dài</code></p><p>   <code>username: "100", // Số nội bộ</code></p><p>   <code>password: "***" // Mật khẩu số nội bộ</code></p><p><code>}</code></p><p></p><p><strong>*Lưu ý:</strong> Có thể lấy các thông tin ghi danh tổng đài ở cấu hình số nội bộ hoặc thông qua API của OMICall</p> |
 |              omiSDK.**unregister()** | Ngưng kết nối với tổng đài                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |        omiSDK.**reregister(params)** | Ngưng kết nối với tổng đài và tạo một phiên kết nối mới với params trước đó hoặc từ params mới truyền                                                                                                                                                                                                                                                                                                                                                                                |
-|          omiSDK.**makeCall(phone) ** | <p><strong>- phone</strong>:</p><ul><li>Số điện thoại khách hàng</li><li>Số nội bộ của nhân viên</li><li>Số nội bộ của nhóm</li><li>Số nội bộ của nhóm bên ngoài</li></ul>                                                                                                                                                                                                                                                                                                           |
+|          omiSDK.**makeCall(phone)**  | <p><strong>- phone</strong>:</p><ul><li>Số điện thoại khách hàng</li><li>Số nội bộ của nhân viên</li><li>Số nội bộ của nhóm</li><li>Số nội bộ của nhóm bên ngoài</li></ul>                                                                                                                                                                                                                                                                                                           |
 |  omiSDK.**makeCall(phone, hotline)** | <p><strong>- phone</strong>:</p><ul><li>Số điện thoại khách hàng</li><li>Số nội bộ của nhân viên</li><li>Số nội bộ của nhóm</li><li>Số nội bộ của nhóm bên ngoài</li></ul><p>- <strong>hotline:</strong> đầu số tổng đài dùng để gọi ra (*<strong>Lưu ý</strong>: phải là đầu số cho phép gọi ra và tài khoản nhân viên thực hiện cuộc gọi được quyền sử dụng đầu số này)</p>                                                                                                        |
 |                omiSDK.**stopCall**() | Kết thúc cuộc gọi                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |              omiSDK.**rejectCall()** | Từ chối cuộc gọi (trong trường hợp không muốn nhận)                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -184,5 +185,5 @@ Ví dụ tích hợp
 |        omiSDK.**toggleHold(status)** | <p>Thay đổi trạng thái giữ cuộc gọi</p><p><strong>status:</strong></p><ul><li><strong>true</strong>: giữ cuộc gọi</li><li><strong>false</strong>: bỏ giữ cuộc gọi</li></ul>                                                                                                                                                                                                                                                                                                          |
 |               omiSDK.**getStatus()** | <p>Lấy trạng thái kết nối hiện tại của SDK với tổng đài:</p><ul><li><strong>registering</strong>: đang kết nối</li><li><strong>registered</strong>: đã kết nối</li><li><strong>unregistered</strong>: chưa kết nối</li></ul>                                                                                                                                                                                                                                                         |
 |            omiSDK.**toggleDialog()** | Chủ động ẩn hiện dialog cuộc gọi của SDK nếu có sử dụng theme                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| omiSDK.**updateContactInfo**(Object) | <p>Cập nhật Tên và Avatar của khách hàng trên cửa số cuộc gọi</p><p><em></em></p><p><em>omiSDK.<strong>updateContactInfo</strong>({</em></p><p><em>   name : "Nguyễn Thanh Sang",</em></p><p><em>   avatar : "https://...."</em></p><p><em>});</em></p><p><em></em></p><p><em>*G</em>iá trị <strong>avatar</strong> sẽ được truyền vào thuộc tính <code>src</code> của thẻ <code>img</code>: có thẻ là http link hoặc base64,...</p>                                                 |
+| omiSDK.**updateContactInfo**(Object) | <p>Cập nhật Tên và Avatar của khách hàng trên cửa số cuộc gọi</p><p><em></em></p><p><em>omiSDK.<strong>updateContactInfo</strong>({</em></p><p>   <em>name : "Nguyễn Thanh Sang",</em></p><p>   <em>avatar : "https://...."</em></p><p><em>});</em></p><p><em></em></p><p><em>*G</em>iá trị <strong>avatar</strong> sẽ được truyền vào thuộc tính <code>src</code> của thẻ <code>img</code>: có thẻ là http link hoặc base64,...</p>                                                 |
 
