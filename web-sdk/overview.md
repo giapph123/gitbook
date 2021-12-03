@@ -35,12 +35,12 @@ Nhúng Web SDK vào HTML của website cần tích hợp
                 theme: 'default',
                 // debug: false,
                 // busy: false,
-                language: 'vi',
-                ringtoneVolume: 1,
-                options: {
-                    hideCallButton: false,
-                    showContactLoading: false,
-                },
+                // language: 'vi',
+                // ringtoneVolume: 0.5, // 0 -> 1;
+                // options: {
+                //     hideCallButton: true,
+                //     showContactLoading: true,
+                // },
                 // classes: {
                 //     btnToggle: 'custom-btn-toggle-call btn-call-left',
                 //     dialog: 'custom-dialog-call dialog-call-left',
