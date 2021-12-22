@@ -97,8 +97,20 @@ Email nhân viên tạo ticket, nếu rỗng thì là Admin
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="" baseUrl="" summary="" %}
+{% swagger method="post" path="/api/ticket/update_status/:id_status" baseUrl="[URL]" summary="Cập nhật trạng thái ticket" %}
 {% swagger-description %}
 
 {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id_status" type="String" %}
+Id
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Thông tin chi tiết ticket được update
+}
+```
+{% endswagger-response %}
 {% endswagger %}
