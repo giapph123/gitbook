@@ -63,10 +63,34 @@ Kích thước trang, mặc định là 50
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="" baseUrl="" summary="" %}
+{% swagger method="post" path="/api/ticket/create" baseUrl="[URL]" summary="Tạo ticket" %}
 {% swagger-description %}
 
 {% endswagger-description %}
+
+{% swagger-parameter in="body" name="name" type="String" required="true" %}
+Tên ticket
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="description" type="String" required="true" %}
+Mô tả ticket
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="priority" type="String" required="true" %}
+Độ ưu tiên (mặc định là medium)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="assignee" type="String" required="true" %}
+Email nhân viên được gán
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Thông tin chi tiết 1 ticket
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="get" path="" baseUrl="" summary="" %}
