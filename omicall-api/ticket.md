@@ -84,6 +84,10 @@ Mô tả ticket
 Email nhân viên được gán
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="created_by" type="String" %}
+Email nhân viên tạo ticket, nếu rỗng thì là Admin 
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```javascript
 {
