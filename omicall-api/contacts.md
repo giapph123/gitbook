@@ -46,18 +46,18 @@ Từ khóa tìm kiếm. Có thể một trong các giá trị
 
 {% swagger-parameter in="body" name="filters" type="Array" %}
 Lọc \
-`"filters": [` \
-`{` \
-&#x20;  `"field_code" : "contact_owner",` \
-&#x20;   `"value":[`
+"filters": \[ \
+{ \
+&#x20;  "field\_code" : "contact\_owner", \
+&#x20;   "value":\[
 
-&#x20;          `"unassigned",  // chưa gán`&#x20;
+&#x20;          "unassigned",  // chưa gán&#x20;
 
-&#x20;           `"agent1@gmail.com" // Email nhân nhân viên`&#x20;
+&#x20;           "agent1@gmail.com" // Email nhân nhân viên&#x20;
 
-&#x20;     `]`&#x20;
+&#x20;     ]&#x20;
 
-`} ]`
+} ]
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Dữ liệu trả về thành công" %}
