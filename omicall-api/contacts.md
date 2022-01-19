@@ -25,7 +25,7 @@ Trang. Bắt đầu từ 1. Mặc định là 1
 Kích thước trang. Mặc định là 50
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="keyword" type="string" %}
+{% swagger-parameter in="body" name="keyword" type="String" %}
 Từ khóa tìm kiếm. Có thể một trong các giá trị
 
 \
@@ -42,6 +42,22 @@ Từ khóa tìm kiếm. Có thể một trong các giá trị
 
 
 \- Họ và tên
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="filters" type="Array" %}
+Lọc \
+`"filters": [` \
+`{` \
+&#x20;  `"field_code" : "contact_owner",` \
+&#x20;   `"value":[`
+
+&#x20;          `"unassigned",  // chưa gán`&#x20;
+
+&#x20;           `"agent1@gmail.com" // Email nhân nhân viên`&#x20;
+
+&#x20;     `]`&#x20;
+
+`} ]`
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Dữ liệu trả về thành công" %}
@@ -328,17 +344,25 @@ Ví dụ :
 \
 
 
-`  data: "tientv@demo.com.nv",  `
+ 
+
+`data: "tientv@demo.com.nv",`
+
+ 
 
 \
 
 
-` value: "home", // home, personal, office`
+ 
+
+`value: "home", // home, personal, office`
 
 \
 
 
-` valueType: "Nhà" // Nhà, Cá nhân, Công ty`
+ 
+
+`valueType: "Nhà" // Nhà, Cá nhân, Công ty`
 
 \
 
@@ -364,17 +388,23 @@ Ví dụ :
 \
 
 
-` data: "02525485xxx",`
+ 
+
+`data: "02525485xxx",`
 
 \
 
 
-` value : "home", // home, personal, office`
+ 
+
+`value : "home", // home, personal, office`
 
 \
 
 
-` valueType : "Nhà" // Nhà, Cá nhân, Công ty`
+ 
+
+`valueType : "Nhà" // Nhà, Cá nhân, Công ty`
 
 \
 
@@ -485,9 +515,9 @@ Danh sách thẻ tags
 \
 
 
-Ví dụ :
+Ví dụ : 
 
-` "tags":["Khách lẻ","Khách có nhu cầu"]`
+`"tags":["Khách lẻ","Khách có nhu cầu"]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="refId" type="string" %}
@@ -583,17 +613,23 @@ Ví dụ :
 \
 
 
-` data : "tientv@demo.com.vn",`
+ 
+
+`data : "tientv@demo.com.vn",`
 
 \
 
 
-` type: "home", // home, personal, office`
+ 
+
+`type: "home", // home, personal, office`
 
 \
 
 
-` valueType: "Nhà" // Nhà, Cá nhân, Công ty`
+ 
+
+`valueType: "Nhà" // Nhà, Cá nhân, Công ty`
 
 \
 
@@ -619,17 +655,25 @@ Ví dụ :
 \
 
 
-`  data : "03256521XXX",  `
+ 
+
+`data : "03256521XXX",`
+
+ 
 
 \
 
 
-` type : "home", //home, personal/ office`
+ 
+
+`type : "home", //home, personal/ office`
 
 \
 
 
-` valueType : "Nhà" // Nhà, Cá nhân, Công ty`
+ 
+
+`valueType : "Nhà" // Nhà, Cá nhân, Công ty`
 
 \
 
