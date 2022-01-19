@@ -48,7 +48,7 @@ Từ khóa tìm kiếm. Có thể một trong các giá trị
 Lọc \
 "filters": \[ \
 { \
-&#x20;  "field\_code" : "contact\_owner", \
+&#x20;  "field\_code" : "contact\_owner", // Người phụ trách\
 &#x20;   "value":\[
 
 &#x20;          "unassigned",  // chưa gán&#x20;
