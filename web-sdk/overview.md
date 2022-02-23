@@ -33,30 +33,6 @@ Nhúng Web SDK vào HTML của website cần tích hợp
             // Ví dụ về một số config có thể dùng khi init SDK
             let config = {
                 theme: 'default',
-                // debug: false,
-                // busy: false,
-                // language: 'vi',
-                // ringtoneVolume: 0.5, // 0 -> 1;
-                // options: {
-                //     hideCallButton: true,
-                //     showContactLoading: true,
-                // },
-                // classes: {
-                //     btnToggle: 'custom-btn-toggle-call btn-call-left',
-                //     dialog: 'custom-dialog-call dialog-call-left',
-                // },
-                // styles: {
-                //     btnToggle: {
-                //         'background-color': 'red',
-                //         justifyContent: 'center',
-            	//         color: 'red',
-                //     },
-                //     dialog: {
-                //        'background-color': 'gray',
-                //        justifyContent: 'center',
-                //        color: 'pink',
-                //    },
-                //},
                 callbacks: {
                     register: (data) => {
                         // Sự kiện xảy ra khi trạng thái kết nối tổng đài thay đổi
