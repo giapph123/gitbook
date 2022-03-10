@@ -749,20 +749,16 @@ application/json
 
 {% swagger method="post" path="/api/contacts/add-note" baseUrl="{URL}/" summary="Tạo tương tác ghi chú" %}
 {% swagger-description %}
+Tạo nhiều tương tác.
 
+Request Body&#x20;
+
+`[` \
+`{ "note_by":"", // Email nhân viên tạo` \
+`"content":"Khách hàng đồng ý mua sản phẩm", // Nội dung` \
+`"phone":"0395187319" //Số điện thoại khách hàng}`\
+`]`
 {% endswagger-description %}
-
-{% swagger-parameter in="body" name="note_by" required="false" type="String" %}
-Email nhân viên , nếu rỗng sẽ ghi nhận cho admin
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="content" type="String" required="true" %}
-Nội dung ghi chú
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="phone" type="String" required="true" %}
-Số điện thoại khách hàng
-{% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
 ```javascript
