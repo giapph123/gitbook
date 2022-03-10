@@ -746,3 +746,54 @@ application/json
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="post" path="/api/contacts/add-note" baseUrl="{URL}/" summary="Tạo tương tác ghi chú" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="note_by" required="false" type="String" %}
+Email nhân viên , nếu rỗng sẽ ghi nhận cho admin
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="content" type="String" required="true" %}
+Nội dung ghi chú
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="phone" type="String" required="true" %}
+Số điện thoại khách hàng
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": {
+        "_id": "6229cd7847fe7b4dac7d5f11",
+        "last_update_by": {
+        },
+        "is_deleted": false,
+        "interactive_type": "note",
+        "ref_id": null,
+        "attribute_structure": [
+           // Thông tin ghi chú
+        ],
+        "diary_attributes": null,
+        "filters": [
+        ],
+        "tags": [],
+        "has_contact_history_filter": null,
+        "tags_view": [],
+        "total_replies": 0,
+        "replies": [],
+        "customer": null,
+        "ticket_info": null,
+        "attributes": null
+    },
+    "key_enabled": false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
