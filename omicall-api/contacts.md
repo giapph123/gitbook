@@ -749,16 +749,20 @@ application/json
 
 {% swagger method="post" path="/api/contacts/add-note" baseUrl="{URL}/" summary="Tạo tương tác ghi chú" %}
 {% swagger-description %}
-Tạo nhiều tương tác.
-
-Request Body&#x20;
-
-`[` \
-`{ "note_by":"", // Email nhân viên tạo` \
-`"content":"Khách hàng đồng ý mua sản phẩm", // Nội dung` \
-`"phone":"0395187319" //Số điện thoại khách hàng}`\
-`]`
+Tạo nhiều tương tác. Request Body là Mảng đối tượng chứa các thuộc tính bên dưới
 {% endswagger-description %}
+
+{% swagger-parameter in="body" name="note_by" type="Strig" %}
+Email nhân viên
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="content" type="Sting" required="true" %}
+Nội dung ghi chú
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="phone" type="Strig" required="true" %}
+Số điện thoại khách hàng
+{% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
 ```javascript
@@ -766,28 +770,7 @@ Request Body&#x20;
     "status_code": 9999,
     "instance_id": "stg",
     "instance_version": "1.2.163",
-    "payload": {
-        "_id": "6229cd7847fe7b4dac7d5f11",
-        "last_update_by": {
-        },
-        "is_deleted": false,
-        "interactive_type": "note",
-        "ref_id": null,
-        "attribute_structure": [
-           // Thông tin ghi chú
-        ],
-        "diary_attributes": null,
-        "filters": [
-        ],
-        "tags": [],
-        "has_contact_history_filter": null,
-        "tags_view": [],
-        "total_replies": 0,
-        "replies": [],
-        "customer": null,
-        "ticket_info": null,
-        "attributes": null
-    },
+    "payload": 1, // Số tương tác đã gửi đi
     "key_enabled": false
 }
 ```
