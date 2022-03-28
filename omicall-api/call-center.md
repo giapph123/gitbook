@@ -19,9 +19,9 @@ description: Quản lý cấu hình tổng đài , số nội bộ
 
 **Tổng đài**
 
- \>
+ \> 
 
-** Số nội bộ**
+**Số nội bộ**
 
 \
 

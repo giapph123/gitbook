@@ -61,9 +61,9 @@ _Loại Webhook_
 
 \- 
 
-**url **
+**url**
 
-: 
+ : 
 
 _Đường dẫn Webhook_
 
@@ -77,12 +77,18 @@ _Đường dẫn Webhook_
 \
 
 
-`    "type" : "call",  `
+   
+
+`"type" : "call",`
+
+ 
 
 \
 
 
-`   "url" : "https://...... "`
+   
+
+`"url" : "https://...... "`
 
 \
 
@@ -125,9 +131,9 @@ Một trong các giá trị sau
 
 \- 
 
-**call **
+**call**
 
-: Lịch sử cuộc gọi
+ : Lịch sử cuộc gọi
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}

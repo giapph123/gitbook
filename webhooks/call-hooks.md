@@ -56,7 +56,7 @@ description: Webhook cuộc gọi
 {% endhint %}
 
 * Gửi thông tin cuộc gọi đang diễn ra cho đối tác tích hợp
-* **Trạng thái gồm : ringing**(Đổ chuông)**, answered **(Kết nối) , **hangup **(Kết thúc)
+* **Trạng thái gồm : ringing**(Đổ chuông)**, answered** (Kết nối) , **hangup** (Kết thúc)
 
 ![](<../.gitbook/assets/image (4).png>)
 

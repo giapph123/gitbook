@@ -117,12 +117,16 @@ _1. Phiên gọi tự động với file ghi âm_
 \
 
 
-`  "target_type" : "Recording",`
+  
+
+`"target_type" : "Recording",`
 
 \
 
 
-`  "target":"5ed0c6dffb7b390007e111"`
+  
+
+`"target":"5ed0c6dffb7b390007e111"`
 
 \
 
@@ -165,7 +169,9 @@ _2. Phiên gọi tự động  với Text To Speech_
 \
 
 
-`   "target_type":"Text_variable"`
+   
+
+`"target_type":"Text_variable"`
 
 \
 
@@ -182,44 +188,70 @@ _2. Phiên gọi tự động  với Text To Speech_
 
 
 
-_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự _
+_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự_
+
+ 
 
 \
 
 
 
 
-`[{ `
+`[{`
+
+ 
 
 \
 
 
-`    "target_type":"Text_variable"  `
+   
+
+`"target_type":"Text_variable"`
+
+ 
 
 \
 
 
-`  },  `
+ 
+
+`},`
+
+ 
 
 \
 
 
-`  {  `
+ 
+
+`{`
+
+ 
 
 \
 
 
-`     "target_type":"Recording",    `
+    
+
+`"target_type":"Recording",`
+
+   
 
 \
 
 
-`     "target":"5ed0c6dffb7b390007e5211"  `
+    
+
+`"target":"5ed0c6dffb7b390007e5211"`
+
+ 
 
 \
 
 
-` }]`
+ 
+
+`}]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="variables" type="string" %}
@@ -230,39 +262,53 @@ Mảng giá trị cho Text To Speech
 
 
 
-_Ví dụ _
+_Ví dụ_
+
+ 
 
 \
 
 
 
 
-`[ `
+`[`
+
+ 
 
 \
 
 
-` "Đơn hàng của bạn là ",`
+ 
+
+`"Đơn hàng của bạn là ",`
 
 \
 
 
-` "CKHDKD00203",`
+ 
+
+`"CKHDKD00203",`
 
 \
 
 
-` "Số tiền",`
+ 
+
+`"Số tiền",`
 
 \
 
 
-` "900000",`
+ 
+
+`"900000",`
 
 \
 
 
-` "Đã được bàn giao cho đối tác vận chuyển"`
+ 
+
+`"Đã được bàn giao cho đối tác vận chuyển"`
 
 \
 
@@ -319,7 +365,7 @@ _Ví dụ _
 }
 ```
 
-**Ví dụ** :Tham số một phiên gọi tự động **File ghi âm và Text To Speech **
+**Ví dụ** :Tham số một phiên gọi tự động **File ghi âm và Text To Speech**&#x20;
 
 ```
 {

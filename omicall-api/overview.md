@@ -23,7 +23,7 @@ Yêu cầu API hoặc thu hồi API
 
 | Thuật ngữ            | Mô tả                                                                                                            |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **OMICALL\_API    ** | Hệ thống cho phép đối tác thao tác với dữ liệu của mình trên OMI thông qua API                                   |
+| **OMICALL\_API**     | Hệ thống cho phép đối tác thao tác với dữ liệu của mình trên OMI thông qua API                                   |
 | **ACCESS\_TOKEN**    | Là token mà OMI cung cấp cho đối tác, để thao tác với OMICALL API. Token sẽ có thời gian timeout là **24** (giờ) |
 | **API\_KEY**         | Là khóa định danh API cho mỗi doanh nghiệp, dùng để kết nối với OMICALL. Dùng API Key để lấy Access Token        |
 
@@ -31,7 +31,7 @@ Yêu cầu API hoặc thu hồi API
 
 | STT | Code             | Type    | Description                                                                                         |
 | --- | ---------------- | ------- | --------------------------------------------------------------------------------------------------- |
-| 1   | **status\_code** | Integer | <p><strong>9999 </strong>: Thao tác thành công</p><p><strong>-9999</strong> : Thao tác thất bại</p> |
+| 1   | **status\_code** | Integer | <p><strong>9999</strong> : Thao tác thành công</p><p><strong>-9999</strong> : Thao tác thất bại</p> |
 | 2   | **message**      | String  | Mã lỗi hoặc thông báo lỗi                                                                           |
 | 3   | **payload**      | Object  | Dữ liệu trả về sau xử lý                                                                            |
 
