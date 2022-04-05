@@ -776,3 +776,21 @@ Số điện thoại khách hàng
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/api/contacts/detail/:id" baseUrl="{URL}" summary="" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" %}
+Id contact
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Thông tin chi tiết 1 contact
+}
+```
+{% endswagger-response %}
+{% endswagger %}
