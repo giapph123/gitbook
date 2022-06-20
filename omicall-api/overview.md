@@ -8,7 +8,7 @@ Last Updated : 25/04/2021
 
 ## API Key
 
-Đăng ký tài khoản tại : [https://sso.omicall.com/](https://sso.omicrm.com)
+Đăng ký tài khoản tại : [https://sso.omicall.com/](https://sso.omicrm.com/)
 
 * Truy cập **Tài khoản > Cấu hình > Quản lý API**
 * Tạo Api key cho doanh nghiệp
