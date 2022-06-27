@@ -88,6 +88,14 @@ Nhúng Web SDK vào HTML của website cần tích hợp
                 }
             };
             omiSDK.init(config, () => {
+                // nếu url login của bạn là: https://abc.omicall.com
+                // và số nội bộ của bạn là 100 với password là 123456
+                // thì param khi register sẽ là:
+                // omiSDK.register({
+                //    domain: 'abc',
+                //    username: '100', 
+                //    password: '123456'
+                // });
                 omiSDK.register({
                     domain: '',
                     username: '', // tương đương trường "sip_user" trong thông tin số nội bộ
