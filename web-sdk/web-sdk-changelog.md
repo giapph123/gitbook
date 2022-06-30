@@ -1,3 +1,7 @@
+---
+description: Lịch sử cập nhật tính năng của Web SDK
+---
+
 # Web SDK Changelog
 
 ### 2.0.0-rc.56 (30/06/2022)
