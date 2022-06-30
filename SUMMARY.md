@@ -21,6 +21,7 @@
 
 * [Tổng quan](webhooks/overview.md)
 * [Webhook](webhooks/call-hooks.md)
+* [Web SDK Changelog](webhooks/web-sdk-changelog.md)
 
 ## SDK <a href="#web-sdk" id="web-sdk"></a>
 
