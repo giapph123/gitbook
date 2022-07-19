@@ -8,16 +8,12 @@ Last Updated : 25/04/2021
 
 ## API Key
 
-Đăng ký tài khoản tại : [https://sso.omicall.com/](https://sso.omicrm.com/)
+Đăng ký tài khoản tại : [https://sso.omicall.io/](https://sso.omicrm.com/)
 
 * Truy cập **Tài khoản > Cấu hình > Quản lý API**
-* Tạo Api key cho doanh nghiệp
+* Tạo Api key cho doanh nghiệp, yêu cầu và thu hồi
 
-![](<../.gitbook/assets/image (2).png>)
-
-Yêu cầu API hoặc thu hồi API
-
-![](<../.gitbook/assets/image (8).png>)
+![Cấu hình >> Tích hợp >> API](<../.gitbook/assets/Screen Shot 2022-07-19 at 10.11.30 PM.png>)
 
 **Thuật ngữ và loại dữ liệu dùng trong OMI**
 
