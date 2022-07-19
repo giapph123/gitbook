@@ -10,8 +10,8 @@ description: >-
 
 Chuẩn bị:
 
-* Đăng ký tài khoản [https://sso.omicall.com/](https://sso.omicrm.com/)
-* Truy cập **Tài khoản > Cấu hình > Quản lý API > WEBHOOK**
+* Đăng ký tài khoản [https://sso.omicall.io/](https://sso.omicrm.com/)
+* Truy cập **Cấu hình > Doanh nghiệp >> Tích hợp > WEBHOOK**
 * Cung cấp URL để lấy thông tin OmiCall gửi (url bắt buộc phải **https**)
 
 ![](<../.gitbook/assets/Screen Shot 2022-07-19 at 10.11.30 PM.png>)
