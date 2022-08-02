@@ -717,7 +717,7 @@ Ví dụ :
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="{URL}" path="/api/contacts/delete/:public_id" method="delete" summary="Xóa khách hàng" %}
+{% swagger baseUrl="[URL]" path="/api/contacts/delete/:public_id" method="delete" summary="Xóa khách hàng" %}
 {% swagger-description %}
 Xóa khách hàng thông qua publicId
 {% endswagger-description %}
@@ -747,7 +747,7 @@ application/json
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="/api/contacts/add-note" baseUrl="{URL}/" summary="Tạo tương tác ghi chú" %}
+{% swagger method="post" path="/api/contacts/add-note" baseUrl="[URL]" summary="Tạo tương tác ghi chú" %}
 {% swagger-description %}
 Tạo nhiều tương tác. Request Body là Mảng đối tượng chứa các thuộc tính bên dưới
 {% endswagger-description %}
@@ -777,7 +777,7 @@ Số điện thoại khách hàng
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/contacts/detail/:id" baseUrl="{URL}" summary="" %}
+{% swagger method="get" path="/api/contacts/details/:id" baseUrl="[URL]" summary="" %}
 {% swagger-description %}
 
 {% endswagger-description %}
