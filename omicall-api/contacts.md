@@ -777,6 +777,36 @@ Số điện thoại khách hàng
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/api/contacts/get" baseUrl="[URL]/" summary="" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="phone" %}
+Số điện thoại
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="email" %}
+Email
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="ref_id" %}
+Id bên thứ 3
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="ref_code" %}
+Mã bên thứ 3
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Thông tin chi tiết 1 contact
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 {% swagger method="get" path="/api/contacts/details/:id" baseUrl="[URL]" summary="" %}
 {% swagger-description %}
 
