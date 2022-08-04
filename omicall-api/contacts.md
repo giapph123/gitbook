@@ -717,9 +717,9 @@ Ví dụ :
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="[URL]" path="/api/contacts/delete/:public_id" method="delete" summary="Xóa khách hàng" %}
+{% swagger baseUrl="[URL]" path="/api/contacts/delete/:id" method="delete" summary="Xóa khách hàng" %}
 {% swagger-description %}
-Xóa khách hàng thông qua publicId
+Xóa khách hàng thông qua Id
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="public_id" type="string" %}
