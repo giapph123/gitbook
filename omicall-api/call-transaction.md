@@ -323,6 +323,10 @@ Danh sách đầu số
 Số nội bộ nhân viên
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="agents" type="array" %}
+Danh sách email nhân viên
+{% endswagger-parameter %}
+
 {% swagger-parameter in="query" name="to_date" type="number" %}
 Đến ngày (Timestamp in milliseconds)
 {% endswagger-parameter %}
