@@ -33,6 +33,10 @@ Từ khóa tìm kiếm
 Số nội bộ của nhân viên
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="agents" type="array" %}
+Danh sách email nhân viên
+{% endswagger-parameter %}
+
 {% swagger-parameter in="query" name="disposition" type="string" %}
 Trạng thái : '
 
