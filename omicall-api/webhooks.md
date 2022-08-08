@@ -41,58 +41,19 @@ Access token
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="webhook" type="object" %}
-Đối tượng :
+Đối tượng :\
+\- **type** : _Loại Webhook_ : call, contact\
+\- **url** : _Đường dẫn Webhook_ \
+_- **events** : \["ringing",",answered","hangup"]_
 
 \
+`{` \
+&#x20;`"webhook" : {` \
+&#x20;  `"type" : "call",` \
+&#x20;   `"url" : "https://...." ,`
 
-
-\- 
-
-**type**
-
- : 
-
-_Loại Webhook_
-
- : call, contact
-
-\
-
-
-\- 
-
-**url**
-
- : 
-
-_Đường dẫn Webhook_
-
-\
-
-
-
-
-`{`
-
-\
-
-
-   
-
-`"type" : "call",`
-
- 
-
-\
-
-
-   
-
-`"url" : "https://...... "`
-
-\
-
-
+&#x20;   `"events": null`\
+&#x20; `}` \
 `}`
 {% endswagger-parameter %}
 
