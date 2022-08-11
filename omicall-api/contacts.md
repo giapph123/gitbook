@@ -418,48 +418,7 @@ Ví dụ :
     "status_code": 9999,
     "instance_id": "stg",
     "instance_name": "DESKTOP-3I0NHO0",
-    "payload": {
-        {
-                "create_by": {
-                    "name": "TRẦN VĂN, Tiến"
-                },
-                "last_update_by": null,
-                "created_date": 1587023890765,
-                "last_updated_date": 1588826965324,
-                "public_id": "ad1a7e78d80b94544ab92456",
-                "contact_type": "contact",
-                "tags_view": [],
-                "is_deleted": false,
-                "tags": [],
-                "attribute_structure": [
-                    {
-                        "identify": false,
-                        "field_code": "full_name",
-                        "field_type": "single_text",
-                        "value": [
-                            {
-                                "display_value": "Trần Văn Tiến",
-                                "data_type": "",
-                                "value_type": ""
-                            }
-                        ]
-                    },
-                    {
-                        "identify": false,
-                        "field_code": "job_title",
-                        "field_type": "single_text",
-                        "value": [
-                            {
-                                "display_value": "Trần Văn Tiến",
-                                "data_type": "",
-                                "value_type": ""
-                            }
-                        ]
-                    },
-                    .....
-                ]
-            }
-    },
+    "payload": true /false,
     "key_enabled": false
 }
 ```
@@ -489,7 +448,7 @@ application/json
 {
     "status_code": 9999,
     "instance_id": "stg",
-    "payload": true,
+    "payload": true /false,
     "key_enabled": false
 }
 ```
@@ -687,30 +646,7 @@ Ví dụ :
     "status_code": 9999,
     "instance_id": "stg",
     "instance_name": "DESKTOP-3I0NHO0",
-    "payload": {
-        "publicId": "7e879ce7ca3870dfbd9...",
-        "fullName": "TRAN VAN TIEN",
-        "displayName": "Tien",
-        "gender": "male",
-        "passport": "125441225",
-        "address": "Ba le chan, Phuong Tan Dinh, Quan 1",
-        "note": "Ghi chu o day",
-        "emails": [
-            {
-                "data": "tientv_xx@yahoo.com.vn",
-                "type": "home",
-                "valueType": "Nhà"
-            }
-        ],
-        "phones": [
-            {
-                "data": "0236552xxx",
-                "type": "home",
-                "valueType": "Nhà"
-            }
-        ],
-        "contactType": "contact"
-    },
+    "payload": true/false,
     "key_enabled": false
 }
 ```
@@ -722,7 +658,7 @@ Ví dụ :
 Xóa khách hàng thông qua Id
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="public_id" type="string" %}
+{% swagger-parameter in="path" name="id" type="string" %}
 Id khách hàng
 {% endswagger-parameter %}
 
