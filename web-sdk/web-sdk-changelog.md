@@ -4,6 +4,15 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.0-rc.59 (22/08/2022)
+
+\- Remove biến **session** trong callback data để hạn chế lỗi không xác định\
+\- Update method **omiSDK.makeCall,** cho phép truyền tham số thứ 2 dạng Object để có thể truyền thêm custom data và thực hiện cuộc gọi giám sát.\
+&#x20;Ví dụ: \
+&#x20;\+ **`omiSDK.makeCall('100', { sneakyType: 'whisper' });`** : thực hiện cuộc gọi giám sát thì thầm tới số nội bộ 100;\
+&#x20;\+ **`omiSDK.makeCall('0394749346', { datas: { 'User-Data': '{"module":"contact","emp_id":"1"}' } });`** : truyền một String bất kỳ hoặc Object đã stringify (max length = 256 ) để lưu thông tin thêm vào lịch sử cuộc gọi, dữ liệu này sẽ được **encodeURIComponent** trước khi truyền lên tổng đài\
+
+
 ### 2.0.0-rc.58 (02/08/2022)
 
 \- Thêm options **`extraUserAgentString: String`** sẽ cộng chuỗi thêm vào userAgentString của phiên kết nối tổng đài, có format là: \
