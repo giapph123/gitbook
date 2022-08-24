@@ -4,6 +4,13 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.0-rc.60 (24/08/2022)
+
+\- Bổ sung biến **sipDomain và sipUser** trong callback data\
+\- Remove việc sử dụng **encodeURIComponent** với data customize cần lưu thêm vào lịch sử cuộc gọi
+
+
+
 ### 2.0.0-rc.59 (22/08/2022)
 
 \- Remove biến **session** trong callback data để hạn chế lỗi không xác định\
