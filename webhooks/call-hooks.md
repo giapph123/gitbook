@@ -23,9 +23,8 @@ description: Webhook cuộc gọi
    "direction":"outbound", // Hướng gọi outbound, inbound, local
    "source_number":"842727777787", //Số hotline
    "destination_number":"0979816773", // Số khách hàng
-   "disposition":"answered", //Tình trạng cuộc gọi
    "bill_sec":232, // Số giây tính tiền
-   "record_seconds":232, // Số giây file ghi âm
+   "record_seconds":232, // Số giây ghi âm (Trả lời / Không trả lời)
    "time_start_to_answer":1589015432, //thời gian bắt đầu trả lời
    "recording_file":"https://drive.google.com/uc?id=1Jry_LGzQM....", // File ghi âm
    "sip_user":"101", // Số máy lẻ nhân viên
