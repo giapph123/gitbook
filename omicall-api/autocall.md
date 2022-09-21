@@ -316,6 +316,10 @@ _Ví dụ_
 `]`
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="phone_number_list" type="Array" required="true" %}
+Danh sách số điện thoại cần gọi
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="Thông tin phiên gọi tự động" %}
 ```
 {
