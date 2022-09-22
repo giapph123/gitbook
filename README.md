@@ -35,7 +35,7 @@ Dùng API bên dưới để tạo 1 nhân viên, OMI sẽ response về thông 
 
 API : /api/agent/invite
 
-Hoặc : Nếu nhân viên đã có ở OMI, mà không cần tạo mới thì có thể lấy qua API
+Hoặc : Nếu nhân viên đã có ở OMI, mà không cần tạo mới thì có thể lấy dữ liệu tổng đài  qua API
 
 [https://api.omicall.com/omicall-api/call-center](https://api.omicall.com/omicall-api/call-center)
 {% endhint %}
