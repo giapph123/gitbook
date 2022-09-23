@@ -35,8 +35,3 @@
 * [Lịch sử thanh toán](partner/payment-history.md)
 * [Quản lý doanh nghiệp](partner/tenant.md)
 * [Thông tin đối tác](partner/me.md)
-
-## SUPPLIER <a href="#provider" id="provider"></a>
-
-* [Tổng quan](provider/tong-quan.md)
-* [Báo cáo sản lượng nhà cung cấp](provider/bao-cao-san-luong.md)
