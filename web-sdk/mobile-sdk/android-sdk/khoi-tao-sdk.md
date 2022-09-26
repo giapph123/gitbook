@@ -10,7 +10,7 @@ Mỗi tài khoản thực hiện cuộc gọi trong OMI là tài khoản tổng 
 * Password : Mật khẩu
 * Realm : Domain của doanh nghiệp , domain này khi đăng ký và đăng nhập trên Web sẽ hiện thị đường dẫn có domain như sau:&#x20;
 
-![](<../../../.gitbook/assets/image (1).png>)
+![](<../../../.gitbook/assets/image (3).png>)
 
 * customUI: Dùng để tuỳ chỉnh màn hình thoại đến và đi
 
