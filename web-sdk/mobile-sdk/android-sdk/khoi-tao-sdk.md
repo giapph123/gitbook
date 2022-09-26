@@ -18,7 +18,7 @@ Mỗi tài khoản thực hiện cuộc gọi trong OMI là tài khoản tổng 
 
 Khởi tạo Omi SDK bằng cách thêm đoạn mã sau vào trong MainActivity của Project
 
-```
+```java
 OmiClient(requireContext()).register(
     userName,
     password,
@@ -32,7 +32,7 @@ OmiSDKUtils.startOmiService(requireActivity())
 
 Use OmiSDKUtils to handle permissions results
 
-```
+```java
 override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,

@@ -6,7 +6,7 @@
 
 &#x20;Để thực hiện một cuộc gọi ra chúng ta gọi hàm như sau
 
-```
+```java
 InCallActivity.startInCall(
                 requireContext(),
                 phoneNumber
@@ -40,7 +40,7 @@ Khi sử dụng SDK các sự kiện từ SDK sẽ được notification ra bằ
 
 để làm việc này chúng ta cần thực hiện như sau:
 
-```
+```java
 OmiClient.instance.setListener(OmiListener)
 ```
 
@@ -56,7 +56,7 @@ Thông thường SDK sẽ tự có màn hình để hiển thị cuộc gọi đ
 
 Trường hợp bạn muốn mình tự Custom màn hình này thì có thể tuỳ chỉnh cấu hình SDK như sau:
 
-```
+```java
 OmiClient(requireContext()).initSDK(
     userName,
     password,
@@ -67,7 +67,7 @@ OmiClient(requireContext()).initSDK(
 
 Sau đó chúng ta sẽ cài đặt Listenner để lắng nghe sự kiện thông báo cuộc gọi tới như sau:
 
-```
+```java
 OmiClient.instance.setListener(OmiListener)
 ```
 

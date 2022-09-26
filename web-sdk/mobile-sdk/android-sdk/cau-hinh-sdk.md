@@ -4,7 +4,7 @@
 
 1. Cầu hình setting.gradle của Project như sau:
 
-```
+```java
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
 
 3\. Add library required by SDK
 
-```
+```java
 implementation 'androidx.core:core-ktx:1.7.0'
 implementation 'androidx.fragment:fragment-ktx:1.4.0'
 implementation 'androidx.activity:activity-ktx:1.4.0'
@@ -41,7 +41,7 @@ implementation "com.google.code.gson:gson:2.8.6"
 
 &#x20;4\. Bổ sung đoạn mã sau ở đầu File  build.gradle:
 
-```
+```java
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
