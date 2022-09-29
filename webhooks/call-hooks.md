@@ -35,6 +35,8 @@ description: Webhook cuộc gọi
    "duration":242, // Số giây tính từ khi đổ chuông đến khi kết thúc
    "is_auto_call" : false, // Gọi thường hoặc gọi tự động
    "call_out_price" : 3990.0, // Số tiền
+   "is_voicemail" : true/false, // Hộp thư thoại
+   "recording_file_voicemail" : "", //File ghi âm hộp thư thoại
    "user":[
       {
          "full_name":"TestBoss 123",

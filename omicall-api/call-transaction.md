@@ -104,6 +104,7 @@ Số điện thoại nhận
                 "destination_number": "0395187319", // Số điện thoại nhận
                 "disposition": "answered", // answered : Trả lời, cancelled : Không trả lời
                 "bill_sec": 5, // Thời lượng tính tiền
+                "record_seconds" : 10, // Trả lời / không trả lời (số giây file ghi âm)
                 "time_start_to_answer": 1575253218, //Thời gian bắt đầu cuộc gọi
                 "recording_file": "https://drive.google.com/uc?id=6NZI5ZucJ6E-g9NcvXPU8D0&export=download", // Đường dẫn file ghi âm
                 "sip_user": "142", // Số nội bộ
@@ -115,6 +116,8 @@ Số điện thoại nhận
                 "call_out_price": 2389, //Cước phí,
                 "created_date": 1575253235933, // Ngày tạo
                 "last_updated_date": 1575253239002, // Lần cập nhật cuối cùng
+                "is_voicemail" : true/false, // Hộp thư thoại
+                "recording_file_voicemail" : "", //File ghi âm hộp thư thoại
                 "user": [ // Thông tin nhân viên
                     {
                         "full_name": "TRAN VAN TIEN",
