@@ -4,6 +4,17 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.0-rc.61 (06/09/2022)
+
+\- Cập nhật một số màu cơ bản và bộ icon của theme default\
+\- Thêm chức năng hiển thị thời gian đổ chuông ở dialog call in và out\
+\- Thêm chức năng chỉ đổ chuông cuộc gọi tới khi không có cuộc gọi nào đang diễn ra ở trong cùng một trình duyệt\
+\- Thêm biến **isAccepted** trong callback event data để biết cuộc gọi đã được trả lời hay chưa\
+\- Thêm menu chức năng hiển thị danh sách cuộc gọi gần đây của số nội bộ đang kết nối\
+\- Fix một số bug console.log lỗi ko cần thiết
+
+
+
 ### 2.0.0-rc.60 (24/08/2022)
 
 \- Bổ sung biến **sipDomain và sipUser** trong callback data\
