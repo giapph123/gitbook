@@ -4,7 +4,7 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
-### 2.0.0-rc.61 (06/09/2022)
+### 2.0.0-rc.61 (08/10/2022)
 
 \- Cập nhật một số màu cơ bản và bộ icon của theme default\
 \- Thêm chức năng hiển thị thời gian đổ chuông ở dialog call in và out\
