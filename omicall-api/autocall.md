@@ -320,6 +320,22 @@ _Ví dụ_
 Danh sách số điện thoại cần gọi
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="num_retry" type="Integer" %}
+Số lần gọi lại khi không nghe máy. Mặc định là 0
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="num_per_call" type="Integer" %}
+Số cuộc gọi mỗi lần. Mặc định là 15 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="distance_per_call" type="Integer" %}
+Khoảng cách thời gian , giữa các lần gọi. Mặc định là 30s
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="distance_retry" type="Integer" %}
+Khoảng cách giữa các lần gọi lại . Mặc định là 0
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="Thông tin phiên gọi tự động" %}
 ```
 {
