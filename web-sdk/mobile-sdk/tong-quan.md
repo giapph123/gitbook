@@ -14,5 +14,5 @@ Trước khi bạn bắt đầu viết mã ứng dụng của mình:
 2. Cấu hình tài khoản để tạo các người dùng có thể thực hiện cuộc gọi trên hệ thống OMICALL. Đầu tiên chúng ta cần tạo các tài khoản nhân viên tại [đây](https://docs.omicrm.io/nhan-vien/gioi-thieu) , mỗi tài khoản nhân viên này được cấp phát 1 số nội bộ, cùng với đó là user và mật khẩu để đăng nhập vào SDK OMICALL được tạo và chỉnh sửa ở [đây](https://docs.omicrm.io/cau-hinh-tong-dai/so-noi-bo)&#x20;
 3. Cấu hình thông tin để tích hợp phần Notification vào ứng dụng&#x20;
 
-<img src="../../.gitbook/assets/image (2).png" alt="" data-size="original">
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 

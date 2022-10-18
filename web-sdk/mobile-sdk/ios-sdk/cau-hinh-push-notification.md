@@ -19,11 +19,13 @@ Thực hiện từng bước này như sau.
 1. Đảm bảo đã thêm Push Notifications and Background Modes.
 2. Trong Chế độ nền Background Modes, enable Audio, AirPlay, and Picture in Picture; Voice over IP; Background Fetch; and Remote Notifications settings.
 
-<img src="../../../.gitbook/assets/Picture1.jpg" alt="" data-size="original">
+<figure><img src="../../../.gitbook/assets/Picture1.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Trên tab Thông tin, thêm “App provides Voice over IP services” vào danh sách “Required Background Modes”
 
-.![](<../../../.gitbook/assets/Picture2 (1).jpg>)
+.
+
+<figure><img src="../../../.gitbook/assets/Picture2 (1).jpg" alt=""><figcaption></figcaption></figure>
 
 **Tạo chứng chỉ dịch vụ VoIP**
 
@@ -37,7 +39,7 @@ Yêu cầu ký chứng chỉ (CSR) là điều kiện tiên quyết để tạo 
 
 1. Mở quyền truy cập Chuỗi khóa bằng cách chọn “Truy cập chuỗi khóa” trong thư mục Tiện ích.
 
-![](../../../.gitbook/assets/Picture3.jpg)
+<figure><img src="../../../.gitbook/assets/Picture3.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Từ menu “Truy cập chuỗi khóa”, điều hướng đến **Certificate Assistant > Request a Certificate From a Certificate Authority**
 
@@ -45,31 +47,35 @@ Yêu cầu ký chứng chỉ (CSR) là điều kiện tiên quyết để tạo 
 
 1. Nhập tên mô tả cho CSR của bạn. Ví dụ: ios\_OMICALL\_app.certSignsRequest.
 2. Chọn vị trí để lưu nó trên ổ cứng của bạn, sau đó nhấp vào **Lưu** .
-3. ![](../../../.gitbook/assets/Picture5.jpg)
+3.
+
+    <figure><img src="../../../.gitbook/assets/Picture5.jpg" alt=""><figcaption></figcaption></figure>
 4. Đăng nhập vào [Bảng điều khiển dành cho nhà phát triển của Apple](https://developer.apple.com/) .&#x20;
 
-![](<../../../.gitbook/assets/Picture6 (1).png>)&#x20;
+&#x20;
+
+<figure><img src="../../../.gitbook/assets/Picture6 (1).png" alt=""><figcaption></figcaption></figure>
 
 1. Điều hướng đến trang Certificates, Identifiers & Profiles và nhấp vào '+' để thêm chứng chỉ mới.
 
-![](../../../.gitbook/assets/Picture7.jpg)
+<figure><img src="../../../.gitbook/assets/Picture7.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Trong loại chứng chỉ, hãy chọn VoIP Services Certificate', sau đó nhấp vào Continue.
 
-![](../../../.gitbook/assets/Picture8.jpg)
+<figure><img src="../../../.gitbook/assets/Picture8.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Nhấp vào Continue để tiếp tục.
 2. Từ danh sách ID ứng dụng, hãy chọn ID ứng dụng được liên kết với ứng dụng của bạn.
 
-![](../../../.gitbook/assets/Picture9.jpg)
+<figure><img src="../../../.gitbook/assets/Picture9.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Để chọn và tải lên tệp CSR được tạo từ Keychain, hãy nhấp vào Choose File.
 
-![](../../../.gitbook/assets/Picture10.jpg)
+<figure><img src="../../../.gitbook/assets/Picture10.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Để tải xuống và lưu chứng chỉ VoIP, hãy nhấp vào 'Download'.
 
-![](../../../.gitbook/assets/Picture11.jpg)
+<figure><img src="../../../.gitbook/assets/Picture11.jpg" alt=""><figcaption></figcaption></figure>
 
 **Tạo hồ sơ cấp phép cho ứng dụng của bạn**
 

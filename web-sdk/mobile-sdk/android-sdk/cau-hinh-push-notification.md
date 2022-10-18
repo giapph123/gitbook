@@ -17,46 +17,62 @@ Các bước thực hiện như sau:
     * Trên [bảng điều khiển Firebase](https://console.firebase.google.com/) , nhấp vào Thêm dự án.
     * Thêm tên dự án và nhấp vào Tạo dự án.&#x20;
 
-    &#x20;![](../../../.gitbook/assets/Picture1.png)
+    &#x20;
+
+    <figure><img src="../../../.gitbook/assets/Picture1.png" alt=""><figcaption></figcaption></figure>
 3. Đăng ký ứng dụng của bạn trên Firebase
 4.
 
     * Chuyển đến phần Android trên trang chủ Dự án của bạn.
     * Đăng ký App Android của bạn trên Firebase.&#x20;
 
-    ![](../../../.gitbook/assets/Picture2.png)&#x20;
+    &#x20;
 
     * Bấm vào Đăng ký ứng dụng.
+
+    <figure><img src="../../../.gitbook/assets/Picture2.png" alt=""><figcaption></figcaption></figure>
 5. Thêm tệp cấu hình Firebase và SDK vào ứng dụng của bạn
 6.
 
     * Tải xuống tệp Firebase google-services.json.
 
-    ![](../../../.gitbook/assets/Picture3.png)
+
 
     * Di chuyển google-services.json đã tải xuống vào thư mục gốc mô-đun ứng dụng Android của bạn.
     * Nhấp vào Tiếp theo.
     * Thực hiện cập nhập cấu hình Gradle của ứng dụng Android của bạn theo hướng dẫn.
 
-    ![](<../../../.gitbook/assets/Picture3 (1).png>)
+
 
     * Chờ xác minh hoàn tất, sau đó tiếp tục đến bảng điều khiển.
 
-    ![](../../../.gitbook/assets/Picture5.png)
+
+
+    <figure><img src="../../../.gitbook/assets/Picture3.png" alt=""><figcaption></figcaption></figure>
+
+    <figure><img src="../../../.gitbook/assets/Picture5.png" alt=""><figcaption></figcaption></figure>
+
+    <figure><img src="../../../.gitbook/assets/Picture3 (1).png" alt=""><figcaption></figcaption></figure>
 7. Sao chép khóa máy chủ dự án Firebase vào trang tổng quan OMICALL
 8.  Vào phần cài đặt của dự án -> Cloud Messaging để lấy khoá gửi tin thông báo . &#x20;
 
-    ![](../../../.gitbook/assets/Picture6.png)![](../../../.gitbook/assets/Picture7.png)
+
+
+    <figure><img src="../../../.gitbook/assets/Picture6.png" alt=""><figcaption></figcaption></figure>
+
+    <figure><img src="../../../.gitbook/assets/Picture7.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
 9\. Trong bảng điều khiển OMICALL, đi tới [Cài đặt -> Tích hợp](https://ocp52033.omicrm.vn/config/company/integrated/api) .&#x20;
 
-&#x20;![](../../../.gitbook/assets/Picture18.png)
+&#x20;
+
+<figure><img src="../../../.gitbook/assets/Picture18.png" alt=""><figcaption></figcaption></figure>
 
 Chọn tiếp Chỉnh sửa -> Nhấn nút thêm chứng chỉ
 
-![](../../../.gitbook/assets/Picture19.png)
+<figure><img src="../../../.gitbook/assets/Picture19.png" alt=""><figcaption></figcaption></figure>
 
 Đối với Android chúng ta chọn FCM và điền thông tin Key vào , lưu lại
 
