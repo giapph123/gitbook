@@ -16,7 +16,7 @@
 * Bước cuối cùng cần vào phần cài đặt Target của Project để cấu hình framework chọn option Embed & Sign framework như hình:
 *
 
-    <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Cách 2: Cài đặt tự động
 
@@ -26,10 +26,11 @@ Trong Podfile chúng ta khai báo bổ sung 1 dòng như sau:
 
 _<mark style="color:blue;">pod 'OmiKit', :git => 'https://github.com/VIHATTeam/OmiKit.git'</mark>_
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 * Sau đó vào thư mục gốc chạy lệnh _pod install_ để cài đặt tự động
-*
+
+
 
 Sau bước cài đặt framework chúng ta đã có thể import vào để sử dụng:
 
