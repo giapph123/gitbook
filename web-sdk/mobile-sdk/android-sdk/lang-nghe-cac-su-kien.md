@@ -50,7 +50,7 @@ Initialize SDK with customUI parme set to true
 
 Thông thường SDK sẽ tự có màn hình để hiển thị cuộc gọi đến như sau:
 
-<img src="../../../.gitbook/assets/image (1).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (1) (2).png" alt="" data-size="original">
 
 
 

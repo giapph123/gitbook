@@ -30,6 +30,7 @@
   * [Tổng Quan](web-sdk/mobile-sdk/tong-quan.md)
   * [IOS SDK](web-sdk/mobile-sdk/ios-sdk/README.md)
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/ios-sdk/cau-hinh-push-notification.md)
+    * [Cài đặt](web-sdk/mobile-sdk/ios-sdk/cai-dat.md)
   * [Android SDK](web-sdk/mobile-sdk/android-sdk/README.md)
     * [Cấu hình SDK](web-sdk/mobile-sdk/android-sdk/cau-hinh-sdk.md)
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/android-sdk/cau-hinh-push-notification.md)
