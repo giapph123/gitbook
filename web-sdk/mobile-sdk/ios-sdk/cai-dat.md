@@ -1,4 +1,10 @@
+---
+description: Cài đặt SDK IOS
+---
+
 # Cài đặt
+
+SDK Kit hỗ trợ Omi OO
 
 ## Bạn có thể cài đặt bằng 2 cách&#x20;
 
