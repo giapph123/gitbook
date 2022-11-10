@@ -89,6 +89,12 @@ Số điện thoại gọi đi
 Số điện thoại nhận
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="queue_destination" type="array" %}
+Số nhóm nội bộ&#x20;
+
+_API Tổng đài >> Nhóm nội bộ_
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="Danh sách cuộc gọi" %}
 ```
 {
