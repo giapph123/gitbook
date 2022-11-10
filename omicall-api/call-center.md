@@ -4,7 +4,7 @@ description: Quản lý cấu hình tổng đài , số nội bộ
 
 # Tổng đài
 
-{% swagger baseUrl="[URL]" path="/api/call_center/internal_phone/list" method="get" summary="Danh sách số nội bộ" %}
+{% swagger baseUrl="[URL]" path="/api/call_center/internal_phone/list" method="get" summary="Danh sách SỐ NỘI BỘ " %}
 {% swagger-description %}
 \- Lấy danh sách cấu hình số nội bộ
 
@@ -152,7 +152,7 @@ Số máy lẻ nhân viên
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách tất cả nhóm nội bộ" %}
+{% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách NHÓM NỘI BỘ" %}
 {% swagger-description %}
 
 {% endswagger-description %}
