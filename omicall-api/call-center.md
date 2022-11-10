@@ -151,3 +151,185 @@ Số máy lẻ nhân viên
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/api/call_center/internal_group/get_all" baseUrl="[URL]" summary="Danh sách tất cả nhóm nội bộ" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" %}
+Bearer Token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+   "status_code":9999,
+   "instance_id":"stg",
+   "instance_version":"1.2.163",
+   "payload":[
+      {
+         "_id":"62ff11b208d4bf3ea694a6f3",
+         "tenant_id":"6209c98461c1cb163ded25f7",
+         "group_name":"Nhóm Tech",
+         "group_name_unsigned":"Nhom Tech",
+         "group_number":"38011",
+         "created_date":1660883378087,
+         "last_updated_date":1661221667904,
+         "create_by":{
+            "id":"6209c98561c1cb163ded25fa",
+            "name":"OMI Hotline"
+         },
+         "last_update_by":{
+            "id":"6209c98561c1cb163ded25fa",
+            "name":"OMI Hotline"
+         },
+         "is_deleted":false,
+         "note":null,
+         "members":[
+            {
+               "agent_id":"62d563113127de2eac6b8cbf",
+               "contact_id":"62d563113127de2eac6b8cbe",
+               "order":0,
+               "view":null,
+               "timeout":30,
+               "sip_user":null,
+               "hold_music_id":null
+            },
+            {
+               "agent_id":"6209c98561c1cb163ded25fa",
+               "contact_id":"6209c98c067f745da47367d1",
+               "order":0,
+               "view":null,
+               "timeout":30,
+               "sip_user":null,
+               "hold_music_id":null
+            }
+         ],
+         "is_forward_to_user_owner":null,
+         "is_forward_to_outer_group":false,
+         "outer_group_id":null,
+         "strategy":"enterprise",
+         "ring_back_id":"",
+         "ring_back_name":null,
+         "is_answer":"false",
+         "target_timeout_type":"",
+         "target_timeout":"",
+         "target_timeout_name":null,
+         "ring_group_type":0,
+         "ring_group_wait_time":0,
+         "ring_group_wait_time_sequence":2,
+         "ring_group_type_result":null,
+         "enable_criteria":false,
+         "criterias":[
+            
+         ]
+      },
+      {
+         "_id":"62ff11a208d4bf3ea694a539",
+         "tenant_id":"6209c98461c1cb163ded25f7",
+         "group_name":"Nhóm Sales",
+         "group_name_unsigned":"Nhom Sales",
+         "group_number":"62714",
+         "created_date":1660883362155,
+         "last_updated_date":1667615822209,
+         "create_by":{
+            "id":"6209c98561c1cb163ded25fa",
+            "name":"OMI Hotline"
+         },
+         "last_update_by":{
+            "id":"6209c98561c1cb163ded25fa",
+            "name":"OMI Hotline"
+         },
+         "is_deleted":false,
+         "note":null,
+         "members":[
+            {
+               "agent_id":"62d563113127de2eac6b8cbf",
+               "contact_id":"62d563113127de2eac6b8cbe",
+               "order":0,
+               "view":null,
+               "timeout":30,
+               "sip_user":null,
+               "hold_music_id":null
+            },
+            {
+               "agent_id":"6209c98561c1cb163ded25fa",
+               "contact_id":"6209c98c067f745da47367d1",
+               "order":0,
+               "view":null,
+               "timeout":30,
+               "sip_user":null,
+               "hold_music_id":null
+            }
+         ],
+         "is_forward_to_user_owner":null,
+         "is_forward_to_outer_group":false,
+         "outer_group_id":null,
+         "strategy":"enterprise",
+         "ring_back_id":"",
+         "ring_back_name":null,
+         "is_answer":"false",
+         "target_timeout_type":"",
+         "target_timeout":"",
+         "target_timeout_name":null,
+         "ring_group_type":0,
+         "ring_group_wait_time":0,
+         "ring_group_wait_time_sequence":0,
+         "ring_group_type_result":null,
+         "enable_criteria":false,
+         "criterias":[
+            
+         ]
+      },
+      {
+         "_id":"62ff119508d4bf3ea694a44a",
+         "tenant_id":"6209c98461c1cb163ded25f7",
+         "group_name":"Nhóm CSKH",
+         "group_name_unsigned":"Nhom CSKH",
+         "group_number":"54807",
+         "created_date":1660883349783,
+         "last_updated_date":1660883349783,
+         "create_by":{
+            "id":"6209c98561c1cb163ded25fa",
+            "name":"OMI Hotline"
+         },
+         "last_update_by":null,
+         "is_deleted":false,
+         "note":null,
+         "members":[
+            {
+               "agent_id":"6209c98561c1cb163ded25fa",
+               "contact_id":"6209c98c067f745da47367d1",
+               "order":0,
+               "view":null,
+               "timeout":30,
+               "sip_user":null,
+               "hold_music_id":null
+            }
+         ],
+         "is_forward_to_user_owner":null,
+         "is_forward_to_outer_group":false,
+         "outer_group_id":null,
+         "strategy":"enterprise",
+         "ring_back_id":"",
+         "ring_back_name":null,
+         "is_answer":"false",
+         "target_timeout_type":"",
+         "target_timeout":"",
+         "target_timeout_name":null,
+         "ring_group_type":0,
+         "ring_group_wait_time":0,
+         "ring_group_wait_time_sequence":2,
+         "ring_group_type_result":null,
+         "enable_criteria":false,
+         "criterias":[
+            
+         ]
+      }
+   ],
+   "key_enabled":false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
