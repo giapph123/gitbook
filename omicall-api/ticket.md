@@ -88,6 +88,14 @@ Email nhân viên được gán
 Email nhân viên tạo ticket, nếu rỗng thì là Admin 
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="ticket_category_id" type="String" %}
+Id chủ đề (API danh sách chủ đề)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="type_uuid" type="String" %}
+UUID của phân loại, (Trong API danh sách chủ đề )
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```javascript
 {
