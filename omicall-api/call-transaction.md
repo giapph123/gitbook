@@ -89,6 +89,16 @@ Số điện thoại gọi đi
 Số điện thoại nhận
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="sip_numbers" type="array" %}
+Danh sách số hotline
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="queue_destination" type="array" %}
+Danh sách số nhóm nội bộ (Hàng đợi)
+
+_API Tổng đài >> Nhóm nội bộ_
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="Danh sách cuộc gọi" %}
 ```
 {
