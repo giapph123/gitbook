@@ -22,7 +22,7 @@ SDK Kit hỗ trợ Omi OO
 * Bước cuối cùng cần vào phần cài đặt Target của Project để cấu hình framework chọn option Embed & Sign framework như hình:
 *
 
-    <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Cách 2: Cài đặt tự động
 

@@ -27,6 +27,20 @@ Thực hiện từng bước này như sau.
 
 <figure><img src="../../../.gitbook/assets/Picture2 (1).jpg" alt=""><figcaption></figcaption></figure>
 
+**Thêm Quyền truy cập Microphone/Camera cho ứng dụng**&#x20;
+
+`Mở file cấu hình info.plist để thêm các key sau vào cấu hình`
+
+<mark style="color:blue;">**`<key>`**</mark><mark style="color:blue;">`NSMicrophoneUsageDescription`</mark><mark style="color:blue;">**`</key>`**</mark>
+
+<mark style="color:blue;">**`<string>`**</mark><mark style="color:blue;">`Need microphone access for make Call`</mark><mark style="color:blue;">**`</string>`**</mark>
+
+<mark style="color:blue;">**`<key>`**</mark><mark style="color:blue;">`NSCameraUsageDescription`</mark><mark style="color:blue;">**`</key>`**</mark>
+
+<mark style="color:blue;">**`<string>`**</mark><mark style="color:blue;">`Need camera access for video call functions`</mark><mark style="color:blue;">**`</string>`**</mark>
+
+****
+
 **Tạo chứng chỉ dịch vụ VoIP**
 
 Để tạo Chứng chỉ dịch vụ VoIP, hãy tạo yêu cầu ký chứng chỉ (CSR), sau đó tạo chứng chỉ dịch vụ bằng CSR.
@@ -94,13 +108,13 @@ Yêu cầu ký chứng chỉ (CSR) là điều kiện tiên quyết để tạo 
 6. Nhập tên cho hồ sơ cấp phép.
 7. Nhấp vào Tải xuống để tải xuống và lưu hồ sơ đã tạo.
 
-![](../../../.gitbook/assets/Picture12.jpg)
+<figure><img src="../../../.gitbook/assets/Picture12.jpg" alt=""><figcaption></figcaption></figure>
 
 **Để thiết lập hồ sơ cấp phép cho môi trường Triển khai ( Production)**
 
 1. Nếu bạn định gửi ứng dụng của mình lên cửa hàng ứng dụng, hãy chọn Cửa hàng ứng dụng trong Phân phối cho môi trường sản xuất. Nếu không, hãy chọn loại phân phối Ad Hoc.
 
-![](../../../.gitbook/assets/Picture13.jpg)
+<figure><img src="../../../.gitbook/assets/Picture13.jpg" alt=""><figcaption></figcaption></figure>
 
 1. Nhấp vào Tiếp tục.
 2. Chọn ID ứng dụng của bạn.
@@ -108,7 +122,7 @@ Yêu cầu ký chứng chỉ (CSR) là điều kiện tiên quyết để tạo 
 4. Nhập tên cho hồ sơ cấp phép.
 5. Nhấp vào Tải xuống để tải xuống và lưu hồ sơ đã tạo.
 
-![](../../../.gitbook/assets/Picture14.jpg)
+<figure><img src="../../../.gitbook/assets/Picture14.jpg" alt=""><figcaption></figcaption></figure>
 
 **Ghi chú:**
 
@@ -118,10 +132,14 @@ Tệp được tải xuống với phần mở rộng .mobileprovision.
 
 Để tạo thông tin đăng nhập đẩy với Chứng chỉ dịch vụ VoIP của bạn:
 
-1. Xuất Chứng chỉ dịch vụ VoIP của bạn dưới dạng **.p12** tệp từ Truy cập chuỗi khóa.\
-   ![](../../../.gitbook/assets/Picture15.jpg)
-2. Nhập tên duy nhất cho chứng chỉ, sau đó nhấp vào Lưu.\
-   ![](../../../.gitbook/assets/Picture16.jpg)
+1.  Xuất Chứng chỉ dịch vụ VoIP của bạn dưới dạng **.p12** tệp từ Truy cập chuỗi khóa.\
+
+
+    <figure><img src="../../../.gitbook/assets/Picture15.jpg" alt=""><figcaption></figcaption></figure>
+2.  Nhập tên duy nhất cho chứng chỉ, sau đó nhấp vào Lưu.\
+
+
+    <figure><img src="../../../.gitbook/assets/Picture16.jpg" alt=""><figcaption></figcaption></figure>
 
 **Ghi chú:**
 
@@ -162,11 +180,13 @@ Bạn có thể thay đổi môi trường từ thử nghiệm ( Sandbox) sang T
 2. Từ tệp khóa ( Key ), chỉ lấy nội dung khoá từ —–BEGIN RSA PRIVATE RSA—– và —–END RSA PRIVATE RSA—–.
 3. Trong bảng điều khiển OMICALL, đi tới [Cài đặt -> Tích hợp](https://ocp52033.omicrm.vn/config/company/integrated/api) .&#x20;
 
-&#x20;![](../../../.gitbook/assets/Picture18.png)
+&#x20;
+
+<figure><img src="../../../.gitbook/assets/Picture18.png" alt=""><figcaption></figcaption></figure>
 
 Chọn tiếp Chỉnh sửa -> Nhấn nút thêm chứng chỉ
 
-![](../../../.gitbook/assets/Picture19.png)
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Đối với IOS chúng ta chọn APNS và Android là FCM
 
