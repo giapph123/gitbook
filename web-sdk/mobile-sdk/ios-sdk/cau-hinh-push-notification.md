@@ -31,15 +31,14 @@ Thực hiện từng bước này như sau.
 
 `Mở file cấu hình info.plist để thêm các key sau vào cấu hình`
 
-<mark style="color:blue;">**`<key>`**</mark><mark style="color:blue;">`NSMicrophoneUsageDescription`</mark><mark style="color:blue;">**`</key>`**</mark>
+```markup
+<key>NSMicrophoneUsageDescription</key>
+<string>Need microphone access for make Call</string>
+<key>NSCameraUsageDescription</key>
+<string>Need camera access for video call functions</string>
+```
 
-<mark style="color:blue;">**`<string>`**</mark><mark style="color:blue;">`Need microphone access for make Call`</mark><mark style="color:blue;">**`</string>`**</mark>
-
-<mark style="color:blue;">**`<key>`**</mark><mark style="color:blue;">`NSCameraUsageDescription`</mark><mark style="color:blue;">**`</key>`**</mark>
-
-<mark style="color:blue;">**`<string>`**</mark><mark style="color:blue;">`Need camera access for video call functions`</mark><mark style="color:blue;">**`</string>`**</mark>
-
-****
+<mark style="color:blue;">**``**</mark>
 
 **Tạo chứng chỉ dịch vụ VoIP**
 
@@ -186,7 +185,7 @@ Bạn có thể thay đổi môi trường từ thử nghiệm ( Sandbox) sang T
 
 Chọn tiếp Chỉnh sửa -> Nhấn nút thêm chứng chỉ
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Đối với IOS chúng ta chọn APNS và Android là FCM
 

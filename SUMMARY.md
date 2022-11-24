@@ -31,6 +31,8 @@
   * [IOS SDK](web-sdk/mobile-sdk/ios-sdk/README.md)
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/ios-sdk/cau-hinh-push-notification.md)
     * [Cài đặt](web-sdk/mobile-sdk/ios-sdk/cai-dat.md)
+    * [Khởi tạo SDK](web-sdk/mobile-sdk/ios-sdk/khoi-tao-sdk.md)
+    * [Xử lý các sự kiện](web-sdk/mobile-sdk/ios-sdk/xu-ly-cac-su-kien.md)
   * [Android SDK](web-sdk/mobile-sdk/android-sdk/README.md)
     * [Cấu hình SDK](web-sdk/mobile-sdk/android-sdk/cau-hinh-sdk.md)
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/android-sdk/cau-hinh-push-notification.md)
