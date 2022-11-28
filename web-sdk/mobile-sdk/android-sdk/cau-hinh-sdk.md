@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
 2\. Cấu hình trong File build.gradle ở thư mục app như sau :&#x20;
 
-`implementation 'vn.vihat.omicall:omisdk:0.9.0'`
+`implementation 'vn.vihat.omicall:omisdk:0.9.6'`
 
 3\. Add library required by SDK
 
