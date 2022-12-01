@@ -152,7 +152,7 @@ Số máy lẻ nhân viên
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách NHÓM NỘI BỘ" %}
+{% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách NHÓM NỘI BỘ" expanded="false" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -392,6 +392,116 @@ Kích thước trang (mặc định là 10)
         "extension": null
     },
     "key_enabled": false
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/api/call_center/key-interaction/list" baseUrl="[URL]" summary="Danh sách KỊCH BẢN BẤM PHÍM" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="keyword" %}
+Từ khoá tìm kiếm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="page" type="Integer" required="true" %}
+Trang
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="size" type="Integer" required="true" %}
+Kích thước trang
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+   "status_code":9999,
+   "instance_id":"stg",
+   "instance_version":"1.2.163",
+   "payload":{
+      "items":[
+         {
+            "_id":"632969ce7534d97b0933d51d",
+            "tenant_id":"6209c98461c1cb163ded25f7",
+            "script_name":"KỊCH BẢN BẤM PHÍM",
+            "script_name_unsigned":"KICH BAN BAM PHIM",
+            "script_number":"166780",
+            "greeting_id":"6209c99b067f745da47367f3",
+            "greeting_name":null,
+            "greeting_short_id":"",
+            "greeting_short_name":null,
+            "note":null,
+            "created_date":1663658446348,
+            "created_by":{
+               "id":"6209c98561c1cb163ded25fa",
+               "name":"OMI Hotline"
+            },
+            "last_updated_date":1663658542212,
+            "last_updated_by":{
+               "id":"6209c98561c1cb163ded25fa",
+               "name":"OMI Hotline"
+            },
+            "is_deleted":false,
+            "scripts":[
+               {
+                  "key":null,
+                  "action_type":"Ring_group",
+                  "action":"62ff119508d4bf3ea694a44a",
+                  "action_name":null,
+                  "ivr":"1"
+               },
+               {
+                  "key":null,
+                  "action_type":"Ring_group",
+                  "action":"62ff119508d4bf3ea694a44a",
+                  "action_name":null,
+                  "ivr":"2"
+               },
+               {
+                  "key":null,
+                  "action_type":"",
+                  "action":"",
+                  "action_name":null,
+                  "ivr":"3"
+               },
+               {
+                  "key":null,
+                  "action_type":"",
+                  "action":"",
+                  "action_name":null,
+                  "ivr":"4"
+               },
+               {
+                  "key":null,
+                  "action_type":"",
+                  "action":"",
+                  "action_name":null,
+                  "ivr":"5"
+               }
+            ],
+            "time_out":3,
+            "action_type":"",
+            "action":"",
+            "action_name":null,
+            "invalid_sound_id":"",
+            "invalid_sound_name":null,
+            "max_failure":1,
+            "ivr_direct_menu_dial":null
+         }
+      ],
+      "page_number":1,
+      "page_size":10,
+      "total_items":1,
+      "total_pages":1,
+      "has_next":false,
+      "next_page":1,
+      "has_previous":false,
+      "previous_page":1,
+      "extension":null
+   },
+   "key_enabled":false
 }
 ```
 {% endswagger-response %}
