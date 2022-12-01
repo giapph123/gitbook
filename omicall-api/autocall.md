@@ -98,159 +98,36 @@ Tên của phiên gọi tự động
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="template_dialplans" type="array" %}
-Cấu trúc phiên gọi tự động theo loại. 
-
+Cấu trúc phiên gọi tự động theo loại. \
+_1. Phiên gọi tự động với file ghi âm_\
+`[{`\
+&#x20; `"target_type" : "Recording",`\
+&#x20; `"target":"5ed0c6dffb7b390007e111"`\
+`}]`\
+target_: Là Id của file ghi âm được lấy từ  chức năng_\
+**Cấu hình >> Tổng đài >> File ghi âm**\
 \
-
-
-
-
-_1. Phiên gọi tự động với file ghi âm_
-
+_2. Phiên gọi tự động  với Text To Speech_\
+`[{`\
+&#x20;  `"target_type":"Text_variable"`\
+`}]`\
 \
-
-
-
-
-`[{`
-
-\
-
-
-  
-
-`"target_type" : "Recording",`
-
-\
-
-
-  
-
-`"target":"5ed0c6dffb7b390007e111"`
-
-\
-
-
-`}]`
-
-\
-
-
-target
-
-_: Là Id của file ghi âm được lấy từ  chức năng_
-
-\
-
-
-
-
-**Cấu hình >> Tổng đài >> File ghi âm**
-
-\
-
-
-
-
-\
-
-
-
-
-_2. Phiên gọi tự động  với Text To Speech_
-
-\
-
-
-
-
-`[{`
-
-\
-
-
-   
-
-`"target_type":"Text_variable"`
-
-\
-
-
-`}]`
-
-\
-
-
-
-
-\
-
-
-
-
-_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự_
-
- 
-
-\
-
-
-
-
-`[{`
-
- 
-
-\
-
-
-   
-
-`"target_type":"Text_variable"`
-
- 
-
-\
-
-
- 
-
-`},`
-
- 
-
-\
-
-
- 
-
-`{`
-
- 
-
-\
-
-
-    
-
-`"target_type":"Recording",`
-
-   
-
-\
-
-
-    
-
-`"target":"5ed0c6dffb7b390007e5211"`
-
- 
-
-\
-
-
- 
-
+_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự_ \
+`[{` \
+&#x20;  `"target_type":"Text_variable"` \
+&#x20;`},` \
+&#x20;`{` \
+&#x20;   `"target_type":"Recording",`   \
+&#x20;   `"target":"5ed0c6dffb7b390007e5211"` \
+&#x20;`}]`
+
+__
+
+_4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
+
+`[{`\
+&#x20; `"target_type" : "Ivr_menu",`\
+&#x20; `"target":"5ed0c6dffb7b390007e111"`\
 `}]`
 {% endswagger-parameter %}
 
@@ -404,6 +281,23 @@ Khoảng cách giữa các lần gọi lại . Mặc định là 0
       "HHKKK",
       "Tổng giá trị",
       "90000"
+   ]
+}
+```
+
+Ví dụ về phiên gọi tự động : **Kịch bản bấm phím**
+
+```
+{
+   "name":"Tên phiên gọi tự động",
+   "template_dialplans":[
+     { 
+       "target_type":"Ivr_menu",   
+       // Id phiên bấm phím,
+       // API : Tổng đài >> Danh sách kịch bản bấm phím
+       "target":"5e9eac95e44159000710f0xxx"  
+    }],
+   "variables" : [
    ]
 }
 ```
