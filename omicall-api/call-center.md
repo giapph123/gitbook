@@ -717,3 +717,36 @@ Kích thước trang
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/api/call_center/key-interaction/add" baseUrl="[URL]" summary="Tạo mới KỊCH BẢN BẤM PHÍM" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="script_name" type="String" required="true" %}
+Tên kịch bản bấm phím (Chú ý không được trùng)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="max_failure" type="Integer" required="true" %}
+Số lần nhấn sai phím
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="time_out" type="Integer" required="true" %}
+Thời gian chờ KH bấm phím,  hoặc Khi  kết thúc file ghi âm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="scripts" type="Array" required="true" %}
+Danh sách mảng đối tượng phím
+
+{
+
+&#x20;  "ivr" : "", //Tên phím 1,2,3..
+
+&#x20;   "action": "xxxxxxxx" // Id của nhóm nội bộ
+
+&#x20; "action\_type":"Ring\_group"
+
+}
+{% endswagger-parameter %}
+{% endswagger %}
+
