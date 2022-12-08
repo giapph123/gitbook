@@ -775,8 +775,18 @@ Số lần nhấn sai phím
 Thời gian chờ KH nhấn phím hoặc lời chào kết thúc
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="scripts" type="Array" %}
+{% swagger-parameter in="body" name="scripts" type="Array" required="true" %}
+Danh sách mảng đối tượng phím
 
+{
+
+&#x20;  "ivr" : "", //Tên phím 1,2,3..
+
+&#x20;   "action": "xxxxxxxx" // Id của nhóm nội bộ
+
+&#x20; "action\_type":"Ring\_group"
+
+}
 {% endswagger-parameter %}
 {% endswagger %}
 
