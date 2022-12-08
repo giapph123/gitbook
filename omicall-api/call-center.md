@@ -881,3 +881,19 @@ Kích thước trang (mặc định 10)
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="post" path="/api/call_center/greeting/upload" baseUrl="[URL]" summary="Upload file ghi âm" %}
+{% swagger-description %}
+Chú ý : 
+
+**Request là form-data và chỉ hỗ trợ mp3**
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="greeting_name" type="String" required="false" %}
+Tên file
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="file" type="Binary" required="true" %}
+Dữ liệu của file
+{% endswagger-parameter %}
+{% endswagger %}
+
