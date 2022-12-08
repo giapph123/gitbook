@@ -397,6 +397,20 @@ Kích thước trang (mặc định là 10)
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/api/call_center/internal_group/add-members" baseUrl="[URL]" summary="THÊM nhân viên vào NHÓM NỘI BỘ" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="group_id" type="String" required="true" %}
+Id của nhóm nội bộ
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="sip_users" type="Array" required="true" %}
+Danh sách các số máy lẻ , thêm vào nhóm
+{% endswagger-parameter %}
+{% endswagger %}
+
 {% swagger method="get" path="/api/call_center/key-interaction/list" baseUrl="[URL]" summary="Danh sách KỊCH BẢN BẤM PHÍM" %}
 {% swagger-description %}
 
