@@ -718,13 +718,17 @@ Kích thước trang
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/call_center/key-interaction/add" baseUrl="[URL]" summary="Tạo mới KỊCH BẢN BẤM PHÍM" %}
+{% swagger method="post" path="/api/call_center/key-interaction/add" baseUrl="[URL]" summary="Tạo mới KỊCH BẢN BẤM PHÍM" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="script_name" type="String" required="true" %}
 Tên kịch bản bấm phím (Chú ý không được trùng)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="greeting_id" type="String" required="true" %}
+Id của file ghi âm (API upload file ghi âm)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="max_failure" type="Integer" required="true" %}
