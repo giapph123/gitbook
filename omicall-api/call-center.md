@@ -425,6 +425,38 @@ Thời gian chờ TỪNG NHÂN VIÊN
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="post" path="/api/call_center/internal_group/update/:id" baseUrl="[URL]" summary="Cập nhật NHÓM NỘI BỘ" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="group_name" required="true" %}
+Tên nhóm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="strategy" required="true" %}
+Hình thức đổ chuông của nhóm, Một trong các giá trị dưới
+
+**enterprise** : Đồng thời&#x20;
+
+**rollover** : Tuần tự
+
+**random** : Ngẫu nhiên
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="sip_members" required="true" %}
+Danh sách số máy lẻ nhân viên cần thêm vào nhóm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="timeout" type="Integer" required="true" %}
+Thời gian chờ từng nhân viên
+{% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+Id của NHÓM NỘI BỘ
+{% endswagger-parameter %}
+{% endswagger %}
+
 {% swagger method="post" path="/api/call_center/internal_group/add-members" baseUrl="[URL]" summary="THÊM nhân viên vào NHÓM NỘI BỘ" %}
 {% swagger-description %}
 
