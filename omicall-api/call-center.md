@@ -754,3 +754,29 @@ Danh sách mảng đối tượng phím
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="post" path="/api/call_center/key-interaction/update" baseUrl="[URL]" summary="Cập nhật KỊCH BẢN BẤM PHÍM" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="script_name" type="String" required="true" %}
+Tên kịch bản bấm phím
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="greeting_id" type="String" required="true" %}
+Id file ghi âm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="max_failure" type="Integer" required="true" %}
+Số lần nhấn sai phím
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="time_out" type="Integer" required="true" %}
+Thời gian chờ KH nhấn phím hoặc lời chào kết thúc
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="scripts" type="Array" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
+
