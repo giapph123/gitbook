@@ -397,7 +397,7 @@ Kích thước trang (mặc định là 10)
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/call_center/internal_group/add-members" baseUrl="[URL]" summary="THÊM nhân viên vào NHÓM NỘI BỘ" %}
+{% swagger method="post" path="/api/call_center/internal_group/add-members" baseUrl="[URL]" summary="THÊM nhân viên vào NHÓM NỘI BỘ" %}
 {% swagger-description %}
 
 {% endswagger-description %}
