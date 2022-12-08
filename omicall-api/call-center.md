@@ -402,11 +402,11 @@ Kích thước trang (mặc định là 10)
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="group_name" required="true" %}
+{% swagger-parameter in="body" name="group_name" required="true" type="String" %}
 Tên nhóm
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="strategy" required="true" %}
+{% swagger-parameter in="body" name="strategy" required="true" type="String" %}
 Hình thức đổ chuông của nhóm, Một trong các giá trị dưới
 
 **enterprise** : Đồng thời&#x20;
@@ -430,11 +430,11 @@ Thời gian chờ TỪNG NHÂN VIÊN
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="group_name" required="true" %}
+{% swagger-parameter in="body" name="group_name" required="true" type="String" %}
 Tên nhóm
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="strategy" required="true" %}
+{% swagger-parameter in="body" name="strategy" required="true" type="String" %}
 Hình thức đổ chuông của nhóm, Một trong các giá trị dưới
 
 **enterprise** : Đồng thời&#x20;
@@ -444,7 +444,7 @@ Hình thức đổ chuông của nhóm, Một trong các giá trị dưới
 **random** : Ngẫu nhiên
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sip_members" required="true" %}
+{% swagger-parameter in="body" name="sip_members" required="true" type="String" %}
 Danh sách số máy lẻ nhân viên cần thêm vào nhóm
 {% endswagger-parameter %}
 
@@ -452,7 +452,7 @@ Danh sách số máy lẻ nhân viên cần thêm vào nhóm
 Thời gian chờ từng nhân viên
 {% endswagger-parameter %}
 
-{% swagger-parameter in="path" name="id" required="true" %}
+{% swagger-parameter in="path" name="id" required="true" type="String" %}
 Id của NHÓM NỘI BỘ
 {% endswagger-parameter %}
 {% endswagger %}
