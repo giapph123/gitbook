@@ -515,6 +515,69 @@ Thời gian chờ từng nhân viên
 {% swagger-parameter in="path" name="id" required="true" type="String" %}
 Id của NHÓM NỘI BỘ
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+````javascript
+```json
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": {
+        "_id": "6391f5be232ce4664531e0cc",
+        "tenant_id": "6209c98461c1cb163ded25f7",
+        "group_name": "tientv11",
+        "group_name_unsigned": "tientv11",
+        "group_number": "22412",
+        "created_date": 1670510011881,
+        "last_updated_date": 1670510241349,
+        "create_by": {
+            "id": "6209c98561c1cb163ded25fa",
+            "name": "OMI Hotline"
+        },
+        "last_update_by": {
+            "id": "6209c98561c1cb163ded25fa",
+            "name": "OMI Hotline"
+        },
+        "is_deleted": false,
+        "note": null,
+        "members": [
+            {
+                "agent_id": "6209c98561c1cb163ded25fa",
+                "contact_id": "6209c98c067f745da47367d1",
+                "order": 0,
+                "view": null,
+                "timeout": 30,
+                "sip_user": null,
+                "hold_music_id": null
+            }
+        ],
+        "is_forward_to_user_owner": null,
+        "is_forward_to_outer_group": false,
+        "outer_group_id": null,
+        "strategy": "enterprise",
+        "ring_back_id": "",
+        "ring_back_name": null,
+        "is_answer": "false",
+        "target_timeout_type": "",
+        "target_timeout": "",
+        "target_timeout_name": null,
+        "ring_group_type": 0,
+        "ring_group_wait_time": 0,
+        "ring_group_wait_time_sequence": 0,
+        "ring_group_type_result": null,
+        "enable_criteria": false,
+        "criterias": [],
+        "sip_members": [
+            "100"
+        ],
+        "timeout": 30
+    },
+    "key_enabled": false
+}
+```
+````
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="post" path="/api/call_center/internal_group/add-members" baseUrl="[URL]" summary="THÊM nhân viên vào NHÓM NỘI BỘ" %}
