@@ -423,6 +423,66 @@ Danh sách số máy lẻ nhân viên cần thêm vào nhóm
 {% swagger-parameter in="body" name="timeout" type="Integer" required="true" %}
 Thời gian chờ TỪNG NHÂN VIÊN
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+````javascript
+```json
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": {
+        "_id": "6391f5be232ce4664531e0cc",
+        "tenant_id": "6209c98461c1cb163ded25f7",
+        "group_name": "tientv11",
+        "group_name_unsigned": "tientv11",
+        "group_number": "22412",
+        "created_date": 1670510011881,
+        "last_updated_date": 1670510011881,
+        "create_by": {
+            "id": "6209c98561c1cb163ded25fa",
+            "name": "OMI Hotline"
+        },
+        "last_update_by": null,
+        "is_deleted": false,
+        "note": null,
+        "members": [
+            {
+                "agent_id": "6209c98561c1cb163ded25fa",
+                "contact_id": "6209c98c067f745da47367d1",
+                "order": 0,
+                "view": null,
+                "timeout": 30,
+                "sip_user": null,
+                "hold_music_id": null
+            }
+        ],
+        "is_forward_to_user_owner": null,
+        "is_forward_to_outer_group": false,
+        "outer_group_id": null,
+        "strategy": "random",
+        "ring_back_id": null,
+        "ring_back_name": null,
+        "is_answer": null,
+        "target_timeout_type": null,
+        "target_timeout": null,
+        "target_timeout_name": null,
+        "ring_group_type": null,
+        "ring_group_wait_time": null,
+        "ring_group_wait_time_sequence": null,
+        "ring_group_type_result": null,
+        "enable_criteria": null,
+        "criterias": null,
+        "sip_members": [
+            "100"
+        ],
+        "timeout": 30
+    },
+    "key_enabled": false
+}
+```
+````
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="post" path="/api/call_center/internal_group/update/:id" baseUrl="[URL]" summary="Cập nhật NHÓM NỘI BỘ" %}
