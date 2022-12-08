@@ -790,3 +790,94 @@ Danh sách mảng đối tượng phím
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="get" path="/api/call_center/greeting/list" baseUrl="[URL]" summary="Danh sách file ghi âm" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="page" type="Integer" required="true" %}
+Trang (bắt đầu từ 1)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="size" type="Integer" required="true" %}
+Kích thước trang (mặc định 10)
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+````javascript
+
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": {
+        "items": [
+            {
+                "_id": "6391f975b4c5c92743725fa3",
+                "created_date": 1670510965969,
+                "last_updated_date": 1670510965977,
+                "create_by": null,
+                "last_update_by": null,
+                "tenant_id": "6209c98461c1cb163ded25f7",
+                "greeting_name": "Name 1",
+                "greeting_name_unsigned": "name 1",
+                "formality": "Robot đọc",
+                "recording_file": "6c0d4c55-d837-4ae5-835e-c16180b09e51.mp3",
+                "content": "Name 1",
+                "voice": "banmai",
+                "speed": 0,
+                "is_deleted": false,
+                "is_hidden_in_list": null
+            },
+            {
+                "_id": "634944c8df71333e7787e03d",
+                "created_date": 1665746120033,
+                "last_updated_date": 1665746120033,
+                "create_by": null,
+                "last_update_by": null,
+                "tenant_id": "6209c98461c1cb163ded25f7",
+                "greeting_name": "Thêm mới thành công",
+                "greeting_name_unsigned": "them moi thanh cong",
+                "formality": "Robot đọc",
+                "recording_file": "d1969275-e403-438f-935c-6425d1550692.mp3",
+                "content": "Thêm mới thành công",
+                "voice": "banmai",
+                "speed": 0,
+                "is_deleted": false,
+                "is_hidden_in_list": null
+            },
+            {
+                "_id": "634944a5823f5332401ec9c3",
+                "created_date": 1665746085884,
+                "last_updated_date": 1665746085884,
+                "create_by": null,
+                "last_update_by": null,
+                "tenant_id": "6209c98461c1cb163ded25f7",
+                "greeting_name": "Thêm mới",
+                "greeting_name_unsigned": "them moi",
+                "formality": "Robot đọc",
+                "recording_file": "d8bc922b-cabf-4e28-8198-6021f5b82c14.mp3",
+                "content": "Thêm mới thành công hay thất bại",
+                "voice": "banmai",
+                "speed": 0,
+                "is_deleted": false,
+                "is_hidden_in_list": null
+            }
+        ],
+        "page_number": 1,
+        "page_size": 3,
+        "total_items": 13,
+        "total_pages": 5,
+        "has_next": true,
+        "next_page": 2,
+        "has_previous": false,
+        "previous_page": 1,
+        "extension": null
+    },
+    "key_enabled": false
+}
+```
+````
+{% endswagger-response %}
+{% endswagger %}
+
