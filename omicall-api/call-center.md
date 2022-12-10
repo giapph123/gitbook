@@ -613,7 +613,7 @@ Danh sách số máy lẻ nhân viên cần xoá
 
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="keyword" %}
+{% swagger-parameter in="query" name="keyword" type="String" %}
 Từ khoá tìm kiếm
 {% endswagger-parameter %}
 
@@ -742,16 +742,91 @@ Thời gian chờ KH bấm phím,  hoặc Khi  kết thúc file ghi âm
 {% swagger-parameter in="body" name="scripts" type="Array" required="true" %}
 Danh sách mảng đối tượng phím
 
+Cách loại kịch bản đi kèm với phím bấm.\
+**Thành phần là nhóm nội bộ**
+
 {
 
 &#x20;  "ivr" : "", //Tên phím 1,2,3..
 
 &#x20;   "action": "xxxxxxxx" // Id của nhóm nội bộ
 
-&#x20; "action\_type":"Ring\_group"
+&#x20; "action\_type":"_Ring\_group_"
 
 }
+
+**Thành phần là kịch bản bấm phím**&#x20;
+
+{
+
+&#x20;  "ivr" : "", //Tên phím 1,2,3..
+
+&#x20;   "action": "xxxxxxxx" // Id Kịch bản bấm phím.
+
+&#x20; "action\_type":"_Ivr\_menu_"
+
+}
+
+
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+   "status_code":9999,
+   "instance_id":"stg",
+   "instance_version":"1.2.163",
+   "payload":{
+      "_id":"632969ce7534d97b0933d51d",
+      "tenant_id":"6209c98461c1cb163ded25f7",
+      "script_name":"KỊCH BẢN BẤM PHÍM",
+      "script_name_unsigned":"KICH BAN BAM PHIM",
+      "script_number":"166780",
+      "greeting_id":"62da34652a310904dfbbf13b",
+      "greeting_name":null,
+      "greeting_short_id":"",
+      "greeting_short_name":null,
+      "note":null,
+      "created_date":1663658446348,
+      "created_by":{
+         "id":"6209c98561c1cb163ded25fa",
+         "name":"OMI Hotline"
+      },
+      "last_updated_date":1670644627322,
+      "last_updated_by":{
+         "id":"6209c98561c1cb163ded25fa",
+         "name":"OMI Hotline"
+      },
+      "is_deleted":false,
+      "scripts":[
+         {
+            "key":null,
+            "action_type":"Ivr_menu",
+            "action":"6391fa5f44b0fb4429b580c0",
+            "action_name":null,
+            "ivr":"1"
+         },
+         {
+            "key":null,
+            "action_type":"",
+            "action":"",
+            "action_name":null,
+            "ivr":"5"
+         }
+      ],
+      "time_out":3,
+      "action_type":"",
+      "action":"",
+      "action_name":null,
+      "invalid_sound_id":"6209c99b067f745da47367f3",
+      "invalid_sound_name":null,
+      "max_failure":1,
+      "ivr_direct_menu_dial":"false"
+   },
+   "key_enabled":false
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="post" path="/api/call_center/key-interaction/update" baseUrl="[URL]" summary="Cập nhật KỊCH BẢN BẤM PHÍM" %}
@@ -788,6 +863,64 @@ Danh sách mảng đối tượng phím
 
 }
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+   "status_code":9999,
+   "instance_id":"stg",
+   "instance_version":"1.2.163",
+   "payload":{
+      "_id":"632969ce7534d97b0933d51d",
+      "tenant_id":"6209c98461c1cb163ded25f7",
+      "script_name":"KỊCH BẢN BẤM PHÍM",
+      "script_name_unsigned":"KICH BAN BAM PHIM",
+      "script_number":"166780",
+      "greeting_id":"62da34652a310904dfbbf13b",
+      "greeting_name":null,
+      "greeting_short_id":"",
+      "greeting_short_name":null,
+      "note":null,
+      "created_date":1663658446348,
+      "created_by":{
+         "id":"6209c98561c1cb163ded25fa",
+         "name":"OMI Hotline"
+      },
+      "last_updated_date":1670644627322,
+      "last_updated_by":{
+         "id":"6209c98561c1cb163ded25fa",
+         "name":"OMI Hotline"
+      },
+      "is_deleted":false,
+      "scripts":[
+         {
+            "key":null,
+            "action_type":"Ivr_menu",
+            "action":"6391fa5f44b0fb4429b580c0",
+            "action_name":null,
+            "ivr":"1"
+         },
+         {
+            "key":null,
+            "action_type":"",
+            "action":"",
+            "action_name":null,
+            "ivr":"5"
+         }
+      ],
+      "time_out":3,
+      "action_type":"",
+      "action":"",
+      "action_name":null,
+      "invalid_sound_id":"6209c99b067f745da47367f3",
+      "invalid_sound_name":null,
+      "max_failure":1,
+      "ivr_direct_menu_dial":"false"
+   },
+   "key_enabled":false
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="get" path="/api/call_center/greeting/list" baseUrl="[URL]" summary="Danh sách file ghi âm" %}
