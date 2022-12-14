@@ -1106,5 +1106,36 @@ Giọng đọc, có thể một trong các giá trị sau
 
  : Giọng nữ miền Nam
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+````javascript
+{
+    "status_code": 9999,
+    "instance_id": "stg",
+    "instance_version": "1.2.163",
+    "payload": {
+        "file": {
+            "_id": "639981151ee2ed6f5bbeea90",
+            "created_date": 1671004437213,
+            "last_updated_date": 1671004437213,
+            "create_by": null,
+            "last_update_by": null,
+            "tenant_id": "6209c98461c1cb163ded25f7",
+            "greeting_name": "Nhắc lịch đào tạo",
+            "greeting_name_unsigned": "Nhac lich dao tao",
+            "formality": "Robot đọc",
+            "recording_file": "a6c2edd9-9af1-4e71-98a7-657c3c1e0466.mp3",
+            "content": "Bạn có một lịch họp sắp đến giờ, bạn vui lòng chú ý thời gian để đến đúng giờ",
+            "voice": "banmai",
+            "speed": 0,
+            "is_deleted": false,
+            "is_hidden_in_list": null
+        }
+    },
+    "key_enabled": false
+}
+```
+````
+{% endswagger-response %}
 {% endswagger %}
 
