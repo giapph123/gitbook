@@ -1047,3 +1047,27 @@ Dữ liệu của file
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="post" path="/api/call_center/greeting/upload-text-to-speech" baseUrl="[URL]" summary="Upload file ghi âm : Robot đọc (Text To Speech)" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="text" type="String" required="true" %}
+Nội dung cần đọc <= 300 ký tự 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="greeting_name" type="String" required="true" %}
+Tên file ghi âm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="speed" type="String" required="true" %}
+Tốc độ đọc
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="voice" type="String" required="true" %}
+Giọng đọc
+{% endswagger-parameter %}
+{% endswagger %}
+
