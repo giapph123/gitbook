@@ -1065,13 +1065,46 @@ Tên file ghi âm
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="speed" type="String" required="true" %}
-Tốc độ đọc
+Tốc độ đọc, Giá trị từ  -3 - 3\
+\- 3 : Cực kì chậm\
+\-2 : Rất chậm\
+\-1 : Chậm\
+0 : Bình thường\
+1 : Nhanh\
+...
 
 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="voice" type="String" required="true" %}
-Giọng đọc
+Giọng đọc, có thể một trong các giá trị sau
+
+\
+
+
+
+
+**banmai**
+
+ : Giọng nữ miền Bắc
+
+\
+
+
+
+
+**leminh**
+
+ : Giọng nam miền Bắc
+
+\
+
+
+
+
+**lannhi**
+
+ : Giọng nữ miền Nam
 {% endswagger-parameter %}
 {% endswagger %}
 
