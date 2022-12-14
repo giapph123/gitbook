@@ -1053,7 +1053,11 @@ Dữ liệu của file
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="text" type="String" required="true" %}
-Nội dung cần đọc <= 300 ký tự 
+Nội dung cần đọc 
+
+**<= 300 ký tự**
+
+ 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="greeting_name" type="String" required="true" %}
