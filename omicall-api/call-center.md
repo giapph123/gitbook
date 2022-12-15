@@ -63,6 +63,7 @@ Kích thước trang, mặc định là 50
                 "sip_user": "147", // Số nội bộ
                 "password": "XXXXXX", // Mật khẩu truy cập
                 "full_name": "Đỗ Thị Hồng Vy", // Họ và tên
+                "agent_id" : "xxx", // Id nhân viên
                 "email": "dohongvyzyt@gmail.com", // Email
                 "public_number":"84256336xxxx", // Đầu số đang sử dụng
                 "last_updated_date": 1575269373331, //Cập nhật lần cuối
@@ -74,6 +75,7 @@ Kích thước trang, mặc định là 50
                 "sip_user": "145",
                 "password": "kiyyzsefxx",
                 "full_name": "Hồng Ngọc",
+                "agent_id" : "xxx", // Id nhân viên
                 "email": "vykh252tn1998@gmail.com",
                 "public_number":"84256336xxxx",
                 "last_updated_date": 1574999296765,
