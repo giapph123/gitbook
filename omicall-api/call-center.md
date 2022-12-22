@@ -831,7 +831,7 @@ Cách loại kịch bản đi kèm với phím bấm.\
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="/api/call_center/key-interaction/update" baseUrl="[URL]" summary="Cập nhật KỊCH BẢN BẤM PHÍM" %}
+{% swagger method="post" path="/api/call_center/key-interaction/update/:id" baseUrl="[URL]" summary="Cập nhật KỊCH BẢN BẤM PHÍM" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -881,6 +881,10 @@ Cách loại kịch bản đi kèm với phím bấm.\
 }
 
 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="id" type="String" %}
+Id kịch bản 
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
