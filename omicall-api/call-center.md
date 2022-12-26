@@ -518,6 +518,22 @@ Thời gian chờ từng nhân viên
 Id của NHÓM NỘI BỘ
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="target_timeout_type" type="String" %}
+Loại kịch bản sẽ chuyển tiếp khi kết thúc nhóm&#x20;
+
+Recording : Lời chào
+
+Ivr\_menu : Tương tác phím
+
+Ring\_group : Nhóm
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="target_timeout" type="String" %}
+Id theo từng loại dữ liệu của 
+
+**target_timeout_type**
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ````javascript
 ```json
@@ -1165,12 +1181,12 @@ Giọng đọc, có thể một trong các giá trị sau
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="delete" path="/api/call_center/greeting/delete/:id" baseUrl="[URL]" summary="" %}
+{% swagger method="delete" path="/api/call_center/greeting/delete/:id" baseUrl="[URL]" summary="Xoá file ghi âm" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="String" %}
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
 Id file ghi âm
 {% endswagger-parameter %}
 {% endswagger %}
