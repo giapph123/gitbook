@@ -4,23 +4,6 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
-### 2.0.0-rc.63 (23/12/2022)
-
-\- **Fix BUG**: không gọi ra được nếu đang set busy = true\
-\- Thêm method **omiSDK.setBusy(Boolean)** và **omiSDK.isBusy()**, thay cho omiSDK.busy như trước đó, hiện sẽ lưu trạng thái busy trong localStorage để đồng bộ trạng thái giữa các tab của trình duyệt, vẫn có thể cập nhật trạng thái busy trong config khi init như cũ
-
-
-
-### 2.0.0-rc.62 (23/12/2022)
-
-\- **Fix BUG**: error trong callback event, chỉ chặn makeCall khi có calling session 1 lần,...\
-\- Support khai báo callback event dạng:\
-&#x20; \+ **omiSDK.on('eventName', callback);**\
-&#x20; \+ **omiSDK.off('eventName');**\
-\- Support UX/UI cho **Salesforce**
-
-
-
 ### 2.0.0-rc.61 (08/10/2022)
 
 \- Cập nhật một số màu cơ bản và bộ icon của theme default\
