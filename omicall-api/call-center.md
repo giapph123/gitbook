@@ -610,6 +610,16 @@ Danh sách số máy lẻ nhân viên cần xoá
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="delete" path="api/call_center/internal_group/delete/:id" baseUrl="[URL]/" summary="XOÁ nhóm nội bộ" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+Id của nhóm
+{% endswagger-parameter %}
+{% endswagger %}
+
 {% swagger method="get" path="/api/call_center/key-interaction/list" baseUrl="[URL]" summary="Danh sách KỊCH BẢN BẤM PHÍM" %}
 {% swagger-description %}
 
@@ -944,6 +954,16 @@ Id kịch bản
 }
 ```
 {% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="delete" path="/api/call_center/key-interaction/delete/:id" baseUrl="[URL]" summary="XOÁ kịch bản bấm phím" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+Id của kịch bản 
+{% endswagger-parameter %}
 {% endswagger %}
 
 {% swagger method="get" path="/api/call_center/greeting/list" baseUrl="[URL]" summary="Danh sách file ghi âm" %}
