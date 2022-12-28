@@ -931,6 +931,14 @@ Recording : Lời chào
 Id của hành động action_type theo các loại tương tứng
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="invalid_sound_id" type="String" %}
+Id của file ghi âm (Nhạc chờ khi nhấn sai phím)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="greeting_short_id" type="String" %}
+Id của file ghi âm( Nhạc chờ khi trở lại tương tác bấm phím)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```javascript
 {
