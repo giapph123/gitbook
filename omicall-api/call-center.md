@@ -798,6 +798,28 @@ Cách loại kịch bản đi kèm với phím bấm.\
 
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="action_type" type="String" %}
+Loại hành động khi không nhấn phím, hoặc nhấn sai phím quá số lần cho phép
+
+Ring\_group : Nhóm nội bộ
+
+Ivr\_menu : Kịch bản bấm phím&#x20;
+
+Recording : Lời chào
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="action" type="String" %}
+Id của hành động action_type theo các loại tương ứng
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="invalid_sound_id" type="String" %}
+Id của file ghi âm (Nhạc chờ khi nhấn sai phím)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="greeting_short_id" type="String" %}
+Id của file ghi âm( Nhạc chờ khi trở lại tương tác bấm phím)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```javascript
 {
@@ -928,7 +950,7 @@ Recording : Lời chào
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="action" type="String" %}
-Id của hành động action_type theo các loại tương tứng
+Id của hành động action_type theo các loại tương ứng
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="invalid_sound_id" type="String" %}
