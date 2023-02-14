@@ -4,6 +4,43 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.0-rc.65 (14/02/2023)
+
+\- Cập nhật **iceServers** IP config\
+\- Thêm **options.showTagField**, thêm nhanh form field với id "**tag**", type "**multiselect**" cho **forms**\
+\- Thêm **options.showInfoLastCall**, search contact ở OMI và info last call của **remoteNumber** đang gọi. Nếu truyền giá trị **{ overrideContact: true }**, sẽ ưu tiên hiển thị contact info từ API, dù trước đó đã dùng **omiSDK.updateContactInfo()**\
+****- Support thêm form field với type "**multiselect**" (thường dùng cho việc gán tag cuộc gọi,...).\
+&#x20; Dùng kèm với các function:\
+&#x20;  \+ **omiSDKTheme.setSelections(id, selections)**\
+&#x20;  \+ **omiSDKTheme.setSelecteds(id, selecteds)**\
+&#x20;   ****    \* **selections và selecteds:** mảng dữ liệu, item có thể là **String** hoặc **Object(label, value)**\
+&#x20;   **\* selecteds** phải là mảng con, thuộc mảng **selections** => dùng **omiSDKTheme.setSelections** trước **omiSDKTheme.setSelecteds**
+
+
+
+### 2.0.0-rc.64 (03/02/2023)
+
+\- **Salesforce:** Support **runApex** trong khi thực hiện cuộc gọi và thêm nút "Logout" ở UI dial
+
+
+
+### 2.0.0-rc.63 (23/12/2022)
+
+\- **Fix BUG**: không gọi ra được nếu đang set busy = true\
+\- Thêm method **omiSDK.setBusy(Boolean)** và **omiSDK.isBusy()**, thay cho omiSDK.busy như trước đó, hiện sẽ lưu trạng thái busy trong localStorage để đồng bộ trạng thái giữa các tab của trình duyệt, vẫn có thể cập nhật trạng thái busy trong config khi init như cũ
+
+
+
+### 2.0.0-rc.62 (23/12/2022)
+
+\- **Fix BUG**: error trong callback event, chỉ chặn makeCall khi có calling session 1 lần,...\
+\- Support khai báo callback event dạng:\
+&#x20; \+ **omiSDK.on('eventName', callback);**\
+&#x20; \+ **omiSDK.off('eventName');**\
+\- Support UX/UI cho **Salesforce**
+
+
+
 ### 2.0.0-rc.61 (08/10/2022)
 
 \- Cập nhật một số màu cơ bản và bộ icon của theme default\
