@@ -4,10 +4,18 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.66 (15/02/2023)
+
+\- Thêm form field id "**note**", type "**text**", multiline, khi không có **forms** và bật cả hai **options.showNoteInput** và **options.showTagField**\
+\- Fix bug không hiển thị contact info khi gọi nội bộ tới chính mình\
+\- Luồng API lưu thông tin cuộc gọi: bổ sung param "**tag**" từ form data, nếu có
+
+
+
 ### 2.0.0-rc.65 (14/02/2023)
 
 \- Cập nhật **iceServers** IP config\
-\- Thêm **options.showTagField**, thêm nhanh form field với id "**tag**", type "**multiselect**" cho **forms**\
+\- Thêm **options.showTagField**, thêm nhanh form field id "**tag**", type "**multiselect**" cho **forms**\
 \- Thêm **options.showInfoLastCall**, search contact ở OMI và info last call của **remoteNumber** đang gọi. Nếu truyền giá trị **{ overrideContact: true }**, sẽ ưu tiên hiển thị contact info từ API, dù trước đó đã dùng **omiSDK.updateContactInfo()**\
 ****- Support thêm form field với type "**multiselect**" (thường dùng cho việc gán tag cuộc gọi,...).\
 &#x20; Dùng kèm với các function:\
