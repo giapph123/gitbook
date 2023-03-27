@@ -149,27 +149,9 @@ _Bạn không cần nhập mật khẩu để tạo tệp .p12. Bấm OK nếu b
 
 **Cập nhật thông tin trên bảng điều khiển OMICALL**
 
-Khóa chứng chỉ và khóa riêng tư cần được tạo từ tệp .p12. Để tạo các tệp:
 
-**1. Tạo khóa chứng chỉ**
 
-Trong cửa sổ dòng lệnh, tạo khóa chứng chỉ bằng cách chạy:
-
-openssl pkcs12 -in VOIP\_SNS.p12 -nokeys -out cert.pem -nodes
-
-**2. Tạo khóa riêng tư**
-
-Tạo khóa cá nhân bằng cách chạy:
-
-openssl pkcs12 -in Certificates.p12 -nocerts -out key.pem -nodes
-
-Sau đó, để xử lý khóa RSA, hãy chạy:
-
-openssl rsa -in key.pem -out key.pem
-
-Khóa RSA và chứng chỉ sẽ được tạo.
-
-**3. Cập nhật thông tin trên bảng điều khiển OMICALL**
+**1. Cập nhật thông tin trên bảng điều khiển OMICALL**
 
 **Ghi chú:**
 
