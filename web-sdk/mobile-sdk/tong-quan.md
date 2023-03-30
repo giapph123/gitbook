@@ -1,10 +1,10 @@
 # Tổng Quan
 
-## SDK Android OMICALL <a href="#plivo-android-sdk" id="plivo-android-sdk"></a>
+## SDK OMICALL <a href="#plivo-android-sdk" id="plivo-android-sdk"></a>
 
-OMICALL Android SDK cho phép bạn tạo các ứng dụng có khả năng thực hiện và nhận cuộc gọi trong ứng dụng Android của bạn. SDK này hỗ trợ cả mạng IPv4 và IPv6, có nghĩa là bạn có thể thực hiện và nhận cuộc gọi khi thiết bị của bạn được kết nối với mạng sử dụng một trong hai hoặc cả hai phiên bản của giao thức. SDK hỗ trợ Android phiên bản 6 trở lên và Android API cấp 21 trở lên.
+OMICALL  SDK cho phép bạn tạo các ứng dụng có khả năng thực hiện và nhận cuộc gọi trong ứng dụng Android/IOS của bạn. SDK này hỗ trợ cả mạng IPv4 và IPv6, có nghĩa là bạn có thể thực hiện và nhận cuộc gọi khi thiết bị của bạn được kết nối với mạng sử dụng một trong hai hoặc cả hai phiên bản của giao thức. **SDK hỗ trợ Android phiên bản 6 trở lên và Android API cấp 21 trở lên với IOS thì hỗ trợ IOS 11 trở lên** .
 
-Phiên bản hiện tại của Android SDK được xây dựng dựa trên giao thức SIP 2.0, với lỗi là WebRTC các bộ mã được hỗ trợ đầy đủ giúp tối ưu hoá chất lượng cuộc gọi như : OPUS/G.711/G711a/G729/GSM
+Phiên bản hiện tại của  SDK được xây dựng dựa trên giao thức SIP 2.0, với lỗi là WebRTC các bộ mã được hỗ trợ đầy đủ giúp tối ưu hoá chất lượng cuộc gọi như : OPUS/G.711/G711a/G729/GSM
 
 ### Điều kiện bắt buộc <a href="#prerequisites" id="prerequisites"></a>
 

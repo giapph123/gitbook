@@ -17,7 +17,7 @@ SDK Kit hỗ trợ Omi OO
 
 * Bước tiếp theo click chuột vào thư mục OmiKit.xcframework sau đó kéo vào bất kỳ nơi nào của Project để sử dụng
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Bước cuối cùng cần vào phần cài đặt Target của Project để cấu hình framework chọn option Embed & Sign framework như hình:
 *
@@ -32,7 +32,7 @@ Trong Podfile chúng ta khai báo bổ sung 1 dòng như sau:
 
 _<mark style="color:blue;">pod 'OmiKit', :git => 'https://github.com/VIHATTeam/OmiKit.git'</mark>_
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * Sau đó vào thư mục gốc chạy lệnh _pod install_ để cài đặt tự động
 

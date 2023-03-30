@@ -28,6 +28,7 @@
 * [Web SDK Changelog](web-sdk/web-sdk-changelog.md)
 * [MOBILE SDK](web-sdk/mobile-sdk/README.md)
   * [Tổng Quan](web-sdk/mobile-sdk/tong-quan.md)
+  * [Tài khoản đăng nhập](web-sdk/mobile-sdk/tai-khoan-dang-nhap.md)
   * [IOS SDK](web-sdk/mobile-sdk/ios-sdk/README.md)
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/ios-sdk/cau-hinh-push-notification.md)
     * [Cài đặt](web-sdk/mobile-sdk/ios-sdk/cai-dat.md)

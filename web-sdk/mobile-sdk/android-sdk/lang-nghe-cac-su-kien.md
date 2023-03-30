@@ -26,17 +26,19 @@ Khi sử dụng SDK các sự kiện từ SDK sẽ được notification ra bằ
 
 `OmiListener`&#x20;
 
-| Tên hàm                 | Mô tả                                                              | Ví dụ                                                                 |
-| ----------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| `onAccountRegistered`   | Sự kiện được gọi khi tài khoản đăng nhập thành công                |                                                                       |
-| onAccountRegisterFailed | Sự kiện được gọi khi tài khoản đăng nhập thất bại                  |                                                                       |
-| onCallEstablished       | Sự kiện được gọi khi cuộc gọi được thiết lập thành công            |                                                                       |
-| onCallEnd               | Sự kiện được gọi khi cuộc gọi kết thúc                             |                                                                       |
-| incomingReceived        | Sự kiện được gọi khi có cuộc gọi đến                               |                                                                       |
-| onRinging               | Cuộc gọi kết nối thành công đang đổ chuông                         |                                                                       |
-| onConnectionTimeout     | Cuộc gọi kết nối thất bại do không nhận được phản hồi của máy chủ  |                                                                       |
-| onHold                  | Cuộc gọi bị giữ lại                                                | <p></p><pre><code>OmiClient.instance.toggleHold()</code></pre><p></p> |
-| onMuted                 | Cuộc gọi bị tắt âm thanh                                           | <pre><code>OmiClient.instance.toggleMute()</code></pre>               |
+| Tên hàm                 | Mô tả                                                              | Ví dụ                                                                  |
+| ----------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| `onAccountRegistered`   | Sự kiện được gọi khi tài khoản đăng nhập thành công                |                                                                        |
+| onAccountRegisterFailed | Sự kiện được gọi khi tài khoản đăng nhập thất bại                  |                                                                        |
+| onCallEstablished       | Sự kiện được gọi khi cuộc gọi được thiết lập thành công            |                                                                        |
+| onCallEnd               | Sự kiện được gọi khi cuộc gọi kết thúc                             |                                                                        |
+| incomingReceived        | Sự kiện được gọi khi có cuộc gọi đến                               |                                                                        |
+| onRinging               | Cuộc gọi kết nối thành công đang đổ chuông                         |                                                                        |
+| onConnectionTimeout     | Cuộc gọi kết nối thất bại do không nhận được phản hồi của máy chủ  |                                                                        |
+| onHold                  | Cuộc gọi bị giữ lại                                                | <p></p><pre><code>OmiClient.instance.toggleHold()
+</code></pre><p></p> |
+| onMuted                 | Cuộc gọi bị tắt âm thanh                                           | <pre><code>OmiClient.instance.toggleMute()
+</code></pre>               |
 
 để làm việc này chúng ta cần thực hiện như sau:
 
@@ -77,11 +79,16 @@ Các sự kiện chúng ta có thể thực hiện để can thiệp vào một 
 
 &#x20;
 
-| Tên hàm    | Mô tả                          | Ví dụ                                                              |
-| ---------- | ------------------------------ | ------------------------------------------------------------------ |
-| pickUp     | chấp nhận cuộc gọi tới         | <pre><code>OmiClient.instance.pickUp()</code></pre>                |
-| decline    | Từ chối cuộc gọi               | <p></p><pre><code>OmiClient.instance.decline()</code></pre><p></p> |
-| hangup     | Tự chối cuộc gọi               | <p></p><pre><code>OmiClient.instance.hangUp()</code></pre><p></p>  |
-| toggleHold | Giữ cuộc gọi hiện tại          | <p></p><pre><code>OmiClient.instance.toggleHold()</code></pre>     |
-| toggleMute | Tắt âm thanh cuộc gọi hiện tại | <pre><code>OmiClient.instance.toggleMute()</code></pre>            |
+| Tên hàm    | Mô tả                          | Ví dụ                                                               |
+| ---------- | ------------------------------ | ------------------------------------------------------------------- |
+| pickUp     | chấp nhận cuộc gọi tới         | <pre><code>OmiClient.instance.pickUp()
+</code></pre>                |
+| decline    | Từ chối cuộc gọi               | <p></p><pre><code>OmiClient.instance.decline()
+</code></pre><p></p> |
+| hangup     | Tự chối cuộc gọi               | <p></p><pre><code>OmiClient.instance.hangUp()
+</code></pre><p></p>  |
+| toggleHold | Giữ cuộc gọi hiện tại          | <p></p><pre><code>OmiClient.instance.toggleHold()
+</code></pre>     |
+| toggleMute | Tắt âm thanh cuộc gọi hiện tại | <pre><code>OmiClient.instance.toggleMute()
+</code></pre>            |
 
