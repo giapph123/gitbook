@@ -38,7 +38,7 @@ Thực hiện từng bước này như sau.
 <string>Need camera access for video call functions</string>
 ```
 
-<mark style="color:blue;">**``**</mark>
+
 
 **Tạo chứng chỉ dịch vụ VoIP**
 

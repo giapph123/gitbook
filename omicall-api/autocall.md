@@ -121,7 +121,7 @@ _3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi 
 &#x20;   `"target":"5ed0c6dffb7b390007e5211"` \
 &#x20;`}]`
 
-__
+
 
 _4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
 

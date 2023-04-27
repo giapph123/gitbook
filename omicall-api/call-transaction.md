@@ -391,3 +391,40 @@ Từ ngày (Timestamp in milliseconds)
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/api/evaluation_criteria/call/list" baseUrl="[URL]" summary="Danh sách tiêu chí đánh giá cuộc gọi" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Access token: Bearer 'token'
+{% endswagger-parameter %}
+{% endswagger %}
+
+{% swagger method="get" path="/api/call_transaction/add_evaluation/:transaction_id" baseUrl="[URL]" summary="Đánh giá cuộc gọi theo tiêu chí " %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="transaction_id" type="String" required="true" %}
+Transaction Id cuộc gọi
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="user_uuid" type="String" required="true" %}
+Id của User bên thứ 3 hoặc Số máy lẻ trong hệ thống
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="evaluation" type="Object" required="true" %}
+Đối tượng chưa thông tin đánh giá, json format như sau
+
+_**(Format như ảnh bên dưới )**_
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Thông tin cuộc gọi + đánh giá" %}
+
+{% endswagger-response %}
+{% endswagger %}
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-04-27 at 8.30.23 AM.png" alt=""><figcaption></figcaption></figure>
+

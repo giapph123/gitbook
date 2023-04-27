@@ -22,7 +22,7 @@ Khi sử dụng SDK các sự kiện từ SDK sẽ được notification ra bằ
 
 * `OmiListener` Lắng nghe các sự kiện trong cuộc gọi
 
-``
+
 
 `OmiListener`&#x20;
 

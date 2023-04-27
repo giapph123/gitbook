@@ -17,11 +17,11 @@ description: Lịch sử cập nhật tính năng của Web SDK
 \- Cập nhật **iceServers** IP config\
 \- Thêm **options.showTagField**, thêm nhanh form field id "**tag**", type "**multiselect**" cho **forms**\
 \- Thêm **options.showInfoLastCall**, search contact ở OMI và info last call của **remoteNumber** đang gọi. Nếu truyền giá trị **{ overrideContact: true }**, sẽ ưu tiên hiển thị contact info từ API, dù trước đó đã dùng **omiSDK.updateContactInfo()**\
-****- Support thêm form field với type "**multiselect**" (thường dùng cho việc gán tag cuộc gọi,...).\
+\- Support thêm form field với type "**multiselect**" (thường dùng cho việc gán tag cuộc gọi,...).\
 &#x20; Dùng kèm với các function:\
 &#x20;  \+ **omiSDKTheme.setSelections(id, selections)**\
 &#x20;  \+ **omiSDKTheme.setSelecteds(id, selecteds)**\
-&#x20;   ****    \* **selections và selecteds:** mảng dữ liệu, item có thể là **String** hoặc **Object(label, value)**\
+&#x20;   \* **selections và selecteds:** mảng dữ liệu, item có thể là **String** hoặc **Object(label, value)**\
 &#x20;   **\* selecteds** phải là mảng con, thuộc mảng **selections** => dùng **omiSDKTheme.setSelections** trước **omiSDKTheme.setSelecteds**
 
 
