@@ -140,6 +140,8 @@ _API Tổng đài >> Nhóm nội bộ_
                         ]
                     }
                 ],
+                "evaluations": null, // Chi tiết về ĐÁNH GIÁ cuộc gọi,
+                "total_evaluate": null, // Điểm trung bình và số lần đánh giá
                 "customer": { // Thông tin khách hàng
                     "full_name": "Trần Văn Tiến",
                     "full_name_unsigned": "Tran Van Tien"
