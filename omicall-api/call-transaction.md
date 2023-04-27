@@ -402,7 +402,7 @@ Access token: Bearer 'token'
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/call_transaction/add_evaluation/:transaction_id" baseUrl="[URL]" summary="Đánh giá cuộc gọi theo tiêu chí " %}
+{% swagger method="post" path="/api/call_transaction/add_evaluation/:transaction_id" baseUrl="[URL]" summary="Đánh giá cuộc gọi theo tiêu chí " %}
 {% swagger-description %}
 
 {% endswagger-description %}
