@@ -154,6 +154,30 @@ Số máy lẻ nhân viên
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="post" path="/api/call_center/hotline/extension/update" baseUrl="[URL]" summary="Cài đặt 1 đầu số, chỉ dùng cho 1 máy nhánh (Extension)" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="hotline" type="String" required="true" %}
+Số hotline
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="sip_user" type="String" required="true" %}
+Số máy nhánh(extension) nhân viên
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="directions" type="Array" required="true" %}
+outbound : Cài đặt cho chiều gọi ra
+
+inbound : Cài đặt cho chiều gọi vào
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+{% endswagger %}
+
 {% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách NHÓM NỘI BỘ" expanded="false" %}
 {% swagger-description %}
 
