@@ -163,8 +163,8 @@ Số máy lẻ nhân viên
 Số hotline
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="sip_user" type="String" required="true" %}
-Số máy nhánh(extension) nhân viên
+{% swagger-parameter in="body" name="user_email" type="String" required="true" %}
+Email nhân viên dùng tổng đài
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="directions" type="Array" required="true" %}
