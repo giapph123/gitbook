@@ -2,7 +2,7 @@
 
 <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
-Hiện tại Omicall hỗ trợ 5 SDK như sau:
+Hiện tại Omicall hỗ trợ 4 SDK cho 4 ngôn ngữ mobile phổ biến nhất như sau:
 
 ### IOS native:
 
@@ -23,3 +23,6 @@ Hiện tại Omicall hỗ trợ 5 SDK như sau:
 * Git: [https://github.com/VIHATTeam/OMICALL-React-Native-SDK](https://github.com/VIHATTeam/OMICALL-React-Native-SDK)
 * NPM: [https://www.npmjs.com/package/omikit-plugin](https://www.npmjs.com/package/omikit-plugin)
 
+
+
+Ngoài ra đối với các ngôn ngữ hybrid có thể dễ dàng wrapper lại native SDK ( android/ios) của omicall để thực hiện cuộc gọi call/videocall

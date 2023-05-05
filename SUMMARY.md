@@ -28,6 +28,7 @@
 * [Web SDK Changelog](web-sdk/web-sdk-changelog.md)
 * [MOBILE SDK](web-sdk/mobile-sdk/README.md)
   * [Tổng Quan](web-sdk/mobile-sdk/tong-quan.md)
+  * [Tại sao lại sử dụng OMICALL](web-sdk/mobile-sdk/tai-sao-lai-su-dung-omicall.md)
   * [Định nghĩa đầu số](web-sdk/mobile-sdk/dinh-nghia-dau-so.md)
   * [Các SDK Hỗ Trợ](web-sdk/mobile-sdk/cac-sdk-ho-tro.md)
   * [Tài khoản đăng nhập](web-sdk/mobile-sdk/tai-khoan-dang-nhap.md)
