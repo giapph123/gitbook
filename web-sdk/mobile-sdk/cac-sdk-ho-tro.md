@@ -7,8 +7,6 @@ Hiện tại Omicall hỗ trợ 5 SDK như sau:
 * GIT  [https://github.com/VIHATTeam/OmiKit](https://github.com/VIHATTeam/OmiKit)&#x20;
 * Cocoapod: OmiKit
 
-
-
 ### Android Native:
 
 * Git: [https://github.com/VIHATTeam/OMICALL-Android-SDK-Example](https://github.com/VIHATTeam/OMICALL-Android-SDK-Example)
