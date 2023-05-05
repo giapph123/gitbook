@@ -89,7 +89,29 @@ pushkitManager = [[PushKitManager alloc] initWithVoipRegistry:voipRegistry];
 
 ## Bước 4: Khởi tạo thư viện
 
+Có 2 cách khơi tạo:
+
+#### Cách 1: khởi tạo bằng thông tin của số nội bộ ( cấp cho nhân viên - [xem ở đây ](../dinh-nghia-dau-so.md))
+
 ```objectivec
     [OmiClient initWithUsername:@"xx" password:@"xx" realm:@""];
     [OmiClient startOmiService];
 ```
+
+#### Cách 2: khởi tạo bằng apiKey cấp phát cho doanh nghiệp:
+
+Mỗi tài khoản sẽ được cấp một API key để truy cập dịch vụ&#x20;
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**Login SDK bằng lệnh:**
+
+```
+[OmiClient initWithUUID:<#(NSString * _Nonnull)#> fullName:<#(NSString * _Nullable)#> apiKey:<#(NSString * _Nonnull)#>]
+```
+
+Trong đó:
+
+* uuid: là id định dạng của user ( có thể lấy username khách hàng của đối tác tích hợp SDK để làm uuid )
+* fullName: Tên của khách hàng dùng để hiển thị khi có cuộc gọi đến&#x20;
+* apiKey: key dùng để xác minh khách hàng
