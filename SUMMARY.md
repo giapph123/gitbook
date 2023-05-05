@@ -42,6 +42,8 @@
     * [Cấu hình Push Notification](web-sdk/mobile-sdk/android-sdk/cau-hinh-push-notification.md)
     * [Khởi tạo SDK](web-sdk/mobile-sdk/android-sdk/khoi-tao-sdk.md)
     * [Lắng nghe các sự kiện](web-sdk/mobile-sdk/android-sdk/lang-nghe-cac-su-kien.md)
+  * [Flutter SDK](web-sdk/mobile-sdk/flutter-sdk.md)
+  * [React-Native SDK](web-sdk/mobile-sdk/react-native-sdk.md)
 
 ## PARTNER
 
