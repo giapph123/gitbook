@@ -1,5 +1,7 @@
 # Tại sao lại sử dụng OMICALL
 
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
 Ngày nay với sự phát triển của công nghệ để tạo một ứng dụng nghe gọi qua công nghệ Voip là vô cùng đơn giản, chỉ cần vài dòng code là đã có thể thực hiện được.
 
 Tuy nhiên việc áp dụng VOIP vào môi trường production nơi mà mọi sai sót đều phải giảm thiểu tối đa, mọi thông số cần tối ưu hoá, để phù hợp với đại đa số hoàn cảnh thực tế , Điều này đòi hỏi kinh nghiệm và không phải đơn vị/ cá nhân nào cũng có thể làm tốt được.

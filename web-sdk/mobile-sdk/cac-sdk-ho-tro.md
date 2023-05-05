@@ -1,6 +1,6 @@
 # Các SDK Hỗ Trợ
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Hiện tại Omicall hỗ trợ 4 SDK cho 4 ngôn ngữ mobile phổ biến nhất như sau:
 
