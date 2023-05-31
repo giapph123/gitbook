@@ -21,8 +21,8 @@ Access Token: Bearer 'token'
 Mảng email nhân viên
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="ref_codes" type="Array" %}
-Danh sách mã user code từ bên thứ 3
+{% swagger-parameter in="query" name="user_uuids" type="Array" %}
+Username hoặc Usercode của bên thứ 3
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="is_auto_call" type="boolean" %}
