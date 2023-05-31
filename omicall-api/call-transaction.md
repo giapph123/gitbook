@@ -144,6 +144,23 @@ _API Tổng đài >> Nhóm nội bộ_
                         ]
                     }
                 ],
+                "create_by":{ // Thông tin người gọi
+                       "id":"6475adb3600dc522432610f0",
+                       "name":"Nguyen Thi Hoa",
+                       "contact_id":"6475adb0600dc522432610ef",
+                       "avatar":null,
+                       "gender":null,
+                       "uuid":"0383459972",
+                       "type":"extension"
+                },
+                "internal_destination":{ // Thông tin người nhận (cho gọi nội bộ)
+                       "id":"6475ae1a600dc5224326111c",
+                       "contact_id":"6475ae19600dc5224326111b",
+                       "name":"Bui Chi Hau",
+                       "uuid":"0344171555",
+                       "extension":"6350",
+                       "type":"extension"
+                },
                 "evaluations": null, // Chi tiết về ĐÁNH GIÁ cuộc gọi,
                 "total_evaluate": null, // Điểm trung bình và số lần đánh giá
                 "customer": { // Thông tin khách hàng
