@@ -178,6 +178,65 @@ inbound : Cài đặt cho chiều gọi vào
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="get" path="/api/call_center/extensions/detail?type=&keyword=" baseUrl="[URL]" summary="Lấy thông tin tổng đài của 1 user theo loại " %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="type" type="String" required="true" %}
+Gồm các giá trị sau tương ứng với keyword được search&#x20;
+
+**usr\_uuid** : Username từ bên thứ 3
+
+**sip\_user** : Số máy lẻ tổng đài&#x20;
+
+**user\_email**: Email nhân viên
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="keyword" type="String" required="true" %}
+Giá trị tìm kiếm tương ứng với type ở trên 
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+
+```json
+{
+    "instance_id": "stg",
+    "payload": {
+        "extension": "6349",
+        "full_name": "Nguyen Tien",
+        "mail": "contact18_usr_1685433772610@omicallpbx.com",
+        "pbx_account": {
+            "display_name": "6349",
+            "sip_user": "6349",
+            "sip_password": "rvld582289",
+            "sip_web_socket_server": "wss://vh.omicrm.com:7443",
+            "sip_realm": "contact18",
+            "sip_proxy": "<sip:171.244.138.14;transport=udp>",
+            "sip_proxy_port": "",
+            "stun_servers": [],
+            "transport": [
+                "tcp",
+                "udp",
+                "ws",
+                "wss"
+            ],
+            "use_opus": true,
+            "opus_quality": 1
+        },
+        "uuid": "tientv11"
+    },
+    "instance_version": "1.2.164",
+    "key_enabled": false,
+    "status_code": 9999
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 {% swagger method="get" path="/api/call_center/internal_group/list" baseUrl="[URL]" summary="Danh sách NHÓM NỘI BỘ" expanded="false" %}
 {% swagger-description %}
 
