@@ -315,6 +315,10 @@ Mật khẩu đăng nhập, khởi tạo ban đầu
 Email định danh
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="uuid" type="String" %}
+Mã user định danh từ bên thứ 3
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="full_name" type="string" %}
 Họ và tên nhân viên
 {% endswagger-parameter %}
@@ -357,6 +361,7 @@ Họ và tên nhân viên
 | agent\_exists            | Nhân viên đã tồn tại                                                                                                                           |
 | limit\_agent             | Vượt quá giới hạn gói dịch vu                                                                                                                  |
 | invite\_error            | Có lỗi xảy ra khi invite                                                                                                                       |
+| agent\_uuid\_exists      | Nhân viên có mã uuid đã tồn tại trước đó                                                                                                       |
 
 {% swagger baseUrl="[URL]" path="/api/agent/delete?identify_info=" method="delete" summary="Xóa nhân viên" %}
 {% swagger-description %}
