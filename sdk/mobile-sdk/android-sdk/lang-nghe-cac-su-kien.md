@@ -26,19 +26,9 @@ Khi sử dụng SDK các sự kiện từ SDK sẽ được notification ra bằ
 
 `OmiListener`&#x20;
 
-| Tên hàm                 | Mô tả                                                              | Ví dụ                                                                  |
-| ----------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| `onAccountRegistered`   | Sự kiện được gọi khi tài khoản đăng nhập thành công                |                                                                        |
-| onAccountRegisterFailed | Sự kiện được gọi khi tài khoản đăng nhập thất bại                  |                                                                        |
-| onCallEstablished       | Sự kiện được gọi khi cuộc gọi được thiết lập thành công            |                                                                        |
-| onCallEnd               | Sự kiện được gọi khi cuộc gọi kết thúc                             |                                                                        |
-| incomingReceived        | Sự kiện được gọi khi có cuộc gọi đến                               |                                                                        |
-| onRinging               | Cuộc gọi kết nối thành công đang đổ chuông                         |                                                                        |
-| onConnectionTimeout     | Cuộc gọi kết nối thất bại do không nhận được phản hồi của máy chủ  |                                                                        |
-| onHold                  | Cuộc gọi bị giữ lại                                                | <p></p><pre><code>OmiClient.instance.toggleHold()
-</code></pre><p></p> |
-| onMuted                 | Cuộc gọi bị tắt âm thanh                                           | <pre><code>OmiClient.instance.toggleMute()
-</code></pre>               |
+<table><thead><tr><th>Tên hàm</th><th width="214">Mô tả </th><th>Ví dụ</th></tr></thead><tbody><tr><td><code>onAccountRegistered</code></td><td>Sự kiện được gọi khi tài khoản đăng nhập thành công</td><td></td></tr><tr><td>onAccountRegisterFailed</td><td>Sự kiện được gọi khi tài khoản đăng nhập thất bại</td><td></td></tr><tr><td>onCallEstablished</td><td>Sự kiện được gọi khi cuộc gọi được thiết lập thành công</td><td></td></tr><tr><td>onCallEnd</td><td>Sự kiện được gọi khi cuộc gọi kết thúc</td><td></td></tr><tr><td>incomingReceived</td><td>Sự kiện được gọi khi có cuộc gọi đến</td><td></td></tr><tr><td>onRinging</td><td>Cuộc gọi kết nối thành công đang đổ chuông</td><td></td></tr><tr><td>onConnectionTimeout</td><td>Cuộc gọi kết nối thất bại do không nhận được phản hồi của máy chủ </td><td></td></tr><tr><td>onHold</td><td>Cuộc gọi bị giữ lại</td><td><p></p><pre><code>OmiClient.instance.toggleHold()
+</code></pre><p></p></td></tr><tr><td>onMuted</td><td>Cuộc gọi bị tắt âm thanh</td><td><pre><code>OmiClient.instance.toggleMute()
+</code></pre></td></tr></tbody></table>
 
 để làm việc này chúng ta cần thực hiện như sau:
 

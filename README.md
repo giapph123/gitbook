@@ -78,6 +78,6 @@ API lịch sử : Nhận dữ liệu qua API của OMICall
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="web-sdk/overview.md" %}
-[overview.md](web-sdk/overview.md)
+{% content-ref url="sdk/web-sdk.md" %}
+[web-sdk.md](sdk/web-sdk.md)
 {% endcontent-ref %}
