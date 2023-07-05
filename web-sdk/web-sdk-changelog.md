@@ -4,6 +4,13 @@ description: Lịch sử cập nhật tính năng của Web SDK
 
 # Web SDK Changelog
 
+### 2.0.71 (05/07/2023)
+
+\- Bổ sung giao diện chọn đầu số tương tự như phiên bản Web của OMICall\
+\- Fix lỗi hiển thị sai thời gian của thông tin cuộc gọi gần nhất
+
+
+
 ### 2.0.66 (15/02/2023)
 
 \- Thêm form field id "**note**", type "**text**", multiline, khi không có **forms** và bật cả hai **options.showNoteInput** và **options.showTagField**\
