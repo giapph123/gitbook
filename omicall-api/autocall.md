@@ -205,6 +205,10 @@ _4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
 Số máy lẻ nhận cuộc gọi
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="variables" type="Array" required="true" %}
+Mãng giá trị chuỗi, chứa nội dung văn bản cần đọc , nếu kịch bản có chứa Text To Speech 
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 
 
