@@ -209,6 +209,10 @@ Số máy lẻ nhận cuộc gọi
 Mãng giá trị chuỗi, chứa nội dung văn bản cần đọc , nếu kịch bản có chứa Text To Speech 
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="extensions" type="Array" %}
+Danh sách các số máy lẻ nhận cuộc gọi 
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 
 
