@@ -4,7 +4,7 @@ description: API gọi tự động
 
 # Gọi tự động
 
-{% swagger baseUrl="[URL]" path="/api/auto_call/execute_by_phone?phone_number=" method="post" summary="Gọi tự động tới một số điện thoại khách hàng" fullWidth="false" %}
+{% swagger baseUrl="[URL]" path="/api/auto_call/execute_by_phone" method="post" summary="Gọi tự động tới một số điện thoại khách hàng" fullWidth="false" %}
 {% swagger-description %}
 Tạo phiên gọi tự động dựa trên cấu hình & thực thi
 {% endswagger-description %}
@@ -179,7 +179,7 @@ Khoảng cách giữa các lần gọi lại . Mặc định là 0
 
 
 
-{% swagger method="post" path="/api/auto_call/execute_by_extension?exension=" baseUrl="[URL]" summary="Gọi tự động tới 1 máy nhánh (extension) của tổng đài" %}
+{% swagger method="post" path="/api/auto_call/execute_by_extension" baseUrl="[URL]" summary="Gọi tự động tới 1 máy nhánh (extension) của tổng đài" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -201,15 +201,11 @@ _3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi 
 _4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="extension" type="String" required="true" %}
-Số máy lẻ nhận cuộc gọi
-{% endswagger-parameter %}
-
 {% swagger-parameter in="body" name="variables" type="Array" required="true" %}
 Mãng giá trị chuỗi, chứa nội dung văn bản cần đọc , nếu kịch bản có chứa Text To Speech 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="extensions" type="Array" %}
+{% swagger-parameter in="body" name="extensions" type="Array" required="true" %}
 Danh sách các số máy lẻ nhận cuộc gọi 
 {% endswagger-parameter %}
 
