@@ -4,7 +4,7 @@ description: API gọi tự động
 
 # Gọi tự động
 
-{% swagger baseUrl="[URL]" path="/api/auto_call/execute_by_phone?phone_number=" method="post" summary="Tạo phiên gọi tự động" %}
+{% swagger baseUrl="[URL]" path="/api/auto_call/execute_by_phone?phone_number=" method="post" summary="Gọi tự động tới một số điện thoại khách hàng" fullWidth="false" %}
 {% swagger-description %}
 Tạo phiên gọi tự động dựa trên cấu hình & thực thi
 {% endswagger-description %}
@@ -18,37 +18,9 @@ Access Token Bearer token
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="speed" type="number" %}
-Tốc độ đọc, Giá trị từ  -3 - 3 : Mặc định là 0
+Tốc độ đọc.Từ chậm : -3. Đến nhanh : 3.&#x20;
 
-\
-
-
-\- 3 : Cực kì chậm
-
-\
-
-
-\-2 : Rất chậm
-
-\
-
-
-\-1 : Chậm
-
-\
-
-
-0 : Bình thường
-
-\
-
-
-1 : Nhanh
-
-\
-
-
-...
+Mặc định là 0
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="voice" type="string" %}
@@ -98,37 +70,16 @@ Tên của phiên gọi tự động
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="template_dialplans" type="array" %}
-Cấu trúc phiên gọi tự động theo loại. \
+Cấu trúc phiên gọi tự động theo loại. (tham khảo ví dụ)\
 _1. Phiên gọi tự động với file ghi âm_\
-`[{`\
-&#x20; `"target_type" : "Recording",`\
-&#x20; `"target":"5ed0c6dffb7b390007e111"`\
-`}]`\
-target_: Là Id của file ghi âm được lấy từ  chức năng_\
-**Cấu hình >> Tổng đài >> File ghi âm**\
 \
 _2. Phiên gọi tự động  với Text To Speech_\
-`[{`\
-&#x20;  `"target_type":"Text_variable"`\
-`}]`\
 \
-_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự_ \
-`[{` \
-&#x20;  `"target_type":"Text_variable"` \
-&#x20;`},` \
-&#x20;`{` \
-&#x20;   `"target_type":"Recording",`   \
-&#x20;   `"target":"5ed0c6dffb7b390007e5211"` \
-&#x20;`}]`
+_3. Phiên gọi tự động với file ghi âm và Text To Speech._&#x20;
 
 
 
 _4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
-
-`[{`\
-&#x20; `"target_type" : "Ivr_menu",`\
-&#x20; `"target":"5ed0c6dffb7b390007e111"`\
-`}]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="variables" type="string" %}
@@ -221,6 +172,54 @@ Khoảng cách giữa các lần gọi lại . Mặc định là 0
         "autocall_id": "91d3e842-9da2-43ec-8bb1-979c17e817ad",
         "name": "Chiến dịch giới thiệu sản phẩm mới"
     }
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+
+
+{% swagger method="post" path="/api/auto_call/execute_by_extension?exension=" baseUrl="[URL]" summary="Gọi tự động tới 1 máy nhánh (extension) của tổng đài" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="template_dialplans" type="Array" required="true" %}
+Cấu trúc của cuộc gọi , tham khảo ví dụ bên dưới\
+_1. Phiên gọi tự động với file ghi âm_
+
+
+
+_2. Phiên gọi tự động  với Text To Speech_
+
+
+
+_3. Phiên gọi tự động với file ghi âm và Text To Speech. Thực thi theo thứ tự_&#x20;
+
+
+
+_4. Phiên gọi tự động với kịch bản bấm phím_&#x20;
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="extension" type="String" required="true" %}
+Số máy lẻ nhận cuộc gọi
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+
+```json
+{
+    "instance_id": "stg",
+    "payload": {
+        "autocall_uuids": [
+            "f5d39f30-fef7-49df-9ef6-697bf5353983"
+        ],
+        "autocall_id": "64b8117691447377aecac985"
+    },
+    "instance_version": "1.2.164",
+    "key_enabled": false,
+    "status_code": 9999
 }
 ```
 {% endswagger-response %}
