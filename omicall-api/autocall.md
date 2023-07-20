@@ -184,6 +184,10 @@ Khoảng cách giữa các lần gọi lại . Mặc định là 0
 
 {% endswagger-description %}
 
+{% swagger-parameter in="body" name="cid" type="String" %}
+Số hotline gọi ra định danh cho cuộc gọi
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="template_dialplans" type="Array" required="true" %}
 Cấu trúc của cuộc gọi , tham khảo ví dụ bên dưới\
 _1. Phiên gọi tự động với file ghi âm_
