@@ -184,7 +184,7 @@ Khoảng cách giữa các lần gọi lại . Mặc định là 0
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="cid" type="String" %}
+{% swagger-parameter in="body" name="cid" type="String" required="true" %}
 Số hotline gọi ra định danh cho cuộc gọi
 {% endswagger-parameter %}
 
