@@ -178,13 +178,13 @@ _API Tổng đài >> Nhóm nội bộ_
 {% endswagger-response %}
 {% endswagger %}
 
-| Mã Lỗi                       | Mô tả                                                     |
-| ---------------------------- | --------------------------------------------------------- |
-| _limit\_request\_30\_minute_ | Các request cách nhau 30 phút                             |
-| _from\_date\_is\_required_   | Từ ngày là bắt buộc                                       |
-| _to\_date\_is\_required_     | Đến ngày là bắt buộc                                      |
-| _date\_invalid_              | Từ ngày hoặc đến ngày không hợp lệ                        |
-| _date\_is\_too\_long_        | Khoảng cách giữa từ ngày - đến ngày : Chỉ cho phép 3 ngày |
+| Mã Lỗi                       | Mô tả                                                      |
+| ---------------------------- | ---------------------------------------------------------- |
+| _limit\_request\_30\_minute_ | Các request cách nhau 30 phút                              |
+| _from\_date\_is\_required_   | Từ ngày là bắt buộc                                        |
+| _to\_date\_is\_required_     | Đến ngày là bắt buộc                                       |
+| _date\_invalid_              | Từ ngày hoặc đến ngày không hợp lệ                         |
+| _date\_is\_too\_long_        | Khoảng cách giữa từ ngày - đến ngày : Chỉ cho phép 30 ngày |
 
 {% swagger baseUrl="[URL]" path="/api/call_transaction/detail/:transaction_id" method="get" summary="Chi tiết cuộc gọi" %}
 {% swagger-description %}
