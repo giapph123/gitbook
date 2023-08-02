@@ -85,14 +85,6 @@ Từ ngày (Timestamp in milliseconds)
 Đến ngày (Timestamp in milliseconds) 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="source_number" type="string" %}
-Số điện thoại gọi đi
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="destination_number" type="string" %}
-Số điện thoại nhận
-{% endswagger-parameter %}
-
 {% swagger-parameter in="query" name="sip_numbers" type="array" %}
 Danh sách số hotline
 {% endswagger-parameter %}
