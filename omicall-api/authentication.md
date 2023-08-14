@@ -11,7 +11,7 @@ description: >-
 Lấy Access Token thông qua API KEY
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Content-Type" type="string" %}
+{% swagger-parameter in="header" name="Content-Type" type="string" required="true" %}
 application/json
 {% endswagger-parameter %}
 
@@ -41,5 +41,5 @@ API key của doanh nghiệp được cung cấp
 | Tham số       | Mô tả                                                                                                                                                              |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | access\_token | Access token truy cập                                                                                                                                              |
-| access\_type  | <p>Có 2 loại </p><ul><li><strong>normal </strong>: Doanh nghiệp người dùng cuối</li><li><strong>bussiness </strong>: Doanh nghiệp là đối tác của OMICALL</li></ul> |
+| access\_type  | <p>Có 2 loại </p><ul><li><strong>normal</strong> : Doanh nghiệp người dùng cuối</li><li><strong>bussiness</strong> : Doanh nghiệp là đối tác của OMICALL</li></ul> |
 | token\_type   | Bearer                                                                                                                                                             |
