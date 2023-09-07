@@ -16,6 +16,7 @@
 * [Webhooks](omicall-api/webhooks.md)
 * [Click To Call](omicall-api/click-to-call.md)
 * [Ticket](omicall-api/ticket.md)
+* [API tiêu chí kịch bản](omicall-api/api-tieu-chi-kich-ban.md)
 
 ## WEBHOOKS
 
