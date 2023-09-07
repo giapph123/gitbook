@@ -12,7 +12,7 @@ OMICall hỗ trợ gọi API chủ động sang bên đối tác CRM, CMS, ERP .
 4. Trường hợp không có người phụ trách : Trả về empty, hệ thống sẽ tự chuyển vào kịch bản tiếp theo
 5. Timeout request chỉ cho phép là 3s&#x20;
 
-{% swagger method="get" path="get_ower_contact_by_phone?phoneNumber=?" baseUrl="https://demo.crm.com.vn/" summary="API lấy người phụ trách theo số điện thoại" %}
+{% swagger method="get" path="get_owner_contact_by_phone?phoneNumber=?" baseUrl="https://demo.crm.com.vn/" summary="API lấy người phụ trách theo số điện thoại" %}
 {% swagger-description %}
 
 {% endswagger-description %}
