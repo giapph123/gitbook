@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Changelog](chang-log.md)
 
 ## OMICALL API
 

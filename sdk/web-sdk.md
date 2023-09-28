@@ -8,9 +8,9 @@ description: >-
 # Web SDK
 
 ```markup
-Version : 2.0.0
-Release date : 15/07/2021 22:00
-Changelog : https://api.omicall.com/chang-log#26-05-2021
+Version : 2.0.85
+Release date : 23/09/2023
+Changelog : https://api.omicall.com/sdk/web-sdk-changelog
 ```
 
 ### Hướng dẫn cài đặt
