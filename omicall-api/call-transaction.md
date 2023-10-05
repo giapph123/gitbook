@@ -42,31 +42,11 @@ Danh sách email nhân viên
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="disposition" type="string" %}
-Trạng thái : '
-
-**cancelled**
-
-' : Không trả lời, '
-
-**answered**
-
-' : Trả lời
+Trạng thái : '**cancelled**' : Không trả lời, '**answered**' : Trả lời
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="direction" type="array" %}
-Hướng gọi ('
-
-**outbound**
-
-' : Gọi đi ; '
-
-**inbound**
-
-' : Gọi đến; '
-
-**local**
-
-' : Gọi nội bộ)
+Hướng gọi ('**outbound**' : Gọi đi ; '**inbound**' : Gọi đến; '**local**' : Gọi nội bộ)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="page" type="number" %}
@@ -74,15 +54,15 @@ Trang : Bắt đầu từ 1 ( Mặc định là 1)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="size" type="number" %}
-Số lượng record trên một trang. Mặc định 50 
+Số lượng record trên một trang. Mặc định 50&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="from_date" type="number" %}
-Từ ngày (Timestamp in milliseconds) 
+Từ ngày (Timestamp in milliseconds)&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="to_date" type="number" %}
-Đến ngày (Timestamp in milliseconds) 
+Đến ngày (Timestamp in milliseconds)&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sip_numbers" type="array" %}
@@ -186,6 +166,8 @@ _API Tổng đài >> Nhóm nội bộ_
 | _date\_invalid_              | Từ ngày hoặc đến ngày không hợp lệ                         |
 | _date\_is\_too\_long_        | Khoảng cách giữa từ ngày - đến ngày : Chỉ cho phép 30 ngày |
 
+
+
 {% swagger baseUrl="[URL]" path="/api/call_transaction/detail/:transaction_id" method="get" summary="Chi tiết cuộc gọi" %}
 {% swagger-description %}
 Lấy thông tin chi tiết cuộc gọi
@@ -271,14 +253,8 @@ Access token: Bearer 'token'
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="tag" type="array" %}
-Danh sách Tag được gán với lịch sử cuộc gọi 
-
-\
-
-
-Ví dụ : 
-
-`tag : ["hailong","goilaisau"]`
+Danh sách Tag được gán với lịch sử cuộc gọi \
+Ví dụ : `tag : ["hailong","goilaisau"]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="note" type="string" %}
@@ -417,6 +393,144 @@ Access token: Bearer 'token'
 {% endswagger-parameter %}
 {% endswagger %}
 
+{% swagger method="post" path="" baseUrl="https://public-v1-stg.omicall.com/api/call_transaction/search" summary="Lấy danh sách chi tiết lịch sử cuộc gọi" %}
+{% swagger-description %}
+Danh sách chi tiết lịch sử cuộc gọi, lấy chi tiết rút gọn
+
+Dữ liệu Body truyền lên dưới định dạng JSON. Ví dụ:
+
+{
+
+&#x20; "from\_date" : 1693846799000,
+
+&#x20; "to\_date" : 1696438799000,
+
+&#x20; "user\_uuids" : \["0123456789"]
+
+}
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="x-api-key" required="true" %}
+API key
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" required="true" %}
+application/json
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="user_uuids" type="ArrayList<String>" required="true" %}
+Danh sách user UUID
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="from_date" required="true" %}
+Thời gian bắt đầu lấy log (milisecond)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="to_date" required="true" %}
+Thời gian kết thúc lấy log (milisecond)
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Dữ liệu trả về thành công (JSON format)" %}
+```json
+// sample data
+{
+  "instance_id": "stg",
+  "payload": {
+    "items": [
+      {
+        "_id": "123400000000000000000000",
+        "created_date": 946659600000,
+        "last_updated_date": 946659600000,
+        "create_by": {
+          "id": "123400000000000000000000",
+          "name": "Lorem ipsum dolor sit amet.",
+          "contact_id": "123400000000000000000000",
+          "type": "agent",
+          "extension": "0123456"
+        },
+        "tenant_id": "123400000000000000000000",
+        "transaction_id": "7125081d-288a-4d35-8eb1-012345678912",
+        "direction": "local",
+        "source_number": "0123456",
+        "destination_number": "0123456",
+        "disposition": "cancelled",
+        "duration": 28,
+        "bill_sec": 0,
+        "record_seconds": 0,
+        "time_start_call": 9466596000,
+        "time_end_call": 9466596000,
+        "time_start_to_answer": 9466596000,
+        "ms_time_start_to_answer": 946659600000,
+        "time_start_media": 9466596000,
+        "wait_sec": 0,
+        "hold_call_sec": 0,
+        "hangup_cause": "ORIGINATOR_CANCEL",
+        "hangup_cause_q850": 16,
+        "customer": {
+          "_id": "649e981afd4c703b39692f5f",
+          "full_name": "Lorem ipsum dolor sit amet.",
+          "full_name_unsigned": "Lorem ipsum dolor sit amet.",
+          "uuid": "0123456789",
+          "type": "extension",
+          "extension": "0123456"
+        },
+        "user": [
+          {
+            "_id": "123400000000000000000000",
+            "full_name": "Lorem ipsum dolor sit amet.",
+            "full_name_unsigned": "Lorem ipsum dolor sit amet.",
+            "tags_view": [],
+            "note_created_date": 1696421425598
+          }
+        ],
+        "sip_user": "0123456",
+        "is_stop_ivr": false,
+        "ivr": "none",
+        "is_have_forward_out": false,
+        "is_auto_call": false,
+        "is_deleted": false,
+        "rtp_audio_in_mos": 4.5,
+        "is_callbot": false,
+        "dial_status": "CANCEL",
+        "answer_sec": 0,
+        "domain_fusion": "Lorem ipsum dolor sit amet.",
+        "sip_from_user": "1000071",
+        "nation": "vn",
+        "is_ai": false,
+        "domain": "Lorem ipsum dolor sit amet.",
+        "playback_seconds": 0,
+        "pbx_type": "",
+        "is_trunk": false,
+        "suspicious_checked": false,
+        "is_missed_call": false,
+        "is_analyzed": false,
+        "internal_destination": {
+          "id": "123400000000000000000000",
+          "contact_id": "649e981afd4c703b39692f5f",
+          "name": "Lorem ipsum dolor sit amet.",
+          "uuid": "0123456789",
+          "extension": "0123456",
+          "type": "extension"
+        }
+      }
+    ],
+    "pageNumber": 1,
+    "pageSize": 20,
+    "totalItems": 1000,
+    "totalPages": 100,
+    "hasNext": true,
+    "nextPage": 2,
+    "hasPrevious": false,
+    "previousPage": 1
+  },
+  "instance_version": "1.0.0",
+  "key_enabled": false,
+  "status_code": 9999
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 {% swagger method="post" path="/api/call_transaction/add_evaluation/:transaction_id" baseUrl="[URL]" summary="Đánh giá cuộc gọi theo tiêu chí " %}
 {% swagger-description %}
 
@@ -437,6 +551,10 @@ _**(Format như ảnh bên dưới )**_
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Thông tin cuộc gọi + đánh giá" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="201" description="" %}
 
 {% endswagger-response %}
 {% endswagger %}
