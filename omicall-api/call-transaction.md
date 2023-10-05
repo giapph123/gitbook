@@ -418,7 +418,7 @@ API key
 application/json
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="user_uuids" type="ArrayList<String>" required="true" %}
+{% swagger-parameter in="body" name="user_uuids" type="List<String>" required="true" %}
 Danh sách user UUID
 {% endswagger-parameter %}
 
@@ -428,6 +428,30 @@ Thời gian bắt đầu lấy log (milisecond)
 
 {% swagger-parameter in="body" name="to_date" required="true" %}
 Thời gian kết thúc lấy log (milisecond)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="page" type="int" %}
+Page cần get (= 1)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="direction" type="List<String>" %}
+Hướng gọi ("inbound", "outbound", "local")
+{% endswagger-parameter %}
+
+{% swagger-parameter in="path" name="size" type="int" %}
+Số phần tử trong trang (max 50 item)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="disposition" type="List<String>" %}
+Trạng thái trả lời/không trả lời ("answered", "cancelled")
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="tags" type="List<String>" %}
+Danh sách ID tags
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="numbers" type="List<String>" %}
+Danh sách đầu số
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Dữ liệu trả về thành công (JSON format)" %}
