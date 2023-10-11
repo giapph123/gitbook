@@ -24,22 +24,30 @@ ID giọng đọc mặc định là 'northern\_female\_ngocanh'.&#x20;
 
 
 
-Danh sách ID các giọng đọc: 'northern\_female\_ngocanh', 'southern\_female\_honganh', 'southern\_male\_tienhuy', 'northern\_male\_anhkiet', 'southern\_female\_khangan'
+Danh sách ID các giọng đọc:&#x20;
+
+northern\_female\_ngocanh
+
+southern\_female\_honganh
+
+southern\_male\_tienhuy
+
+northern\_male\_anhkiet
+
+southern\_female\_khangan
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Thành công" %}
 {% code overflow="wrap" %}
-````json
-```json
+```
 {
     "data": {
-        "audioDuration": 1.55,
-        "sampleRate": 8000,
-        "url": "https://tts-api-v1-stg.omicall.com/v1/tts/e95781ea-6809-11ee-afcd-31a2291b0d7a.wav"
+        "audioDuration": 1.55, // Thời lượng tính bằng giây của audio
+        "sampleRate": 8000, // Tần số lấy mẫu 
+        "url": "https://tts-api-v1-stg.omicall.com/v1/....." //URL download
     }
 }
 ```
-````
 {% endcode %}
 {% endswagger-response %}
 {% endswagger %}
