@@ -66,6 +66,10 @@ Token xác thực để truy cập API
 {% swagger-parameter in="body" name="url" type="String" required="true" %}
 Đường dẫn nhận dữ liệu
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Thành công" %}
+
+{% endswagger-response %}
 {% endswagger %}
 
 
@@ -86,4 +90,8 @@ audio file (định dạng .wav) muốn chuyển sang text
 {% swagger-parameter in="body" name="id" type="String" required="true" %}
 String (id sẽ được đính kèm trong kết quả trả về giúp phân biệt các kết quả)
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
 {% endswagger %}
