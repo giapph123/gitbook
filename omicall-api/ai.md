@@ -8,7 +8,7 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="apikey" type="String" required="true" %}
-Token key
+Token xác thực truy cập API
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="text" type="String" required="true" %}
@@ -30,4 +30,40 @@ Danh sách ID các giọng đọc: 'northern\_female\_ngocanh', 'southern\_femal
 {% swagger-response status="200: OK" description="" %}
 
 {% endswagger-response %}
+{% endswagger %}
+
+
+
+{% swagger method="post" path="" baseUrl="https://asr-api-v1-stg.omicall.com/api/asr/register" summary="API ASR (Speech2Text): Đăng ký webhook url để nhận kết quả ASR" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="apikey" type="String" required="true" %}
+Token xác thực để truy cập API
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="url" type="String" required="true" %}
+Đường dẫn nhận dữ liệu
+{% endswagger-parameter %}
+{% endswagger %}
+
+
+
+{% swagger method="post" path="" baseUrl="https://asr-api-v1-stg.omicall.com/api/asr/upload" summary="API ASR (Speech2Text): Upload audio, kết quả ASR sẽ được trả về webhook url " %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="apikey" type="String" required="true" %}
+Token xác thực để truy cập API
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" required="true" name="audio" type="String" %}
+audio file (định dạng .wav) muốn chuyển sang text
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="id" type="String" required="true" %}
+String (id sẽ được đính kèm trong kết quả trả về giúp phân biệt các kết quả)
+{% endswagger-parameter %}
 {% endswagger %}
