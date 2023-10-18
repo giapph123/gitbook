@@ -18,37 +18,54 @@ description: Webhook cuộc gọi
 
 ```
 {
-   "tenant_id": "5f68.......", // Id của doanh nghiệp
-   "transaction_id":"91d3e842-9da2-43ec-8bb1-979c17e817ad", // id cuộc gọi
-   "direction":"outbound", // Hướng gọi outbound, inbound, local
-   "source_number":"842727777787", //Số hotline
-   "destination_number":"0979816773", // Số khách hàng
-   "bill_sec":232, // Số giây tính tiền
-   "record_seconds":232, // Số giây ghi âm (Trả lời / Không trả lời)
-   "time_start_to_answer":1589015432, //thời gian bắt đầu trả lời
-   "recording_file":"https://drive.google.com/uc?id=1Jry_LGzQM....", // File ghi âm
-   "sip_user":"101", // Số máy lẻ nhân viên
-   "created_date":1589015675440, // Thời gian tạo
-   "last_updated_date":1589015678726, // Lần cập nhật cuối cùng
-   "ivr":"none",
-   "provider":"viettel", // Nhà mạng của số khách hàng
-   "duration":242, // Số giây tính từ khi đổ chuông đến khi kết thúc
-   "is_auto_call" : false, // Gọi thường hoặc gọi tự động
-   "call_out_price" : 3990.0, // Số tiền
-   "is_voicemail" : true/false, // Hộp thư thoại
-   "recording_file_voicemail" : "", //File ghi âm hộp thư thoại
-   "user":[
-      {
-         "full_name":"TestBoss 123",
-         "full_name_unsigned":"TestBoss 123",
-         "note":"Ghi chu cuoc goi",
-         "tag":[{"name":"hailong"},{"name":"dongy"},{"name":"vip"}]
-      }
-   ],
-   "customer":{
-      "full_name":"Trần Văn Tiến 1",
-      "full_name_unsigned":"Tran Van Tien 1"
-   }
+  "answer_sec": 5, // Số giây trả lời 
+  "bill_sec": 6, // Thời lượng cuộc gọi , tính tiền 
+  "call_out_price": 55.002, // Tổng tiền cuộc gọi 
+  "create_by": { // Người tạo hoặc nhân viên thực hiện cuộc gọi đó
+    "contact_id": "6209c98c067f745da47367d1",
+    "id": "6209c98561c1cb163ded25fa",
+    "name": "Trần Văn Tiến 1234"
+  },
+  "created_date": 1697595795704, // Ngày tạo
+  "customer": {
+    "full_name": "Mr. Tiến Demo2",
+    "full_name_unsigned": "mr. tien demo2"
+  },
+  "destination_number": "0395187319", // Số bị gọi
+  "direction": "outbound", // Hướng gọi : inbound, outbound, local
+  "domain_fusion": "contact18",
+  "duration": 12, // Tổng thời gian, tính từ khi có tín hiệu rung chuông
+  "endby_name": "end_call_by_customer",
+  "from_number": "100",
+  "hotline": "842899959300", // Số hotline
+  "is_auto_call": false,
+  "is_have_forward_out": false,
+  "ivr": "none",
+  "last_updated_date": 1697595795853,
+  "note": "",
+  "phone_number": "0395187319",
+  "provider": "viettel",
+  "record_seconds": 5,
+  "recording_file_url": "https://public-v1-stg.omicrm.com/third_party/recording/uc?id=SVJ1TTVlK0ZUZUdZZ1luR3VEdTlNemIwYTAwb3FEY2VkekJveGtvRTRhdlV2NCtKcytDT1dNbEJsOFRXWWhqWmpKSmNmUUtRQW40V1ZpbGpWZnpzVkE9PQ==&code=ae5f56fc-7baa-4537-b312-1105023bbb49",
+  "send_num_retry": 1,
+  "sip_number": "842899959300",
+  "sip_user": "100",
+  "source_number": "842899959300",
+  "state": "cdr",
+  "tag": [],
+  "tenant_id": "6209c98461c1cb163ded25f7",
+  "time_end_call": 1697595795,
+  "time_start_call": 1697595783, // Thời gian bắt đầu gọi 
+  "time_start_to_answer": 1697595783,
+  "to_number": "0395187319",
+  "transaction_id": "ae5f56fc-7baa-4537-b312-1105023bbb49", // ID cuộc gọi
+  "transfer_histories": [],
+  "user": [
+    {
+      "full_name": "Trần Văn Tiến 1234",
+      "full_name_unsigned": "Tran Van Tien 1234"
+    }
+  ]
 }
 ```
 
